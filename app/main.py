@@ -3,7 +3,10 @@ import os
 from flask.wrappers import Response
 import psycopg2
 import psycopg2.extras as ext
+from flask_cors import CORS
 DATABASE_URL = os.environ.get('DATABASE_URL')
+
+
 
 class RecordsTable:
 
@@ -48,6 +51,7 @@ class RecordsTable:
     
 
 app = Flask(__name__)
+CORS(app)
 
 # @app.before_request
 # def limit_req():
