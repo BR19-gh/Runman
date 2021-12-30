@@ -78,10 +78,10 @@ def addUser():
 
     newObj.insert(name,hcoins,htime)
 
-    if ((newObj.search(name))[0] == name and (newObj.search(name))[1] == hcoins):
-        return jsonify({"msg": f"success: {name} recorded"})
+    if ((newObj.search(name))[0] == name):
+        return jsonify({"msg": f"success: {name} recorded, it is {newObj.search(name)}"})
     else:
-        return jsonify({"msg": f"fail: {name} was not recorded"})
+        return jsonify({"msg": f"fail: {name} was not recorded, it is {newObj.search(name)}"})
 
 @app.route("/displayRecords")
 def displayRecords():
