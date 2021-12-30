@@ -20,7 +20,7 @@ class RecordsTable:
         return self.records
     
     def search(self,name):
-        self.cur.execute("SELECT * FROM records WHERE name = ?",(name,))
+        self.cur.execute(f"SELECT * FROM records WHERE name = {(name,)}")
         self.record= self.cur.fetchone()
         print(self.record)
         return self.record
@@ -28,7 +28,7 @@ class RecordsTable:
     def insert(self,name,hcoins,htime):
         if (name=="" or hcoins=="" or htime==""):
             raise Exception("One of the entries is empty")
-        self.cur.execute("INSERT INTO records VALUES (?,?,?)", (name,hcoins,htime))
+        self.cur.execute(f"INSERT INTO records VALUES {(name,hcoins,htime)}")
         self.conn.commit()
 
     # def update(self,name):
@@ -40,7 +40,7 @@ class RecordsTable:
     def delete(self,name):
         if (name==""):
             raise Exception("You have to select a name to delete its values")
-        self.cur.execute("DELETE FROM mosques WHERE name = ?",(name))
+        self.cur.execute(f"DELETE FROM mosques WHERE name = {(name,)}")
         self.conn.commit()
     
 
