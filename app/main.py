@@ -80,8 +80,13 @@ def addUser():
         return jsonify({"msg": f"Error 403: the name {name} already exists","err?":403})
 
     newObj.insert(name,hcoins,htime)
-
     recordSearched = newObj.search(name)
+
+    print(recordSearched)
+    print(recordSearched[0])
+    print(newObj.search(name))
+    print(newObj.search(name)[0])
+
     if ( recordSearched[0] == name):
         return jsonify({"msg": f"Success 200: player {name} is recorded, the name matches {(newObj.search(name))[0]}","err?":200})
     else:
