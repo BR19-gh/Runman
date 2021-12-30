@@ -75,12 +75,14 @@ def addUser():
     hcoins = request.args.get('hcoins')
     htime = request.args.get('htime')
 
-    if ((newObj.search(name))[0] == name):
+    recordSearched = newObj.search(name)
+    if ( recordSearched[0] == name):
         return jsonify({"msg": f"Error 403: the name {name} already exists","err?":403})
 
     newObj.insert(name,hcoins,htime)
 
-    if ((newObj.search(name))[0] == name):
+    recordSearched = newObj.search(name)
+    if ( recordSearched[0] == name):
         return jsonify({"msg": f"Success 200: player {name} is recorded, the name matches {(newObj.search(name))[0]}","err?":200})
     else:
         return jsonify({"msg": f"Unkown Error 500: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}","err?":500})
@@ -97,7 +99,8 @@ def updateUserRecords():
 
     newObj.update(name,hcoins,htime)
 
-    if ((newObj.search(name))[0] == name):
+    recordSearched = newObj.search(name)
+    if ( recordSearched[0] == name):
         return jsonify({"msg": f"Success 200: player {name} is updated, old data:{oldUserRecord}, new data:{newObj.search(name)}","err?":200})
     else:
         return jsonify({"msg": f"Unkown Error 500: player {name} was not updated, old data:{oldUserRecord}, new data:{newObj.search(name)}","err?":500})
