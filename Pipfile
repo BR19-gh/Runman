@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 flask = "*"
 gunicorn = "*"
+psycopg2-binary = "*"
+dj-database-url = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
