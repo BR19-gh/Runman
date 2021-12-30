@@ -62,11 +62,6 @@ def after_request(response):
 def home_view():
         return "<h1>Runman Backend</h1>"
 
-# @app.route("/add")
-# def add():
-#     a = request.args.get('a')
-#     b = request.args.get('b')
-#     return jsonify({"result": a+b})
 
 @app.route("/addUser")
 def addUser():
@@ -79,9 +74,9 @@ def addUser():
     newObj.insert(name,hcoins,htime)
 
     if ((newObj.search(name))[0] == name):
-        return jsonify({"msg": f"success: {name} recorded, it is {newObj.search(name)}"})
+        return jsonify({"msg": f"success: player {name} recorded, the name matches {(newObj.search(name))[0]}"})
     else:
-        return jsonify({"msg": f"fail: {name} was not recorded, it is {newObj.search(name)}"})
+        return jsonify({"msg": f"fail: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}"})
 
 @app.route("/displayRecords")
 def displayRecords():
