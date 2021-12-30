@@ -34,7 +34,7 @@ class RecordsTable:
         self.conn.commit()
 
     def update(self,name,hcoin,htime):
-        self.cur.execute(f"UPDATE records SET hcoin = '{hcoin}' WHERE name = '{name}'")
+        self.cur.execute(f"UPDATE records SET hcoins = '{hcoin}' WHERE name = '{name}'")
         self.cur.execute(f"UPDATE records SET htime = '{htime}' WHERE name = '{name}'")
         self.conn.commit()
 
