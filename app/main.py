@@ -91,6 +91,6 @@ def displayRecords():
 
     dictOfResult={}
     for i in result:
-        dictOfResult[i[0]]=[i[1],i[2]]
+        dictOfResult[i[0]]={'hcoins':i[1],'htime':i[2]}
 
     return jsonify(dictOfResult)
