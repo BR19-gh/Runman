@@ -80,9 +80,11 @@ def addUser():
     name = request.args.get('name')
     hcoins = request.args.get('hcoins')
     htime = request.args.get('htime')
-
+    
     recordSearched = newObj.search(name)
-    if ( recordSearched[0] == name):
+    if recordSearched == None : 
+        pass
+    elif ( recordSearched[0] == name):
         return jsonify({"msg": f"Error 403: the name {name} already exists","err?":403})
 
     newObj.insert(name,hcoins,htime)
