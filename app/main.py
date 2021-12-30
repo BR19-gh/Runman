@@ -1,7 +1,6 @@
-from flask import Flask, render_template
-from flask import jsonify
-from flask import request
+from flask import Flask, render_template, jsonify, request, abort
 import os
+from flask.wrappers import Response
 import psycopg2
 import psycopg2.extras as ext
 DATABASE_URL = os.environ.get('DATABASE_URL')
@@ -31,16 +30,15 @@ class RecordsTable:
         self.cur.execute(f"INSERT INTO records VALUES {(name,hcoins,htime)}")
         self.conn.commit()
 
-    # def update(self,name):
-    #     if (name==""):
-    #         raise Exception("You have to select a name to update its corresponding values")
-    #     self.cur.execute(f"UPDATE mosques SET {columnToUpdate} = ? WHERE name = ?", (valuesToUpdate,name))
-    #     self.conn.commit()
+    def update(self,name,hcoin,htime):
+        self.cur.execute(f"UPDATE records SET hcoin = '{hcoin}' WHERE name = '{name}'")
+        self.cur.execute(f"UPDATE records SET htime = '{htime}' WHERE name = '{name}'")
+        self.conn.commit()
 
     def delete(self,name):
         if (name==""):
             raise Exception("You have to select a name to delete its values")
-        self.cur.execute(f"DELETE FROM mosques WHERE name = '{name}'")
+        self.cur.execute(f"DELETE FROM records WHERE name = '{name}'")
         self.conn.commit()
     
 
@@ -51,12 +49,18 @@ class RecordsTable:
 
 app = Flask(__name__)
 
+# @app.before_request
+# def limit_req():
+#     if request.remote_addr != '74.208.236.105':
+#         abort(401,Response("401: Access from unauthrized IP"))
+
 
 @app.after_request
 def after_request(response):
     header = response.headers
     header['Access-Control-Allow-Origin'] = '*'
     return response
+
 
 @app.route("/")
 def home_view():
@@ -71,12 +75,32 @@ def addUser():
     hcoins = request.args.get('hcoins')
     htime = request.args.get('htime')
 
+    if ((newObj.search(name))[0] == name):
+        return jsonify({"msg": f"Error 403: the name {name} already exists","err?":403})
+
     newObj.insert(name,hcoins,htime)
 
     if ((newObj.search(name))[0] == name):
-        return jsonify({"msg": f"success: player {name} recorded, the name matches {(newObj.search(name))[0]}"})
+        return jsonify({"msg": f"Success 200: player {name} is recorded, the name matches {(newObj.search(name))[0]}","err?":200})
     else:
-        return jsonify({"msg": f"fail: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}"})
+        return jsonify({"msg": f"Unkown Error 500: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}","err?":500})
+
+@app.route("/updateUserRecords")
+def updateUserRecords():
+    newObj = RecordsTable()
+
+    name = request.args.get('name')
+    hcoins = request.args.get('hcoins')
+    htime = request.args.get('htime')
+
+    oldUserRecord = newObj.search(name)
+
+    newObj.update(name,hcoins,htime)
+
+    if ((newObj.search(name))[0] == name):
+        return jsonify({"msg": f"Success 200: player {name} is updated, old data:{oldUserRecord}, new data:{newObj.search(name)}","err?":200})
+    else:
+        return jsonify({"msg": f"Unkown Error 500: player {name} was not updated, old data:{oldUserRecord}, new data:{newObj.search(name)}","err?":500})
 
 @app.route("/displayRecords")
 def displayRecords():
@@ -85,7 +109,9 @@ def displayRecords():
     result = newObj.display()
 
     dictOfResult={}
+    j=0
     for i in result:
-        dictOfResult[i[0]]={'hcoins':i[1],'htime':i[2]}
+        dictOfResult[j]={'name':i[0],'hcoins':i[1],'htime':i[2]}
+        j+=1
 
     return jsonify(dictOfResult)
