@@ -20,7 +20,7 @@ class RecordsTable:
         return self.records
     
     def search(self,name):
-        self.cur.execute(f"SELECT * FROM records WHERE name = {(name,)}")
+        self.cur.execute(f"SELECT * FROM records WHERE name = {name}")
         self.record= self.cur.fetchone()
         print(self.record)
         return self.record
@@ -40,7 +40,7 @@ class RecordsTable:
     def delete(self,name):
         if (name==""):
             raise Exception("You have to select a name to delete its values")
-        self.cur.execute(f"DELETE FROM mosques WHERE name = {(name,)}")
+        self.cur.execute(f"DELETE FROM mosques WHERE name = {name}")
         self.conn.commit()
     
 
