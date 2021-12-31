@@ -71,11 +71,6 @@ def addUser():
     newObj.insert(name, hcoins, htime)
     recordSearched = newObj.search(name)
 
-    print(recordSearched)
-    print(recordSearched[0])
-    print(newObj.search(name))
-    print(newObj.search(name)[0])
-
     if (recordSearched[0] == name):
         return jsonify({"msg": f"Success 200: player {name} is recorded, the name matches {(newObj.search(name))[0]}", "statCode": 200})
     else:
@@ -107,8 +102,15 @@ def updateUserRecords():
 def displayRecords():
     newObj = RecordsTable()
 
+    limit = request.args.get('limit')
+    limit = int(limit)
+
     result = newObj.display()
     resultSorted = sorted(result, key=lambda tup: tup[2], reverse=True)
+    if limit != 0:
+        resultSorted = resultSorted[:limit]
+    else:
+        pass
     dictOfResult = {}
     j = 0
     for i in resultSorted:
@@ -125,8 +127,17 @@ def displayRecordsBR19():
     password = request.args.get('password')
     if password == BR19_PASSWORD:
 
+        newObj = RecordsTable()
+
+        limit = request.args.get('limit')
+        limit = int(limit)
+
         result = newObj.display()
         resultSorted = sorted(result, key=lambda tup: tup[2], reverse=True)
+        if limit != 0:
+            resultSorted = resultSorted[:limit]
+        else:
+            pass
         dictOfResult = {}
         j = 0
         for i in resultSorted:
@@ -134,6 +145,7 @@ def displayRecordsBR19():
             j += 1
 
         return jsonify(dictOfResult)
+
     else:
         return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
 
