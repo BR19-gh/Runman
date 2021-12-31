@@ -53,20 +53,6 @@ class RecordsTable:
 app = Flask(__name__)
 CORS(app)
 
-# @app.before_request
-# def limit_req():
-#     if request.remote_addr != '74.208.236.105':
-#         abort(401,Response("401: Access from unauthrized IP"))
-
-
-# @app.after_request
-# def after_request(response):
-#     header = response.headers
-#     header['Access-Control-Allow-Origin'] = '*'
-#     header['Access-Control-Allow-Headers']='Content-Type'
-
-#     return response
-
 
 @app.route("/")
 def home_view():
@@ -108,7 +94,9 @@ def updateUserRecords():
     newObj.update(name, hcoins, htime)
 
     recordSearched = newObj.search(name)
-    if (recordSearched[0] == name):
+    if recordSearched == None:
+        return jsonify({"msg": f"Error 404: player {name} was not updated because they didn't have a record before (maybe first time playing?) ", "statCode": 404})
+    elif (recordSearched[0] == name):
         return jsonify({"msg": f"Success 200: player {name} is updated, old data:{oldUserRecord}, new data:{newObj.search(name)}", "statCode": 200})
     else:
         return jsonify({"msg": f"Unkown Error 500: player {name} was not updated, old data:{oldUserRecord}, new data:{newObj.search(name)}", "statCode": 500})
