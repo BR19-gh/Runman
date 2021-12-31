@@ -66,7 +66,7 @@ def home_view():
 #         abort(401)
 
 
-@app.route("/addUser")
+@app.route("/addUser", methods=['POST'])
 def addUser():
     newObj = RecordsTable()
 
@@ -81,6 +81,7 @@ def addUser():
         return jsonify({"msg": f"Success 200: player {name} is recorded, the name matches {(newObj.search(name))[0]}", "statCode": 200})
     else:
         return jsonify({"msg": f"Unkown Error 500: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
+
 
 @app.route("/addUserBR19")
 def addUserBR19():
@@ -105,9 +106,7 @@ def addUserBR19():
         return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
 
 
-
-
-@app.route("/updateUserRecords")
+@app.route("/updateUserRecords", methods=['PUT'])
 def updateUserRecords():
     newObj = RecordsTable()
 
