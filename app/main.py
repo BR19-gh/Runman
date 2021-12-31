@@ -63,7 +63,7 @@ def home_view():
 # @app.before_request
 # def limit_remote_addr():
 #     if request.remote_addr != '74.208.236.105':
-#         return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
+#         abort(401)
 
 
 @app.route("/addUser")
@@ -134,8 +134,8 @@ def displayRecords():
 
     limit = request.args.get('limit')
     order = request.args.get('order')
-    
-    
+    limit = int(limit)
+    order = int(order)
 
     result = newObj.display()
     resultSorted = sorted(result, key=lambda tup: tup[order], reverse=True)
@@ -163,8 +163,8 @@ def displayRecordsBR19():
 
         limit = request.args.get('limit')
         order = request.args.get('order')
-        
-        
+        limit = int(limit)
+        order = int(order)
 
         result = newObj.display()
         resultSorted = sorted(result, key=lambda tup: tup[order], reverse=True)
