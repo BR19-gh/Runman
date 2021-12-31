@@ -130,7 +130,7 @@ def displayRecords():
 
 
 @app.route("/searchNameExists")
-def displayRecords():
+def searchNameExists():
     newObj = RecordsTable()
 
     name = request.args.get('name')
