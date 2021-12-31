@@ -108,7 +108,7 @@ def displayRecords():
     newObj = RecordsTable()
 
     result = newObj.display()
-    resultSorted = sorted(result, key=lambda tup: tup[2])
+    resultSorted = sorted(result, key=lambda tup: tup[2], reverse=True)
     dictOfResult = {}
     j = 0
     for i in resultSorted:
@@ -126,7 +126,7 @@ def displayRecordsBR19():
     if password == BR19_PASSWORD:
 
         result = newObj.display()
-        resultSorted = sorted(result, key=lambda tup: tup[2])
+        resultSorted = sorted(result, key=lambda tup: tup[2], reverse=True)
         dictOfResult = {}
         j = 0
         for i in resultSorted:
