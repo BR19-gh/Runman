@@ -66,7 +66,7 @@ def home_view():
 #         abort(401)
 
 
-@app.route("/addUser", methods=['POST'])
+@app.route("/addUser", methods=['POST,GET'])
 def addUser():
     newObj = RecordsTable()
 
@@ -106,7 +106,7 @@ def addUserBR19():
         return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
 
 
-@app.route("/updateUserRecords", methods=['PUT'])
+@app.route("/updateUserRecords", methods=['PUT,GET'])
 def updateUserRecords():
     newObj = RecordsTable()
 
