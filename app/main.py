@@ -108,10 +108,10 @@ def displayRecords():
     newObj = RecordsTable()
 
     result = newObj.display()
-
+    resultSorted = sorted(result, key=lambda tup: tup[1])
     dictOfResult = {}
     j = 0
-    for i in result:
+    for i in resultSorted:
         dictOfResult[j] = {'name': i[0], 'hcoins': i[1], 'htime': i[2]}
         j += 1
 
@@ -126,10 +126,10 @@ def displayRecordsBR19():
     if password == BR19_PASSWORD:
 
         result = newObj.display()
-
+        resultSorted = sorted(result, key=lambda tup: tup[1])
         dictOfResult = {}
         j = 0
-        for i in result:
+        for i in resultSorted:
             dictOfResult[j] = {'name': i[0], 'hcoins': i[1], 'htime': i[2]}
             j += 1
 
@@ -146,6 +146,6 @@ def searchNameExists():
     result = newObj.search(name)
 
     if result == None:
-        return jsonify({"msg": f"Success 200: the name {name} not exists", "statCode": 200})
+        return jsonify({"msg": f"Success 200: the name {name} doesn't exists, so it'll be added", "statCode": 200})
     else:
         return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
