@@ -60,10 +60,10 @@ def home_view():
     return "<h1>Runman Backend</h1>"
 
 
-@app.before_request
-def limit_remote_addr():
-    if request.remote_addr != '74.208.236.105':
-        return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
+# @app.before_request
+# def limit_remote_addr():
+#     if request.remote_addr != '74.208.236.105':
+#         return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
 
 
 @app.route("/addUser")
