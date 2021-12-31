@@ -5,6 +5,7 @@ import psycopg2
 import psycopg2.extras as ext
 from flask_cors import CORS
 DATABASE_URL = os.environ.get('DATABASE_URL')
+BR19_PASSWORD = os.environ.get('BR19_PASSWORD')
 
 
 class RecordsTable:
@@ -115,6 +116,26 @@ def displayRecords():
         j += 1
 
     return jsonify(dictOfResult)
+
+
+@app.route("/displayRecordsBR19")
+def displayRecordsBR19():
+    newObj = RecordsTable()
+
+    password = request.args.get('password')
+    if password == BR19_PASSWORD:
+
+        result = newObj.display()
+
+        dictOfResult = {}
+        j = 0
+        for i in result:
+            dictOfResult[j] = {'name': i[0], 'hcoins': i[1], 'htime': i[2]}
+            j += 1
+
+        return jsonify(dictOfResult)
+    else:
+        return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
 
 
 @app.route("/searchNameExists")
