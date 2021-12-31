@@ -60,6 +60,12 @@ def home_view():
     return "<h1>Runman Backend</h1>"
 
 
+# @app.before_request
+# def limit_remote_addr():
+#     if request.remote_addr != '74.208.236.105':
+#         abort(401)
+
+
 @app.route("/addUser")
 def addUser():
     newObj = RecordsTable()
@@ -75,6 +81,30 @@ def addUser():
         return jsonify({"msg": f"Success 200: player {name} is recorded, the name matches {(newObj.search(name))[0]}", "statCode": 200})
     else:
         return jsonify({"msg": f"Unkown Error 500: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
+
+@app.route("/addUserBR19")
+def addUser():
+    newObj = RecordsTable()
+
+    password = request.args.get('password')
+    if password == BR19_PASSWORD:
+
+        name = request.args.get('name')
+        hcoins = request.args.get('hcoins')
+        htime = request.args.get('htime')
+
+        newObj.insert(name, hcoins, htime)
+        recordSearched = newObj.search(name)
+
+        if (recordSearched[0] == name):
+            return jsonify({"msg": f"Success 200: player {name} is recorded, the name matches {(newObj.search(name))[0]}", "statCode": 200})
+        else:
+            return jsonify({"msg": f"Unkown Error 500: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
+
+    else:
+        return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
+
+
 
 
 @app.route("/updateUserRecords")
@@ -103,10 +133,12 @@ def displayRecords():
     newObj = RecordsTable()
 
     limit = request.args.get('limit')
+    order = request.args.get('order')
     limit = int(limit)
+    order = int(order)
 
     result = newObj.display()
-    resultSorted = sorted(result, key=lambda tup: tup[2], reverse=True)
+    resultSorted = sorted(result, key=lambda tup: tup[order], reverse=True)
     if limit != 0:
         resultSorted = resultSorted[:limit]
     else:
@@ -130,10 +162,12 @@ def displayRecordsBR19():
         newObj = RecordsTable()
 
         limit = request.args.get('limit')
+        order = request.args.get('order')
         limit = int(limit)
+        order = int(order)
 
         result = newObj.display()
-        resultSorted = sorted(result, key=lambda tup: tup[2], reverse=True)
+        resultSorted = sorted(result, key=lambda tup: tup[order], reverse=True)
         if limit != 0:
             resultSorted = resultSorted[:limit]
         else:
