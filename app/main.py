@@ -66,7 +66,7 @@ def home_view():
 #         abort(401)
 
 
-@app.route("/addUser", methods=['POST','GET'])
+@app.route("/addUser", methods=['POST', 'GET'])
 def addUser():
     newObj = RecordsTable()
 
@@ -106,7 +106,7 @@ def addUserBR19():
         return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
 
 
-@app.route("/updateUserRecords", methods=['PUT','GET'])
+@app.route("/updateUserRecords", methods=['PUT', 'GET'])
 def updateUserRecords():
     newObj = RecordsTable()
 
@@ -194,3 +194,23 @@ def searchNameExists():
         return jsonify({"msg": f"Success 200: the name {name} doesn't exists, so it'll be added", "statCode": 200})
     else:
         return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
+
+
+@app.route("/deleteRecordBR19")
+def deleteRecordBR19():
+    newObj = RecordsTable()
+
+    password = request.args.get('password')
+    if password == BR19_PASSWORD:
+
+        name = request.args.get('name')
+        newObj.delete(name)
+        result = newObj.search(name)
+
+        if result == None:
+            return jsonify({"msg": f"Success 200: the name {name} doesn't exists, it is been deleted successfully", "statCode": 200})
+        else:
+            return jsonify({"msg": f"Error 403: the name {name} exists it not been deleted", "statCode": 500})
+
+    else:
+        return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
