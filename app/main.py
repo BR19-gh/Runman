@@ -83,7 +83,7 @@ def addUser():
         return jsonify({"msg": f"Unkown Error 500: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
 
 @app.route("/addUserBR19")
-def addUser():
+def addUserBR19():
     newObj = RecordsTable()
 
     password = request.args.get('password')
