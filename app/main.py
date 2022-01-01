@@ -216,9 +216,9 @@ def deleteRecordBR19():
         result = newObj.search(name)
 
         if result == None:
-            return jsonify({"msg": f"Success 200: the name {name} doesn't exists, it is been deleted successfully", "statCode": 200})
+            return jsonify({"msg": f"Success 200:{name} is deleted successfully, {name} doesn't exists anymore", "statCode": 200})
         else:
-            return jsonify({"msg": f"Error 403: the name {name} exists it not been deleted", "statCode": 500})
+            return jsonify({"msg": f"Error 403: failed to delete name {name}, {name} still exists", "statCode": 500})
 
     else:
         return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
