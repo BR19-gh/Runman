@@ -42,7 +42,7 @@ class RecordsTable:
         self.conn.commit()
 
     def delete(self, name):
-        if (name == ""):
+        if (name == None):
             raise Exception("You have to select a name to delete its values")
         self.cur.execute(f"DELETE FROM records WHERE name = '{name}'")
         self.conn.commit()
@@ -73,6 +73,14 @@ def addUser():
     name = request.args.get('name')
     hcoins = request.args.get('hcoins')
     htime = request.args.get('htime')
+
+    result = newObj.search(name)
+
+    if result == None:
+        pass
+    else:
+        return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
+
 
     newObj.insert(name, hcoins, htime)
     recordSearched = newObj.search(name)
