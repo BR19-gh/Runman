@@ -51,7 +51,7 @@ class RecordsTable:
         self.conn.close()
 
 
-app = Flask(__name__,template_folder='template')
+app = Flask(__name__,template_folder='templates')
 # CORS(app)
 
 
