@@ -66,7 +66,7 @@ let songS = new sound("../sound/song_hmmm101.wav");
 let jumpS = new sound("../sound/jump.wav");
 let losingS = new sound("../sound/losing.wav");
 let hurtS = new sound("../sound/hurt.wav");
-let menuS = new sound("../sound/menu.wav")
+let menuS = new sound("../static/sound/menu.wav")
 let menuExitS = new sound("../sound/menuExit.wav")
 let startS = new sound("../sound/start.wav");
 
