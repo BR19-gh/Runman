@@ -51,13 +51,13 @@ class RecordsTable:
         self.conn.close()
 
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='template')
 # CORS(app)
 
 
 @app.route("/")
 def home_view():
-    return render_template('views\index.html')
+    return render_template('index.html')
 
 
 # @app.before_request
