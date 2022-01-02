@@ -57,7 +57,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home_view():
-    return render_template('/views/imdex.html')
+    return render_template('/views/index.html')
 
 
 # @app.before_request
