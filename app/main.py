@@ -61,7 +61,7 @@ def home_view():
 
 @app.route("/ar")
 def home_view2():
-    return render_template('index.html')
+    return render_template('indexAr.html')
 
 
 # @app.before_request
