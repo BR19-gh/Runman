@@ -1,11 +1,11 @@
 @font-face {
     font-family: "ArabicPixel1";
-    src: url("ArabicPixel1.ttf");
+    src: url("static/ArabicPixel1.ttf");
 }
 
 @font-face {
     font-family: "ArabicPixel2";
-    src: url("ArabicPixel2.ttf");
+    src: url("static/ArabicPixel2.ttf");
 }
 
 body {
