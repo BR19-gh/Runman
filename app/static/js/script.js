@@ -789,13 +789,13 @@ document.getElementById("Voice").addEventListener("click", () => {
 document.getElementById("English").addEventListener("click", () => {
     playOrStop(menuS, VoiceOn);
     playOrStop(menuS, VoiceOn);
-    window.location.assign("index.html");
+    window.location.assign("../templates/index.html");
 });
 
 document.getElementById("Arabic").addEventListener("click", () => {
     playOrStop(menuS, VoiceOn);
     playOrStop(menuS, VoiceOn);
-    window.location.assign("indexAr.html");
+    window.location.assign("../templates/indexAr.html");
 });
 
 
