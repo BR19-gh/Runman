@@ -59,6 +59,10 @@ app = Flask(__name__,template_folder='templates')
 def home_view():
     return render_template('index.html')
 
+@app.route("/ar")
+def home_view2():
+    return render_template('index.html')
+
 
 # @app.before_request
 # def limit_remote_addr():
