@@ -52,12 +52,12 @@ class RecordsTable:
 
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
 
 
 @app.route("/")
 def home_view():
-    return "<h1>Runman Backend</h1>"
+    return render_template('/views/imdex.html')
 
 
 # @app.before_request
