@@ -60,15 +60,15 @@ function playOrStop(sound, VoiceOn) {
 }
 
 
-let hitS = new sound("../static/sound/hit.wav");
-let coinS = new sound("../static/sound/coin.wav");
-let songS = new sound("../static/sound/song_hmmm101.wav");
-let jumpS = new sound("../static/sound/jump.wav");
-let losingS = new sound("../static/sound/losing.wav");
-let hurtS = new sound("../static/sound/hurt.wav");
-let menuS = new sound("../static/sound/menu.wav")
-let menuExitS = new sound("../static/sound/menuExit.wav")
-let startS = new sound("../static/sound/start.wav");
+let hitS = new sound("../sound/hit.wav");
+let coinS = new sound("../sound/coin.wav");
+let songS = new sound("../sound/song_hmmm101.wav");
+let jumpS = new sound("../sound/jump.wav");
+let losingS = new sound("../sound/losing.wav");
+let hurtS = new sound("../sound/hurt.wav");
+let menuS = new sound("../sound/menu.wav")
+let menuExitS = new sound("../sound/menuExit.wav")
+let startS = new sound("../sound/start.wav");
 
 
 
@@ -256,15 +256,15 @@ function chooseObstacle() {
 
         let picPicked = Math.floor(Math.random() * 5) + 1;
         if (picPicked == 1) {
-            document.getElementById("obstacle").style.backgroundImage = 'url("../static/img/obstacle/1.png")';
+            document.getElementById("obstacle").style.backgroundImage = 'url("../img/obstacle/1.png")';
         } else if (picPicked == 2) {
-            document.getElementById("obstacle").style.backgroundImage = 'url("../static/img/obstacle/2.png")';
+            document.getElementById("obstacle").style.backgroundImage = 'url("../img/obstacle/2.png")';
         } else if (picPicked == 3) {
-            document.getElementById("obstacle").style.backgroundImage = 'url("../static/img/obstacle/3.png")';
+            document.getElementById("obstacle").style.backgroundImage = 'url("../img/obstacle/3.png")';
         } else if (picPicked == 4) {
-            document.getElementById("obstacle").style.backgroundImage = 'url("../static/img/obstacle/4.png")';
+            document.getElementById("obstacle").style.backgroundImage = 'url("../img/obstacle/4.png")';
         } else if (picPicked == 5) {
-            document.getElementById("obstacle").style.backgroundImage = 'url("../static/img/obstacle/5.png")';
+            document.getElementById("obstacle").style.backgroundImage = 'url("../img/obstacle/5.png")';
         }
         setTimeout(() => {
             obstacle.style.display = "none";
@@ -529,7 +529,7 @@ var timer;
 
 cloudChangerVal = setInterval(() => {
     let cloudChooserVal = Math.floor(Math.random() * 3) + 1;
-    if (cloudChooserVal == 1) { cloud.style.backgroundImage = 'url("../static/img/cloud/1.png")'; } else if (cloudChooserVal == 2) { cloud.style.backgroundImage = 'url("../static/img/cloud/2.png")'; } else { cloud.style.backgroundImage = 'url("../static/img/cloud/3.png")'; }
+    if (cloudChooserVal == 1) { cloud.style.backgroundImage = 'url("../img/cloud/1.png")'; } else if (cloudChooserVal == 2) { cloud.style.backgroundImage = 'url("../img/cloud/2.png")'; } else { cloud.style.backgroundImage = 'url("../img/cloud/3.png")'; }
 }, 20000);
 
 
@@ -736,7 +736,7 @@ let musicStopped = localStorage.getItem("musicStopped");
 if (musicStopped == 1) {
     localStorage.setItem("musicStopped", 1);
     MusicOn = 0;
-    document.getElementById("Music").innerHTML = '<img src="../static/img/icons/MusicOff.png" alt="Music Off">';
+    document.getElementById("Music").innerHTML = '<img src="../img/icons/MusicOff.png" alt="Music Off">';
 }
 
 document.getElementById("Music").addEventListener("click", () => {
@@ -744,12 +744,12 @@ document.getElementById("Music").addEventListener("click", () => {
     if (MusicOn == 1) {
         localStorage.setItem("musicStopped", 1);
         MusicOn = 0;
-        document.getElementById("Music").innerHTML = '<img src="../static/img/icons/MusicOff.png" alt="Music Off">';
+        document.getElementById("Music").innerHTML = '<img src="../img/icons/MusicOff.png" alt="Music Off">';
         playOrStop(songS, MusicOn);
     } else {
         localStorage.setItem("musicStopped", 0);
         MusicOn = 1;
-        document.getElementById("Music").innerHTML = '<img src="../static/img/icons/MusicOn.png" alt="Music On">';
+        document.getElementById("Music").innerHTML = '<img src="../img/icons/MusicOn.png" alt="Music On">';
         playOrStop(songS, MusicOn);
     }
 
@@ -762,7 +762,7 @@ let voiceStopped = localStorage.getItem("voiceStopped");
 if (voiceStopped == 1) {
     localStorage.setItem("voiceStopped", 1);
     VoiceOn = 0;
-    document.getElementById("Voice").innerHTML = '<img src="../static/img/icons/VoiceOff.png" alt="Voice Off">';
+    document.getElementById("Voice").innerHTML = '<img src="../img/icons/VoiceOff.png" alt="Voice Off">';
 }
 
 document.getElementById("Voice").addEventListener("click", () => {
@@ -770,12 +770,12 @@ document.getElementById("Voice").addEventListener("click", () => {
     if (VoiceOn == 1) {
         localStorage.setItem("voiceStopped", 1);
         VoiceOn = 0;
-        document.getElementById("Voice").innerHTML = '<img src="../static/img/icons/VoiceOff.png" alt="Voice Off">';
+        document.getElementById("Voice").innerHTML = '<img src="../img/icons/VoiceOff.png" alt="Voice Off">';
     } else {
         playOrStop(menuS, VoiceOn);
         localStorage.setItem("voiceStopped", 0);
         VoiceOn = 1;
-        document.getElementById("Voice").innerHTML = '<img src="../static/img/icons/VoiceOn.png" alt="Voice On">';
+        document.getElementById("Voice").innerHTML = '<img src="../img/icons/VoiceOn.png" alt="Voice On">';
     }
 
 
@@ -1070,19 +1070,19 @@ function displayRecordsForRanking() {
                 }
                 if ('1' == rank.innerText) {
                     if (currentPage == 'indexAr.html') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
-                    rank.innerHTML = '<img style="width: 16px; height: 17px;" src="../static/img/coin/gold.png" alt="1st">';
+                    rank.innerHTML = '<img style="width: 16px; height: 17px;" src="../img/coin/gold.png" alt="1st">';
                     if (localStorage.nickname == usersFetched[i]['name']) {
                         document.getElementsByClassName('rank')[i].style.backgroundColor = "#00000010";
                     }
                 } else if ('2' == rank.innerText) {
                     if (currentPage == 'indexAr.html') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
-                    rank.innerHTML = '<img style="width: 16px; height: 17px;" src="../static/img/coin/silver.png" alt="2nd">';
+                    rank.innerHTML = '<img style="width: 16px; height: 17px;" src="../img/coin/silver.png" alt="2nd">';
                     if (localStorage.nickname == usersFetched[i]['name']) {
                         document.getElementsByClassName('rank')[i].style.backgroundColor = "#00000010";
                     }
                 } else if ('3' == rank.innerText) {
                     if (currentPage == 'indexAr.html') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
-                    rank.innerHTML = '<img style="width: 16px; height: 17px;" src="../static/img/coin/bronze.png" alt="3rd">';
+                    rank.innerHTML = '<img style="width: 16px; height: 17px;" src="../img/coin/bronze.png" alt="3rd">';
                     if (localStorage.nickname == usersFetched[i]['name']) {
                         document.getElementsByClassName('rank')[i].style.backgroundColor = "#00000010";
                     }
@@ -1137,9 +1137,9 @@ document.getElementById("orderBtn").addEventListener("click", () => {
 
     if (order == 2) {
         if (currentPage == 'indexAr.html') {
-            document.getElementById('orderBtn').innerHTML = 'عدد<br><img style="width: 12px; height: 13px;" src="../static/img/coin/0.png" alt="Coins">'
+            document.getElementById('orderBtn').innerHTML = 'عدد<br><img style="width: 12px; height: 13px;" src="../img/coin/0.png" alt="Coins">'
         } else {
-            document.getElementById('orderBtn').innerHTML = '# of <img style="width: 12px; height: 13px;" src="../static/img/coin/0.png" alt="Coins">'
+            document.getElementById('orderBtn').innerHTML = '# of <img style="width: 12px; height: 13px;" src="../img/coin/0.png" alt="Coins">'
         }
         order = 1;
     } else if (order == 1) {
