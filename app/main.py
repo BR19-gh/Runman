@@ -81,7 +81,6 @@ def addUser():
     else:
         return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
 
-
     newObj.insert(name, hcoins, htime)
     recordSearched = newObj.search(name)
 
@@ -199,7 +198,7 @@ def searchNameExists():
     result = newObj.search(name)
 
     if result == None:
-        return jsonify({"msg": f"Success 200: the name {name} doesn't exists, so it'll be added", "statCode": 200})
+        return jsonify({"msg": f"Success 200: the name {name} doesn't exists, so it can be added", "statCode": 200})
     else:
         return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
 
