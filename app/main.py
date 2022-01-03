@@ -215,7 +215,8 @@ def deleteRecordBR19():
     if password == BR19_PASSWORD:
 
         id = request.args.get('id')
-
+        id = int(id)
+        
         result = newObj.display()
         resultSorted = sorted(result, key=lambda tup: tup[2], reverse=True)
         dictOfResult = {}
