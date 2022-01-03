@@ -52,7 +52,7 @@ class RecordsTable:
 
 
 app = Flask(__name__,template_folder='templates')
-# CORS(app)
+CORS(app)
 
 
 @app.route("/")
