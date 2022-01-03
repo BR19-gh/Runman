@@ -207,7 +207,7 @@ def searchNameExists():
         return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
 
 
-@app.route("/deleteRecordBR19")
+@app.route("/deleteRecordByIDBR19")
 def deleteRecordBR19():
     newObj = RecordsTable()
 
@@ -233,6 +233,28 @@ def deleteRecordBR19():
             return jsonify({"msg": f"Success 200: id:{id} is deleted successfully, id:{id} doesn't exists anymore", "statCode": 200})
         else:
             return jsonify({"msg": f"Error 403: failed to delete name id:{id}, id:{id} still exists", "statCode": 500})
+
+    else:
+        return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
+
+
+@app.route("/deleteRecordByNameBR19")
+def deleteRecordBR19():
+    newObj = RecordsTable()
+
+    password = request.args.get('password')
+    if password == BR19_PASSWORD:
+
+        name = request.args.get('name')
+
+        newObj.delete(name)
+
+        result = newObj.search(name)
+
+        if result == None:
+            return jsonify({"msg": f"Success 200: name:{name} is deleted successfully, name:{name} doesn't exists anymore", "statCode": 200})
+        else:
+            return jsonify({"msg": f"Error 403: failed to delete name:{name}, name:{name} still exists", "statCode": 500})
 
     else:
         return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
