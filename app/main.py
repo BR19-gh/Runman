@@ -132,7 +132,6 @@ def addUserBR19():
 @app.route("/updateUserRecords", methods=['PUT', 'GET'])
 @limiter.limit('1 per 30seconds')
 def updateUserRecords():
-    print(get_remote_address)
     newObj = RecordsTable()
 
     name = request.args.get('name')
@@ -155,6 +154,7 @@ def updateUserRecords():
 @app.route("/displayRecords")
 @limiter.exempt
 def displayRecords():
+    print(get_remote_address)
     newObj = RecordsTable()
 
     limit = request.args.get('limit')
