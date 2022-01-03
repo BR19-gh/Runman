@@ -154,7 +154,7 @@ def updateUserRecords():
 @app.route("/displayRecords")
 @limiter.exempt
 def displayRecords():
-    print(get_remote_address)
+    print(get_remote_address())
     newObj = RecordsTable()
 
     limit = request.args.get('limit')
