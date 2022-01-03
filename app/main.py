@@ -214,14 +214,24 @@ def deleteRecordBR19():
     password = request.args.get('password')
     if password == BR19_PASSWORD:
 
-        name = request.args.get('name')
-        newObj.delete(name)
-        result = newObj.search(name)
+        id = request.args.get('id')
+
+        result = newObj.display()
+        resultSorted = sorted(result, key=lambda tup: tup[2], reverse=True)
+        dictOfResult = {}
+        j = 0
+        for i in resultSorted:
+            dictOfResult[j] = {'name': i[0], 'hcoins': i[1], 'htime': i[2]}
+            j += 1
+
+        result = newObj.search(dictOfResult[id]['name'])
+
+        newObj.delete(dictOfResult[id]['name'])
 
         if result == None:
-            return jsonify({"msg": f"Success 200:{name} is deleted successfully, {name} doesn't exists anymore", "statCode": 200})
+            return jsonify({"msg": f"Success 200: id:{id} is deleted successfully, id:{id} doesn't exists anymore", "statCode": 200})
         else:
-            return jsonify({"msg": f"Error 403: failed to delete name {name}, {name} still exists", "statCode": 500})
+            return jsonify({"msg": f"Error 403: failed to delete name id:{id}, id:{id} still exists", "statCode": 500})
 
     else:
         return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
