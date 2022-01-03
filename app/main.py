@@ -279,4 +279,4 @@ def deleteRecordBR19ByName():
 
 @app.errorhandler(429)
 def ratelimit_handler(e):
-  return "You have exceeded your rate-limit"
+  return jsonify({"msg": f"Error 429: you have exceeded your rate-limit", "statCode": 429})
