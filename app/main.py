@@ -207,8 +207,8 @@ def searchNameExists():
         return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
 
 
-@app.route("/deleteRecordByIDBR19")
-def deleteRecordBR19():
+@app.route("/deleteRecordByIdBR19")
+def deleteRecordByIdBR19():
     newObj = RecordsTable()
 
     password = request.args.get('password')
@@ -239,7 +239,7 @@ def deleteRecordBR19():
 
 
 @app.route("/deleteRecordByNameBR19")
-def deleteRecordBR19():
+def deleteRecordBR19ByName():
     newObj = RecordsTable()
 
     password = request.args.get('password')
