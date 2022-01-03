@@ -4,10 +4,20 @@ from flask.wrappers import Response
 import psycopg2
 import psycopg2.extras as ext
 from flask_cors import CORS
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+
 DATABASE_URL = os.environ.get('DATABASE_URL')
 BR19_PASSWORD = os.environ.get('BR19_PASSWORD')
 
 
+app = Flask(__name__,template_folder='templates')
+CORS(app)
+limiter = Limiter(
+    app,
+    key_func=get_remote_address,
+    default_limits=["1 per 30seconds", "50 per hour"]
+)
 class RecordsTable:
 
     def __init__(self):
@@ -71,6 +81,7 @@ def home_view2():
 
 
 @app.route("/addUser", methods=['POST', 'GET'])
+@limiter.limit('1 per 30seconds')
 def addUser():
     newObj = RecordsTable()
 
@@ -95,6 +106,7 @@ def addUser():
 
 
 @app.route("/addUserBR19")
+@limiter.exempt
 def addUserBR19():
     newObj = RecordsTable()
 
@@ -118,6 +130,7 @@ def addUserBR19():
 
 
 @app.route("/updateUserRecords", methods=['PUT', 'GET'])
+@limiter.limit('1 per 30seconds')
 def updateUserRecords():
     newObj = RecordsTable()
 
@@ -139,6 +152,7 @@ def updateUserRecords():
 
 
 @app.route("/displayRecords")
+@limiter.exempt
 def displayRecords():
     newObj = RecordsTable()
 
@@ -163,6 +177,7 @@ def displayRecords():
 
 
 @app.route("/displayRecordsBR19")
+@limiter.exempt
 def displayRecordsBR19():
     newObj = RecordsTable()
 
@@ -195,6 +210,7 @@ def displayRecordsBR19():
 
 
 @app.route("/searchNameExists")
+@limiter.exempt
 def searchNameExists():
     newObj = RecordsTable()
 
@@ -208,6 +224,7 @@ def searchNameExists():
 
 
 @app.route("/deleteRecordByIdBR19")
+@limiter.exempt
 def deleteRecordByIdBR19():
     newObj = RecordsTable()
 
@@ -224,21 +241,22 @@ def deleteRecordByIdBR19():
         for i in resultSorted:
             dictOfResult[j] = {'name': i[0], 'hcoins': i[1], 'htime': i[2]}
             j += 1
-
+        name = dictOfResult[id]['name']
         newObj.delete(dictOfResult[id]['name'])
 
         result = newObj.search(dictOfResult[id]['name'])
 
         if result == None:
-            return jsonify({"msg": f"Success 200: id:{id} is deleted successfully, id:{id} doesn't exists anymore", "statCode": 200})
+            return jsonify({"msg": f"Success 200: (id:{id}, name:{name}) is deleted successfully, (id:{id}, name:{name}) doesn't exists anymore", "statCode": 200})
         else:
-            return jsonify({"msg": f"Error 403: failed to delete name id:{id}, id:{id} still exists", "statCode": 500})
+            return jsonify({"msg": f"Error 403: failed to delete name (id:{id}, name:{name}), (id:{id}, name:{name}) still exists", "statCode": 500})
 
     else:
         return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
 
 
 @app.route("/deleteRecordByNameBR19")
+@limiter.exempt
 def deleteRecordBR19ByName():
     newObj = RecordsTable()
 
@@ -258,3 +276,7 @@ def deleteRecordBR19ByName():
 
     else:
         return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
+
+@app.errorhandler(429)
+def ratelimit_handler(e):
+  return "You have exceeded your rate-limit"

@@ -10,6 +10,7 @@ psycopg2-binary = "*"
 dj-database-url = "*"
 psycopg2 = "*"
 flask-cors = "*"
+flask-limiter = "*"
 
 [dev-packages]
 
