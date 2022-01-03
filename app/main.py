@@ -83,6 +83,7 @@ def home_view2():
 @app.route("/addUser", methods=['POST', 'GET'])
 @limiter.limit('1 per 30seconds')
 def addUser():
+    print('The ip address: ',get_remote_address())
     newObj = RecordsTable()
 
     name = request.args.get('name')
@@ -132,6 +133,7 @@ def addUserBR19():
 @app.route("/updateUserRecords", methods=['PUT', 'GET'])
 @limiter.limit('1 per 30seconds')
 def updateUserRecords():
+    print('The ip address: ',get_remote_address())
     newObj = RecordsTable()
 
     name = request.args.get('name')
@@ -154,7 +156,7 @@ def updateUserRecords():
 @app.route("/displayRecords")
 @limiter.exempt
 def displayRecords():
-    print(get_remote_address())
+    print('The ip address: ',get_remote_address())
     newObj = RecordsTable()
 
     limit = request.args.get('limit')
