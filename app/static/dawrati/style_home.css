@@ -3,18 +3,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Tajawal', sans-serif;
-
 }
 
-body{
+body {
     background-size: contain;
-    background-image: url('img_main/background.jpg');
+    background-image: url('../../static/dawrati/img_main/background.JPG');
 }
 
 
 /********  N A V  ************/
-
-
 
 #navbar {
     background-color: rgba(46, 46, 46, 0.801);
@@ -28,114 +25,98 @@ body{
     font-weight: bold;
     width: 100%;
     transition: all 0.3s ease-in-out;
- }
- 
- #navbar.active {
-     background-color:rgba(0, 0, 0, 0.208);
-     padding-top: 15px;
-     padding-bottom: 10px;
-     padding-left: 50px;
-     padding-right: 50px;
-     position: fixed;
-     width: 100%;
-     
- }
- 
- #li1.active1{
-     color: rgba(255, 255, 255, 0.208);
-     background-color: hsla(308, 85%, 28%, 0.208); 
-     border: hsla(308, 85%, 28%, 0.308); 
-     border-radius: 50px;}
- 
-     #li12.active12{ color:rgba(255, 255, 255, 0.208); }
- 
- 
- 
- #logo, .menu-bar {
-     
-     display: inline-block;
- }
- 
- #logo a {
- 
-     font-size: 25px;
-     text-decoration: none;
-     font-family: 'Roboto', sans-serif;
-     color: white;
- }
- 
- #logoo.activel{
- 
-     color: rgba(255, 255, 255, 0.208);
- }
- 
- 
+}
 
- 
- .menu-bar ul li {
-     border-radius: 50px;
-     padding: 10px;
-     display: inline-block;
-     font-size: 13px;
-     
- }
- 
- .menu-bar ul li a {
-     text-decoration: none; 
-     color: rgb(255, 255, 255);
-     padding: 15px;
- }
- 
- #navbar:hover{
-     background-color: hsla(0, 0%, 0%, 0.849);
-     padding-bottom: 15px;
-     
- }
- 
- 
- 
- #li1:hover , button:hover{
-     color: #ffffff;
-     background-color: #725d00;
- 
- }
- 
- 
- #li12,button{
-     transition: all 0.3s ease-in-out; 
- }
- 
- 
- 
- 
-   #logoo{
-     transition: all 0.3s ease-in-out; 
-     color: white;
-   }
- 
-   #logoo:hover{
-     color: white;
-   }
-     #li1, button {
-         transition: all 0.3s ease-in-out;
-         background-color: #3b3b3bab;
-         color: rgb(255, 255, 255);
-     }
-     
- 
- 
+#navbar.active {
+    background-color: rgba(0, 0, 0, 0.208);
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: fixed;
+    width: 100%;
+}
+
+#li1.active1 {
+    color: rgba(255, 255, 255, 0.208);
+    background-color: hsla(308, 85%, 28%, 0.208);
+    border: hsla(308, 85%, 28%, 0.308);
+    border-radius: 50px;
+}
+
+#li12.active12 {
+    color: rgba(255, 255, 255, 0.208);
+}
+
+#logo,
+.menu-bar {
+    display: inline-block;
+}
+
+#logo a {
+    font-size: 25px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+#logoo.activel {
+    color: rgba(255, 255, 255, 0.208);
+}
+
+.menu-bar ul li {
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.menu-bar ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+}
+
+#navbar:hover {
+    background-color: hsla(0, 0%, 0%, 0.849);
+    padding-bottom: 15px;
+}
+
+#li1:hover,
+button:hover {
+    color: #ffffff;
+    background-color: #725d00;
+}
+
+#li12,
+button {
+    transition: all 0.3s ease-in-out;
+}
+
+#logoo {
+    transition: all 0.3s ease-in-out;
+    color: white;
+}
+
+#logoo:hover {
+    color: white;
+}
+
+#li1,
+button {
+    transition: all 0.3s ease-in-out;
+    background-color: #3b3b3bab;
+    color: rgb(255, 255, 255);
+}
+
 
 /********  H E A D E R  ************/
 
 header {
-text-align: center;
-background-color: transparent;
-
-
-height: 80vh;
-
+    text-align: center;
+    background-color: transparent;
+    height: 80vh;
 }
-
 
 header h1 {
     font-size: 54px;
@@ -146,7 +127,6 @@ header h1 {
 }
 
 header .header-button {
-    
     display: inline-block;
     text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.781);
@@ -164,42 +144,32 @@ header p {
     color: rgb(20, 16, 0);
     margin-bottom: 25px;
     font-weight: bolder;
-    
-    
 }
 
 header .header-button:hover {
     color: rgb(255, 255, 255);
     background-color: #caa500;
-   
-
 }
 
 
 /********  T  S E C T I O N  ************/
 
+.iconBox {
+    background-color: rgba(255, 255, 255, 0.507);
+    display: inline;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0;
+    position: relative;
+    top: 10%;
+}
 
-
-
-    .iconBox {
-        background-color: rgba(255, 255, 255, 0.507);
-       
-        display: inline;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin: 0;
-        position: relative;
-        top: 10%;
-    }
-
-.iconContainer{
+.iconContainer {
     width: 33%;
     /*background-color: rgba(65, 105, 225, 0.466);*/
     display: inline-block;
     text-align: center;
     padding-bottom: 5px;
-   
- 
 }
 
 .iconContainer .icon {
@@ -211,15 +181,12 @@ header .header-button:hover {
     height: 50px;
     border-radius: 50%;
     margin-bottom: 20px;
-   
 }
 
 .iconContainer .icon {
-
     font-size: 30px;
     color: white;
     line-height: 50px;
-  
 }
 
 .iconContainer h4 {
@@ -233,88 +200,83 @@ header .header-button:hover {
     padding: 0;
 }
 
-
 #ic1 {
-    transition: all 0.3s ease-in-out; 
-    padding: 5px;
-     background-color: rgba(192, 180, 119, 0.466);
-    color: #000000;
-    cursor: pointer;
-}
-#ic2 {
-    transition: all 0.3s ease-in-out; 
-    padding: 5px;
-     background-color: rgba(192, 180, 119, 0.466);
-    color: #000000;
-    cursor: pointer;
-}
-#ic3 {
-    transition: all 0.3s ease-in-out; 
-    padding: 5px;
-     background-color: rgba(192, 180, 119, 0.466);
-    color: #000000;
-    cursor: pointer;
-}
-#ic4 {
-    transition: all 0.3s ease-in-out; 
-    padding: 5px;
-     background-color: rgba(192, 180, 119, 0.466);
-    color: #000000;
-    cursor: pointer;
-}
-#ic5 {
-    transition: all 0.3s ease-in-out; 
-    padding: 5px;
-     background-color: rgba(192, 180, 119, 0.466);
-    color: #000000;
-    cursor: pointer;
-}
-#ic6 {
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
     padding: 5px;
     background-color: rgba(192, 180, 119, 0.466);
     color: #000000;
     cursor: pointer;
 }
 
+#ic2 {
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+    background-color: rgba(192, 180, 119, 0.466);
+    color: #000000;
+    cursor: pointer;
+}
 
+#ic3 {
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+    background-color: rgba(192, 180, 119, 0.466);
+    color: #000000;
+    cursor: pointer;
+}
+
+#ic4 {
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+    background-color: rgba(192, 180, 119, 0.466);
+    color: #000000;
+    cursor: pointer;
+}
+
+#ic5 {
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+    background-color: rgba(192, 180, 119, 0.466);
+    color: #000000;
+    cursor: pointer;
+}
+
+#ic6 {
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+    background-color: rgba(192, 180, 119, 0.466);
+    color: #000000;
+    cursor: pointer;
+}
 
 #ic1:hover {
     background-color: #916f009c;
-    border-radius: 20px; 
-    
+    border-radius: 20px;
 }
 
 #ic2:hover {
     background-color: #916f009c;
-    border-radius: 20px; 
-   
+    border-radius: 20px;
 }
 
 #ic3:hover {
     background-color: #916f009c;
-    border-radius: 20px; 
-    
+    border-radius: 20px;
 }
 
 #ic4:hover {
     background-color: #916f009c;
-    border-radius: 20px; 
-    
+    border-radius: 20px;
 }
 
 #ic5:hover {
     background-color: #916f009c;
-    border-radius: 20px; 
-   
+    border-radius: 20px;
 }
 
 #ic6:hover {
     background-color: #916f009c;
-    border-radius: 20px; 
-    
+    border-radius: 20px;
 }
-
 
 
 /********  F  S E C T I O N  ************/
@@ -333,38 +295,38 @@ footer {
     width: 100%;
 }
 
-footer h4{
+footer h4 {
     color: #ffffff;
     font-size: 19px;
     margin-bottom: 10px;
 }
 
-.about-trainer, .footer-social, .footer-contact{
+.about-trainer,
+.footer-social,
+.footer-contact {
     text-align: center;
     width: 28%;
 }
 
-
-.about-trainer p{
+.about-trainer p {
     color: darkgray;
     font-size: 13px;
 }
 
-.footer-social{
-
+.footer-social {
     margin-bottom: 20px;
 }
+
 .footer-social ul {
     list-style: none;
-    
 }
 
-.footer-social ul li a{
-text-decoration: none;
-color: darkgray;
+.footer-social ul li a {
+    text-decoration: none;
+    color: darkgray;
 }
 
-.footer-social ul li{
+.footer-social ul li {
     margin-bottom: 2px;
 }
 

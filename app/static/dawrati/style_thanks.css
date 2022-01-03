@@ -3,49 +3,46 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Tajawal', sans-serif;
-
 }
 
-#body{
+#body {
     background-size: contain;
-    background-image: url('img_main/background.jpg');
+    background-image: url('../../static/dawrati/img_main/background.JPG');
 }
 
 
 /********  N A V  ************/
 
-
 #navbar {
-   background-color: rgba(46, 46, 46, 0.801);
-   padding-top: 15px;
-   padding-bottom: 15px;
-   padding-left: 50px;
-   padding-right: 50px;
-   display: flex;
-   justify-content: space-between;
-   position: relative;
-   font-weight: bold;
-   width: 100%;
-   transition: all 0.3s ease-in-out;
+    background-color: rgba(46, 46, 46, 0.801);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
 }
 
-#logo, .menu-bar {
-    
+#logo,
+.menu-bar {
     display: inline-block;
 }
 
 #logo a {
-
     font-size: 25px;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     color: white;
 }
 
-#logoo.activel{
-
+#logoo.activel {
     color: rgba(255, 255, 255, 0.208);
 }
+
 
 /*.menu-bar ul {
     list-style: none;
@@ -56,66 +53,57 @@
     padding: 10px;
     display: inline-block;
     font-size: 13px;
-    
 }
 
 .menu-bar ul li a {
-    text-decoration: none; 
+    text-decoration: none;
     color: rgb(255, 255, 255);
     padding: 15px;
 }
 
-#navbar:hover{
+#navbar:hover {
     background-color: hsla(0, 0%, 0%, 0.849);
     padding-bottom: 15px;
-    
 }
-
-
 
 #li1:hover {
     color: #ffffff;
     background-color: #725d00;
-
 }
 
+#li12 {
+    transition: all 0.3s ease-in-out;
+}
 
-#li12{
-    transition: all 0.3s ease-in-out; }
+#li12:hover {
+    color: #ffffff;
+}
 
-
-
-#li12:hover {color: #ffffff; }
-
- 
-
-  #logoo{
-    transition: all 0.3s ease-in-out; 
+#logoo {
+    transition: all 0.3s ease-in-out;
     color: white;
-  }
+}
 
-  #logoo:hover{
+#logoo:hover {
     color: white;
-  }
-    #li1 {
-        transition: all 0.3s ease-in-out;
-        background-color: #3b3b3bab;
-        color: rgb(255, 255, 255);
-    }
+}
 
-
+#li1 {
+    transition: all 0.3s ease-in-out;
+    background-color: #3b3b3bab;
+    color: rgb(255, 255, 255);
+}
 
 
 /********  H E A D E R  ************/
 
 header {
-text-align: center;
-background-color: transparent;
-padding-bottom: 100px;
-
-height: 80vh;
-
+    text-align: center;
+    background-color: transparent;
+    padding-bottom: 100px;
+    height: 80vh;
 }
+
 header h1 {
     font-size: 54px;
     text-transform: uppercase;
@@ -124,11 +112,9 @@ header h1 {
     color: rgb(207, 159, 0);
     padding-top: 75px;
     font-weight: bolder;
-   
 }
 
 header .header-button {
-    
     display: inline-block;
     text-transform: uppercase;
     background-color: rgba(0, 0, 0, 0.781);
@@ -146,15 +132,11 @@ header p {
     color: rgb(20, 16, 0);
     margin-bottom: 25px;
     font-weight: bolder;
-    
-    
 }
 
 header .header-button:hover {
     color: rgb(255, 255, 255);
     background-color: #caa500;
-   
-
 }
 
 
@@ -171,38 +153,38 @@ footer {
     flex-wrap: wrap;
 }
 
-footer h4{
+footer h4 {
     color: #ffffff;
     font-size: 19px;
     margin-bottom: 10px;
 }
 
-.about-trainer, .footer-social, .footer-contact{
+.about-trainer,
+.footer-social,
+.footer-contact {
     text-align: center;
     width: 28%;
 }
 
-
-.about-trainer p{
+.about-trainer p {
     color: darkgray;
     font-size: 13px;
 }
 
-.footer-social{
-
+.footer-social {
     margin-bottom: 0px;
 }
+
 .footer-social ul {
     list-style: none;
-    
 }
 
-.footer-social ul li a{
-text-decoration: none;
-color: darkgray;
+.footer-social ul li a {
+    text-decoration: none;
+    color: darkgray;
 }
 
-.footer-social ul li{
+.footer-social ul li {
     margin-bottom: 2px;
 }
 
