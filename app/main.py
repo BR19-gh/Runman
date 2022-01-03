@@ -216,7 +216,7 @@ def deleteRecordBR19():
 
         id = request.args.get('id')
         id = int(id)
-        
+
         result = newObj.display()
         resultSorted = sorted(result, key=lambda tup: tup[2], reverse=True)
         dictOfResult = {}
@@ -225,9 +225,9 @@ def deleteRecordBR19():
             dictOfResult[j] = {'name': i[0], 'hcoins': i[1], 'htime': i[2]}
             j += 1
 
-        result = newObj.search(dictOfResult[id]['name'])
-
         newObj.delete(dictOfResult[id]['name'])
+
+        result = newObj.search(dictOfResult[id]['name'])
 
         if result == None:
             return jsonify({"msg": f"Success 200: id:{id} is deleted successfully, id:{id} doesn't exists anymore", "statCode": 200})
