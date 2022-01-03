@@ -277,6 +277,7 @@ def deleteRecordBR19ByName():
     else:
         return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
 
+
 @app.errorhandler(429)
 def ratelimit_handler(e):
-  return jsonify({"msg": f"Error 429: you have exceeded your rate-limit", "statCode": 429})
+  return jsonify({"msg": f"Error 429: you have exceeded your rate-limit, any requests won't be applied", "statCode": 429})
