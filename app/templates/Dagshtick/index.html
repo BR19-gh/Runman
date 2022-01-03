@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/Dagshtick/mstyle.css">
+    <link rel="stylesheet" href="../../static/Dagshtick/style.css">
+    <script src="../../static/Dagshtick/script.js" defer></script>
+    <title>Dagshtick</title>
+</head>
+
+<body>
+    <div class="bodyy">
+        <img class="logoImg" src="img\logoImg.png">
+        <div class="yourmoneyContainer">
+            <div class="aboveM">
+                <div class="infoPopupBtn" id="undoBtn" onclick="undo()">
+                    <div class="i">↩️</div>
+                </div>
+                <div class="yourmoneyTitle">نقودك</div>
+                <div class="infoPopupBtn" id="redoBtn" onclick="redo()">
+                    <div class="i">↪️</div>
+                </div>
+            </div>
+
+            <div id="yourmoneyBox">
+                <div class="pastBox">⚙ عين نقودك في</i>
+                </div>
+            </div>
+            <div class="winLimitContainer">
+                <div id="winLimit">
+                    <div class="pastLimit">1000000</div>
+                </div>
+                <div class="winLimitTitle">:حد الفوز هو </div>
+            </div>
+        </div>
+        <div class="inputContainer">
+            <input type="tel" id="sumG" class="inputs1" onfocus="this.value=''" type="number" placeholder="الرضاوة" /><br/>
+            <input type="tel" id="yourB" class="inputs1" onfocus="this.value=''" type="number" placeholder="الرهان" /><br/>
+        </div>
+        <div class="loseWinContainer">
+            <div class="loseBtn" onclick="lose()">خسارة</div>
+
+            <div class="winBtn" onclick="win()">فـــــــــــــوز</div>
+        </div>
+        <div class="popupInfo" id="popupInfo">
+            <div class="overlayI"></div>
+            <div class="popupInfoContainer">
+                <div class="popupInfoCloseBtn" onclick="togglePopupInfo()">&times;</div>
+                <div class="explain">
+                    <h2 class="explainTitle">كيفية عمل حاسبة <b>داقشتك</b></h2>
+                    <p class="explainPara">عند الفوز: سيضاف مقدار "الرهان" المحدد وستخصم "الرضاوة"؛ <br>وعند الخسارة: سيخصما "الرهان" و "الرضاوة"؛ <br>وعند الانسحاب: يمكنك وضع مراضاة الانسحاب المكتسبة من اللاعب الآخر في إي من خانتي "الرهان" أو "الرضاوة"؛</p>
+                </div>
+                <h2 class="popupInfoTitle">تــواصــل مـع المــطـور</h2>
+                <p class="popupInfoPara">
+                    <h5 id="twitterAccount"><a href="https://twitter.com/BR19_tw">Twitter: BR19_tw</a></h5>
+                    <h5 id="instagramAccount"><a href="https://br19.me">Website: BR19.me</a></h5>
+                    <h5 id="emailAddress">
+                        <a href="mailto: ibrahim-abdalaziz@hotmail.com">
+                            <div id="at">@</div> ibrahim-abdalaziz@hotmail.com</a>
+                    </h5>
+                    <h5 id="ver">Version- النسخة- 4.0.5</h5>
+                </p>
+
+            </div>
+        </div>
+
+
+
+        <!--  -->
+        <div class="popupSet" id="popupSet">
+            <div class="overlayS"></div>
+            <div class="popupSetContainer">
+                <div class="popupSetCloseBtn" onclick="togglePopupSet()">&times;</div>
+                <h2 class="popupSetTitle">تغيير قيمة نقودك</h2>
+                <input type="tel" id="changeYourM" class="inputs2" onfocus="this.value=''" type="number" placeholder="قيمة نقودك" /> <br/>
+                <div class="done" onclick="changeYourMoney()">تـــــــم</div>
+                <h2 class="popupSetTitle2">تغيير حد الفوز</h2>
+                <input type="tel" id="changeYourL" class="inputs2" onfocus="this.value=''" type="number" placeholder="حد الفوز" /><br/>
+                <div class="done2" onclick="changeYourLimit()">تـــــــم</div>
+                <h2 class="popupSetTitle3">مقدار الرهان المكتسب</h2>
+                <div id="done3" onclick="changeAmountBit()">أضغط للتحديد</div>
+                <p class="done3info">كرر الضغط إن لم ترد المقدار المحدد</p>
+                <div id="dl">" المظهر: فاتح ☀️ "</div>
+                <div id="dd">" المظهر: داكن 🌙 "</div>
+                <h5>لتغيير المظهر داكن\فاتح، غير المظهر من نظام جهازك</h5>
+
+            </div>
+        </div>
+        <!--  -->
+
+
+        <div class="popups">
+            <div class="infoPopupBtn" onclick="togglePopupInfo()">
+                <div class="i">ℹ️</div>
+            </div>
+            <div class="withdBtn" onclick="withd()">انسحاب</div>
+            <div class="infoPopupBtn" onclick="togglePopupSet()">
+                <div class="i">⚙</div>
+            </div>
+        </div>
+        <div id="gameover">
+            <h1>خسرت اللعبة</h1>
+            <h3>خسرت اللعبة لتجاوزك عدد المرات المسموح بها للإستلاف من البنك </h3>
+            <h3 class="hunBank">"مئة البنك"</h3>
+            <h4>لإعادة اللعب، إضغط على الزر أدناه</h4>
+            <div class="replyBtn" onclick="location.reload()">🔄 </div>
+        </div>
+        <div id="gamewin">
+            <h1>!فزت باللعبة</h1>
+            <h3 class="t">:فزت باللعبة لتخطيك حد الفوز، ونقودك تساوي</h3>
+            <div id="ym">0</div>
+            <h3 class="congra">!مــــبــــروك</h3>
+            <h4>لإعادة اللعب، إضغط على الزر أدناه</h4>
+            <div class="replyBtn" onclick="location.reload()">🔄 </div>
+        </div>
+
+        <div id="tryover">
+            <h1>خسرت كل مالك</h1>
+            <h3>خسرت كل مالك، وأعطاك البنك سلفة 100 "مئة البنك"، إن خسرت كل مالك مجددًا، فلن يعطيك البنك سلفة أخرى وستخسر اللعبة</h3>
+            <h3 class="beCareful">!كن حذرًا</h3>
+            <h4>للإستمرار إضغط على الزر أدناه</h4>
+            <div class="cont" onclick="tryoveroff()">إستمرار</i>
+            </div>
+        </div>
+        <div class="buttom">َ</div>
+    </div>
+</body>
+
+</html>

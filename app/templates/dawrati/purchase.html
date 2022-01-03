@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدفع</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="../../static/dawrati/style_purchase.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="../../static/dawrati/main_purchase.js"></script>
+
+
+</head>
+
+<body>
+    <div id="body">
+        <!--header-->
+        <header>
+            <!--nav -->
+            <nav id="navbar">
+                <div id="logo">
+                    <a style="font-family: 'Tajawal', sans-serif;" id="logoo" href="main.html">دوراتــــــي<br>dawrati</a>
+                </div>
+
+                <div class="menu-bar">
+                    <ul>
+                        <li id="li1"><a id="li12" href="main.html">الرئيسية</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="box">
+                <button onclick="check_inputs_empty()" id="login_btn">إتمام الدفع</button>
+                <button onclick="back()" id="login_btn">الســـــــــابــــــق</button>
+                <div class="register_box1">
+                    <h1 id="register_title">الدفع</h1>
+                    <div id="register_box1_part1">
+                        <h4 id="register_cardname_title" class="register_box1_content">الاسم على البطاقة</h4>
+                        <input onfocus="this.value=''" placeholder="الاسم على البطاقة" id="register_cardname_input" type="text">
+                        <h4 id="register_CVV2_title" class="register_box1_content">CVV2</h4>
+                        <div onmouseover="hover()" onmouseout="nothover()" id="CVV2">❔</div> <input onfocus="this.value=''" placeholder="CVV2" id="register_CVV2_input" type="number">
+                    </div>
+                    <div id="register_box1_part2">
+                        <h4 id="register_cardno_title" class="register_box1_content">الرقم على البطاقة</h4>
+                        <input onfocus="this.value=''" placeholder="الرقم على البطاقة" id="register_cardno_input" type="number">
+                        <h4 id="register_expdate_title" class="register_box1_content">تاريخ الإنتهاء</h4>
+                        <input onfocus="this.value=''" placeholder="تاريخ الإنتهاء" id="register_expdate_input" type="date">
+                    </div>
+
+
+
+                </div>
+
+                <div id="popupCVV2">الرقم خلف بطاقتك</div>
+
+            </div>
+
+        </header>
+
+
+
+
+
+        </section>
+        <footer id="footer">
+            <div class="about-trainer">
+                <h4>عن</h4>
+                <h4 style="font-family: 'Tajawal', sans-serif;">©دوراتــــــي</h4>
+                <p>دوراتي هو موقع لتقديم الدورات الخاصة في تطوير الذات (كل المواضيع قريبًا) حيث يتم تقديمها حضوريا في مراكزنا المتواجدة في كل مكان أو عن بعد من خلال موقعنا.</p>
+            </div>
+            <div class="footer-social">
+                <h4>منصاتنا الإجتماعية</h4>
+                <ul>
+                    <li><a href="http://Snapchat.com">Snapchat</a></li>
+                    <li><a href="http://Twitter.com">Twitter</a></li>
+                    <li><a href="http://Github.com">Github</a></li>
+                    <li><a href="http://Instagram.com">Instagram</a></li>
+            </div>
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <p>إن كان لديك أي استفسار إضافي فلا تتردد في التواصل معنا</p><br>
+                <a href="mailto:381120606@qu.edu.sa">بريدنا الإلكتروني</a>
+            </div>
+        </footer>
+
+    </div>
+
+
+
+
+
+    </script>
+</body>
+
+</html>

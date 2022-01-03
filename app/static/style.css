@@ -1,0 +1,270 @@
+* {
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("img/backgroundLight.jpg");
+    background-size: cover;
+}
+
+.fab,
+.far {
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.fa,
+.fas {
+    font-weight: 900;
+    font-size: 50px;
+}
+
+#langBoxBefore:hover~#langBox {
+    display: flex;
+    opacity: 1;
+    box-shadow: 0 0 30px rgb(255 255 255 / 25%);
+}
+
+#langBox:hover {
+    display: flex;
+    opacity: 1;
+    box-shadow: 0 0 30px rgb(255 255 255 / 25%);
+}
+
+.card-title-info {
+    font-size: 28px;
+}
+
+p,
+h5 {
+    text-align: center;
+}
+
+#langBox {
+    top: 1%;
+    left: 92%;
+    position: absolute;
+    display: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #ffffff00;
+    border-color: #ffffff00;
+}
+
+#langBoxBefore {
+    left: 95%;
+    top: 1%;
+    cursor: default;
+    position: absolute;
+    border: #3b417e;
+    color: rgb(0, 0, 0);
+    background-color: #656ecf;
+    border: 1px solid;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.90rem;
+}
+
+#en,
+#ar {
+    color: #000000;
+    background-color: #656ecf;
+    border: 1px solid #3b417e;
+}
+
+#en:hover,
+#ar:hover {
+    color: #f1f1f1;
+    background-color: #282d5a;
+}
+
+
+/**/
+
+#popupInfo {
+    position: relative;
+    cursor: default;
+    width: 50rem;
+    height: 30rem;
+    margin-top: 100px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+#popupProjects {
+    position: absolute;
+    cursor: default;
+    width: 20.5rem;
+    margin-top: 170px;
+    display: none;
+    box-shadow: 0 0 30px rgb(0 0 0 / 10%);
+}
+
+#popupProjects:hover {
+    box-shadow: 0 0 30px rgb(0 0 0 / 25%);
+}
+
+#popupLinkedIn {
+    margin-top: 100px;
+    display: none;
+    position: absolute;
+    width: 21rem;
+}
+
+.carHovers {
+    background-color: #0000006e;
+}
+
+#popupProjects img {
+    cursor: pointer;
+}
+
+.carHovers,
+.carHovers p,
+.carHovers h5,
+.carStart {
+    transition: 250ms ease-in-out;
+    color: #ffffff6e;
+    border-radius: 1rem;
+}
+
+.carHovers:hover~.carStart,
+.carHovers:hover,
+.carStart:hover~.carHovers,
+.carStart:hover {
+    background-color: #0000008f;
+    border-radius: 2rem;
+}
+
+.carHovers:hover>.carHoversP,
+.carHovers:hover>.carHoversH5,
+.carHovers:hover~.carStart,
+.carStart:hover {
+    color: white;
+}
+
+.carStart {
+    cursor: pointer;
+}
+
+.carHovers {
+    height: 140px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    height: 50%;
+}
+
+.btn-close {
+    position: absolute;
+    margin: 10px
+}
+
+.btn-outline-info {
+    border: #3b417e;
+    color: rgb(0, 0, 0);
+    background-color: #656ecf;
+    border: 1px solid;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.90rem;
+}
+
+.btn-outline-info:hover {
+    color: #ffffff;
+    border-color: #0a0b14;
+    background-color: #282d5a;
+}
+
+#info-card-body {
+    justify-content: space-around;
+}
+
+#verS {
+    width: 100%;
+}
+
+#middle {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 18rem;
+    position: static;
+    border: 1px solid #3e4585;
+    cursor: default;
+    transition: 100ms ease-in-out;
+    background-color: #5460c0;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.01, 1.01);
+    box-shadow: 0 0 30px rgb(0 0 0 / 25%);
+}
+
+.card-title {
+    font-size: 35px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #4d59af;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.card-text {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-img-top {
+    align-self: center;
+    border-radius: 0px;
+    width: 70%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#verL {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+#verD {
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapping {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+p.carHoversP {
+    font-size: 11px;
+}

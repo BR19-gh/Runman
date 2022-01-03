@@ -789,7 +789,7 @@ document.getElementById("Voice").addEventListener("click", () => {
 document.getElementById("English").addEventListener("click", () => {
     playOrStop(menuS, VoiceOn);
     playOrStop(menuS, VoiceOn);
-    window.location.assign("/");
+    window.location.assign("/en");
 });
 
 document.getElementById("Arabic").addEventListener("click", () => {
@@ -909,7 +909,7 @@ function countHighestScore() {
     if (nameStat == 'unknown name') {
         return
     } else {
-        fetch('https://runman-backend.herokuapp.com/searchNameExists?name=' + (localStorage.nickname), {
+        fetch('https://www.br19.me/runman/searchNameExists?name=' + (localStorage.nickname), {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -943,7 +943,7 @@ function hasWhiteSpace(s) {
 document.getElementById('DoneName').addEventListener('click', () => {
     playOrStop(menuS, VoiceOn);
     inputValue = document.getElementById('enterNNPopupInput').value; {
-        fetch('https://runman-backend.herokuapp.com/searchNameExists?name=' + inputValue, {
+        fetch('https://www.br19.me/runman/searchNameExists?name=' + inputValue, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -996,7 +996,7 @@ document.getElementById('DoneName').addEventListener('click', () => {
 
 function addUser(name, hcoins, htime) {
 
-    fetch('https://runman-backend.herokuapp.com/addUser?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
+    fetch('https://www.br19.me/runman/addUser?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
             headers: {
                 'Method': 'POST',
                 'Content-Type': 'application/json',
@@ -1013,7 +1013,7 @@ function addUser(name, hcoins, htime) {
 
 function updateUserRecords(name, hcoins, htime) {
 
-    fetch('https://runman-backend.herokuapp.com/updateUserRecords?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
+    fetch('https://www.br19.me/runman/updateUserRecords?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
             headers: {
                 'Method': 'PUT',
                 'Content-Type': 'application/json',
@@ -1031,7 +1031,7 @@ function updateUserRecords(name, hcoins, htime) {
 
 function displayRecordsForRanking() {
 
-    fetch('https://runman-backend.herokuapp.com/displayRecords?limit=10&order=' + order, {
+    fetch('https://www.br19.me/runman/displayRecords?limit=10&order=' + order, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -1179,7 +1179,7 @@ document.getElementById("Linkedin").addEventListener("click", function() {
 });
 document.getElementById("Website").addEventListener("click", function() {
     playOrStop(menuS, VoiceOn);
-    window.location.assign("https://br19.me");
+    window.location.assign("https://www.br19.me");
 });
 document.getElementById("Email").addEventListener("click", function() {
     playOrStop(menuS, VoiceOn);

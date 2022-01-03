@@ -3,237 +3,185 @@
 
 <head>
 
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="description" content="Some personal projects I worked on can be found in this page.">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <meta name="format-detection" content="telephone=no">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <script src="../static/js/script.js" defer></script>
-    <title>Runman</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7882c25953.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/mstyle.css">
+    <script src="../static/script.js" defer></script>
+    <title>Ibrahim Alkhowaiter Portfolio</title>
 </head>
 
-<body>
+<body scrolling="no">
 
-    <div id="timerContainer">
-        <div id="timerTitle"></div>
-        <div id="timer">0</div>s
+    <button type="button" id="langBoxBefore" style="text-align: center; display: flex; justify-content: center;"><i
+            style="font-size: 25px; line-height: 35px;" class="fas fa-globe-africa"></i></button>
+
+
+    <div id="langBox" class="btn-group btn-group-lg" role="group">
+        <button type="button" id="ar" class="btn btn-secondary">ع</button>
+        <button type="button" id="en" class="btn btn-secondary">E</button>
     </div>
-    <div id="scoreContainer">
-        <div id="score">0</div>
-        <div id="scoreTitle"><img style="width: 12px; height: 13px;" src="../static/img/coin/0.png" alt="Coins"></div>
-    </div>
 
-    <div id="innerBody">
-        <div id="readyMsg">READY</div>
-        <div id="goMsg">GO!!!</div>
+    <div id="middle">
 
-        <div id="cloud" class="envs"></div>
-        <div id="sun" class="envs"></div>
-        <div id="moon" class="envs"></div>
-
-        <div id="startingPopup">RUNMAN<br>
-            <div style="font-weight: bold;">Press <b>S key</b> or <br>Touch <b id="startBtn">►</b> to Start</div>
-            <div id="explainPopupBtn">How to Play</div>
-            <div id="leaderboardPopupBtn">Leaderboard</div>
-            <div id="settingsPopupBtn">Settings</div>
-            <div id="infoPopupBtn">About</div>
-        </div>
-        <div id="gameoverPopup">Game Over<br>
-            <div>Press <b>A key</b> or <br>Touch <b id="replayBtn">↻</b> to Play Again</div>
-            <div style="display: flex; justify-content: center;" class="highest" id="highestTimeContainer">
-                <div id="HTtitle">Best Time : </div>
-                <div id="highestTime">0</div>
-                <div style="font-size: 20px;">s</div>
+        <div class="card mb-3" class="popupInfo" id="popupInfo">
+            <h5 id="popupInfo-card-title" class="card-title">Ibrahim Alkhowaiter</h5>
+            <div id="info-card-body" class="card-body">
+                <div class="wrapping">
+                    <button type="button" title="My Projects" id="myProject" class="btn btn-outline-info"><i
+                            class="fas fa-tasks"></i></button>
+                    <button type="button" title="LinkedIn Account" href="https://www.linkedin.com/in/ibrahim-alkhowaiter-430b24203/" id="linkedinAccount" class="btn btn-outline-info"><i class="fab fa-linkedin"></i></button>
+                    <button type="button" title="GitHub Account" href="https://github.com/BR19-gh" id="githubAccount" class="btn btn-outline-info"><i class="fab fa-github-square"></i></button>
+                </div>
+                <div class="wrapping">
+                    <button type="button" title="Email Address" href="mailto: ibrahim-abdalaziz@hotmail.com" id="emailAddress" class="btn btn-outline-info"><i class="fas fa-envelope"></i></button>
+                    <button type="button" onclick='window.location.assign("Ibrahim_Alkhowaiter_Resume.pdf")' title="My Resume" href="Ibrahim_Alkhowaiter_Resume.pdf" id="myCv" class="btn btn-outline-info"><i class="fas fa-id-card"></i></button>
+                    <button type="button" onclick='window.location.assign("https://wa.me/966500885115")' title="WhatsApp Account" id="WhatsAppAccount" class="btn btn-outline-info"><i
+                            class="fab fa-whatsapp-square"></i></button>
+                </div>
             </div>
-            <div style="display: flex; justify-content: center;" class="highest" id="highestCoinsContainer">
-                <div id="HCtitle">Best # of <img src="../static/img/coin/0.png" alt="Coins"> : </div>
-                <div id="highestCoins">0</div>
+            <div class="card-text" id="verS">
+                <h5 id="verD">Dark Mode Enabled <i style="font-size: 25px;" class="fas fa-moon"></i></h5>
+                <h5 id="verL">Light Mode Enabled <i style="font-size: 25px;" class="fas fa-sun"></i></h5>
+                <h5 id="lastEdit">Last Update: 2021/12/1 </h5>
             </div>
         </div>
-        <div id="infoPopup">About
-            <div id="x1">X</div>
-            <div style="display: flex; flex-wrap: wrap; line-height: 55px;">
-                <div style="line-height: 69px; width: 100%; display: flex; justify-content: center; flex-wrap: wrap; padding-bottom: 60px;">
-                    <div style="font-size: 25px; width: 100%;">Developer Social:</div>
-                    <div style="width: 100%; line-height: 40px;" id="socialContainer">
-                        <div title="Email Address" id="Email">@</div>
-                        <div title="LinkedIn Account" id="Linkedin"><img src="../static/img/icons/Linkedin.png" alt="LinkedIn">
+
+        <div class="card mb-3" id="popupLinkedIn">
+            <div style="display: flex; justify-content: space-between;">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <h5 id="popupInfo-card-title" class="card-title">LinkedIn Account</h5>
+            </div>
+            <div id="info-card-body" class="card-body">
+                <div id="linkedInBadge" class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_SA" data-type="vertical" data-theme="light" data-vanity="ibrahim-alkhowaiter-430b24203"><a class="LI-simple-link" href='https://sa.linkedin.com/in/ibrahim-alkhowaiter-430b24203?trk=profile-badge'>Ibrahim
+                        Alkhowaiter</a></div>
+            </div>
+        </div>
+        <div style="margin-top: 100px;" class="card mb-3" id="popupProjects">
+            <div style="display: flex; justify-content: space-between;">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <h5 id="popupInfo-card-title" class="card-title">My Projects</h5>
+            </div>
+            <div id="info-card-body" class="card-body">
+
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-interval="false">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img id="runman-card" src="img/Runman.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                            <div class="carHovers">
+                                <h5 class="carHoversH5">Fullstack Platform Game</h5>
+                                <p class="carHoversP">A side-scrolling fullstack pixel game where player has to make the character avoid obstacles and kill the monsters. The game uses Flask as its backend, PostgreSQL as database, and CSS, HTML and JS as its frontend.<br><b>Press the Picture to
+                                        Start</b></p>
+                            </div>
+                            <div style="background-color: #00000000; color: #00000000;" class="carStart">Start</div>
                         </div>
-                        <div title="My Website" id="Website"><img src="../static/img/icons/Website.png" alt="Website"></div>
-                        <div title="Twitter Account" id="Twitter"><img src="../static/img/icons/Twitter.png" alt="Twitter"></div>
-                        <div title="Github Account" id="Github"><img src="../static/img/icons/Github.png" alt="Github"></div>
-                        <a title="Download the Game" id="Download" href="Runman.zip" download="Runman"><img src="../static/img/icons/Download.png" alt="Download"></a>
+                        <div class="carousel-item">
+                            <img id="demonsKiller-card" src="img/DemonsKiller.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                            <div class="carHovers">
+                                <h5 class="carHoversH5">Mini Game</h5>
+                                <p class="carHoversP">the game objective is to kill the demons (by clicking on them) as much as possible without killing any human.<br><b>Press the Picture to Start</b></p>
+                            </div>
+                            <div style="background-color: #00000000; color: #00000000;" class="carStart">Start</div>
+                        </div>
+                        <div class="carousel-item">
+                            <img id="dagshtick-card" src="img/Dagshtik.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                            <div class="carHovers">
+                                <h5 class="carHoversH5">Game Calculater</h5>
+                                <p class="carHoversP">Calculator for the famous Saudi card game <b>مداقش</b> (similar to Poker) that do the full math in the game for the players.<br><b>Press the Picture to
+                                        Start</b></p>
+                            </div>
+                            <div style="background-color: #00000000; color: #00000000;" class="carStart">Start</div>
+                        </div>
+                        <div class="carousel-item">
+                            <img id="blogger-card" src="img/Blogger.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                            <div class="carHovers">
+                                <h5 class="carHoversH5">Blog Website</h5>
+                                <p class="carHoversP">Frontend blog website that makes the user upload blogs with titles after logging in as "admin".<br><b>Press the Picture to Start</b></p>
+                            </div>
+                            <div style="background-color: #00000000; color: #00000000;" class="carStart">Start</div>
+                        </div>
+                        <div class="carousel-item">
+                            <img id="dawrati-card" src="img/dawrati.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                            <div class="carHovers">
+                                <h5 class="carHoversH5">Courses Website</h5>
+                                <p class="carHoversP">Sample frontend website for organizations that offer courses and self-improvement sessions.<br><b>Press the Picture to Start</b></p>
+                            </div>
+                            <div style="background-color: #00000000; color: #00000000;" class="carStart">Start</div>
+                        </div>
+                        <div class="carousel-item">
+                            <img id="1nbt3-card" src="img/1-nbt-3t.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                            </div>
+                            <div class="carHovers">
+                                <h5 class="carHoversH5">Quiz App</h5>
+                                <p class="carHoversP">Quiz app that can be modified to include as many question as wanted with 4 answer provided one or more of them is correct.<br><b>Press the
+                                        Picture to Start</b></p>
+                            </div>
+                            <div style="background-color: #00000000; color: #00000000;" class="carStart">Start</div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
-                <div style="line-height: 19px; width: 100%; display: flex; justify-content: center; flex-wrap: wrap;">
-                    <div style="font-size: 15px; width: 100%;">Version: 6.5</div>
-                    <div style="font-size: 10px; width: 100%;">Developed By: BR19<br>Song By: hmmm101</div>
-                </div>
             </div>
-        </div>
-
-        <div id="enterNNPopup">Enter Nickname
-            <div id="x5">X</div><br>
-            <p>to register your rank in Leaderboard</p>
-            <input accept-charset="ISO-8859-1" maxlength="10" placeholder="Enter max 10-character name" id="enterNNPopupInput" type="text">
-            <div style="width: 50%;" id="DoneName">Done</div>
-        </div>
-
-        <div id="leaderboardPopup">Leaderboard
-            <div id="x4">X</div>
-            <div id="orderBtn">Sort By</div><br>
-            <ol id="listContainer">
-                <li class="mainAlist">
-                    <div class="proto">Rank</div>
-                    <div class="proto">Name</div>
-                    <div class="proto"># of <img style="width: 12px; height: 13px;" src="../static/img/coin/0.png" alt="Coins">
-                    </div>
-                    <div class="proto">Time(s)</div>
-                </li>
-            </ol>
-        </div>
-
-        <div id="explainPopup">How To Play
-            <div id="x2">X</div><br>
-            <div style="font-size: 13px; font-weight: normal; line-height: 100px;">Press <img id="spaceImg" src="../static/img/icons/Space.png" alt="Space"> or <b class="b">JUMP</b> to avoid obstacles.<br>Press <img id="enterImg" src="../static/img/icons/Enter.png" alt="Enter"> or <b class="b">HIT</b> to kill the monsters.
-            </div>
-        </div>
-        <div id="settingsPopup">Settings
-            <div id="x3">X</div><br>
-            <div style="display: flex; flex-wrap: wrap;">
-                <div class="settingsTitles" style=" width: 50%;">Language:</div>
-                <div style="width: 50%;" id="langContainer">
-                    <div style="font-family: ArabicPixel1;" class="containers" id="Arabic">ع</div>
-                    <div class="containers" id="English">E</div>
-                </div>
-
-                <div class="settingsTitles" style=" width: 50%;">Sound:</div>
-                <div style="width: 50%;" class="containers" id="soundContainer">
-                    <div id="Music"><img src="../static/img/icons/MusicOn.png" alt="Music On"></div>
-                    <div id="Voice"><img src="../static/img/icons/VoiceOn.png" alt="Voice On"></div>
-                </div>
-
-                <div class="settingsTitles" style=" width: 50%;">Zoom:</div>
-                <div style="width: 50%;" class="containers" id="zoomContainer">
-                    <div id="ZoomIn">+</div>
-                    <div id="ZoomOut">-</div>
-                </div>
-
-                <div class="settingsTitles" style=" width: 50%;">Difficulty:</div>
-                <div style="width: 50%;" title="Easy: long jump and hit range" class="containers" id="diffContainer">
-                    <div id="Difficulty">
-                        <div id="difficultyText">Easy</div>
-                    </div>
-                </div>
-
-                <div class="settingsTitles" style=" width: 50%;">Reset:</div>
-                <div style="width: 50%;" class="containers" id="resetContainer">
-                    <div id="Reset"><img src="../static/img/icons/Reset.png" alt="Reset"></div>
-                </div>
-
-            </div>
-        </div>
-
-        <div id="above">a
-            <div id="player"></div>
-            <div id="obstacle"></div>
-            <div id="obstacle2"></div>
-            <div id="coins"></div>
-        </div>
-        <div id="ground">
-            <div id="jumpBtn">JUMP</div>
-            <div id="hitBtn">HIT</div>
         </div>
     </div>
-
-
 
 </body>
-<script type="text/javascript">
-    if (document.images) {
-        img1 = new Image();
-        img1.src = "../static/img/cloud/1.png";
-        img2 = new Image();
-        img2.src = "../static/img/cloud/2.png";
-        img3 = new Image();
-        img3.src = "../static/img/cloud/3.png";
-
-        img4 = new Image();
-        img4.src = "../static/img/coin/0.png";
-        img5 = new Image();
-        img5.src = "../static/img/coin/1.png";
-        img6 = new Image();
-        img6.src = "../static/img/coin/2.png";
-        img7 = new Image();
-        img7.src = "../static/img/coin/3.png";
-        img8 = new Image();
-        img8.src = "../static/img/coin/4.png";
-        img8a = new Image();
-        img8a.src = "../static/img/coin/gold.png";
-        img8b = new Image();
-        img8b.src = "../static/img/coin/silver.png";
-        img8c = new Image();
-        img8c.src = "../static/img/coin/bronze.png";
-
-        img9 = new Image();
-        img9.src = "../static/img/obstacle/1.png";
-        img10 = new Image();
-        img10.src = "../static/img/obstacle/2.png";
-        img11 = new Image();
-        img11.src = "../static/img/obstacle/3.png";
-        img12 = new Image();
-        img12.src = "../static/img/obstacle/4.png";
-        img13 = new Image();
-        img13.src = "../static/img/obstacle/5.png";
-
-        img14 = new Image();
-        img14.src = "../static/img/obstacle2/1.png";
-        img15 = new Image();
-        img15.src = "../static/img/obstacle2/2.png";
-        img16 = new Image();
-        img16.src = "../static/img/obstacle2/3.png";
-        img17 = new Image();
-        img17.src = "../static/img/obstacle2/4.png";
-        img18 = new Image();
-        img18.src = "../static/img/obstacle2/5.png";
-
-        img19 = new Image();
-        img19.src = "../static/img/player/new/0.png";
-        img20 = new Image();
-        img20.src = "../static/img/player/new/01.png";
-        img21 = new Image();
-        img21.src = "../static/img/player/new/02.png";
-        img22 = new Image();
-        img22.src = "../static/img/player/new/1.png";
-        img23 = new Image();
-        img23.src = "../static/img/player/new/2.png";
-        img24 = new Image();
-        img24.src = "../static/img/player/new/3.png";
-        img25 = new Image();
-        img25.src = "../static/img/player/new/4.png";
-        img26 = new Image();
-        img26.src = "../static/img/player/new/5.png";
-        img27 = new Image();
-        img27.src = "../static/img/player/new/6.png";
-        img28 = new Image();
-        img28.src = "../static/img/player/new/7.png";
-        img29 = new Image();
-        img29.src = "../static/img/player/new/8.png";
-        img30 = new Image();
-        img30.src = "../static/img/player/new/d.png";
-        img31 = new Image();
-        img31.src = "../static/img/player/new/j3.png";
-    }
-</script>
 
 </html>
-<style>
-    #Linkedin,
-    #Website,
-    #Twitter,
-    #Github,
-    #Download {
-        line-height: 55px;
-    }
-</style>

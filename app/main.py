@@ -64,23 +64,94 @@ class RecordsTable:
 app = Flask(__name__,template_folder='templates')
 CORS(app)
 
+##### routes
+
+###### main
 
 @app.route("/")
+@limiter.exempt
 def home_view():
     return render_template('index.html')
 
+@app.route("/en")
+@limiter.exempt
+def home_view_en():
+    return render_template('index.html')
+
 @app.route("/ar")
-def home_view2():
+@limiter.exempt
+def home_view_ar():
     return render_template('indexAr.html')
 
+###### Runman
 
-# @app.before_request
-# def limit_remote_addr():
-#     if request.remote_addr != '74.208.236.105':
-#         abort(401)
+@app.route("/runman")
+@limiter.exempt
+def home_view_runman():
+    return render_template('Runman/index.html')
+
+@app.route("/runman/en")
+@limiter.exempt
+def home_view_runman_en():
+    return render_template('Runman/index.html')
+
+@app.route("/runman/ar")
+@limiter.exempt
+def home_view_runman_ar():
+    return render_template('Runman/indexAr.html')
+
+###### DemonsKiller
+
+@app.route("/demonskiller")
+@limiter.exempt
+def home_view_demonskiller():
+    return render_template('DemonsKiller/index.html')
+
+@app.route("/demonskiller/en")
+@limiter.exempt
+def home_view_demonskiller_en():
+    return render_template('DemonsKiller/index.html')
+
+@app.route("/demonskiller/ar")
+@limiter.exempt
+def home_view_demonskiller_ar():
+    return render_template('DemonsKiller/indexAr.html')
+
+###### Dagshtick
+
+@app.route("/dagshtick")
+@limiter.exempt
+def home_view_dagshtick():
+    return render_template('Dagshtick/index.html')
+
+###### dawrati
+
+@app.route("/dawrati")
+@limiter.exempt
+def home_view_dawrati():
+    return render_template('dawrati/home.html')
+
+###### Blogger
+
+@app.route("/blogger")
+@limiter.exempt
+def home_view_blogger():
+    return render_template('Blogger/login.html')
+
+###### onethree
+
+@app.route("/onethree")
+@limiter.exempt
+def home_view_onethree():
+    return render_template('onethree/index.html')
 
 
-@app.route("/addUser", methods=['POST', 'GET'])
+##### end of routes
+
+
+###### Runman Backend
+
+@app.route("/runman/addUser", methods=['POST', 'GET'])
 @limiter.limit('1 per 30seconds')
 def addUser():
     print('The ip address: ',get_remote_address())
@@ -106,7 +177,7 @@ def addUser():
         return jsonify({"msg": f"Unkown Error 500: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
 
 
-@app.route("/addUserBR19")
+@app.route("/runman/addUserBR19")
 @limiter.exempt
 def addUserBR19():
     newObj = RecordsTable()
@@ -127,10 +198,10 @@ def addUserBR19():
             return jsonify({"msg": f"Unkown Error 500: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
 
     else:
-        return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
+        abort(401)
 
 
-@app.route("/updateUserRecords", methods=['PUT', 'GET'])
+@app.route("/runman/updateUserRecords", methods=['PUT', 'GET'])
 @limiter.limit('1 per 30seconds')
 def updateUserRecords():
     print('The ip address: ',get_remote_address())
@@ -153,7 +224,7 @@ def updateUserRecords():
         return jsonify({"msg": f"Unkown Error 500: player {name} was not updated, old data:{oldUserRecord}, new data:{newObj.search(name)}", "statCode": 500})
 
 
-@app.route("/displayRecords")
+@app.route("/runman/displayRecords")
 @limiter.exempt
 def displayRecords():
     print('The ip address: ',get_remote_address())
@@ -179,7 +250,7 @@ def displayRecords():
     return jsonify(dictOfResult)
 
 
-@app.route("/displayRecordsBR19")
+@app.route("/runman/displayRecordsBR19")
 @limiter.exempt
 def displayRecordsBR19():
     newObj = RecordsTable()
@@ -209,10 +280,10 @@ def displayRecordsBR19():
         return jsonify(dictOfResult)
 
     else:
-        return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
+        abort(401)
 
 
-@app.route("/searchNameExists")
+@app.route("/runman/searchNameExists")
 @limiter.exempt
 def searchNameExists():
     newObj = RecordsTable()
@@ -226,7 +297,7 @@ def searchNameExists():
         return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
 
 
-@app.route("/deleteRecordByIdBR19")
+@app.route("/runman/deleteRecordByIdBR19")
 @limiter.exempt
 def deleteRecordByIdBR19():
     newObj = RecordsTable()
@@ -255,10 +326,10 @@ def deleteRecordByIdBR19():
             return jsonify({"msg": f"Error 403: failed to delete name (id:{id}, name:{name}), (id:{id}, name:{name}) still exists", "statCode": 500})
 
     else:
-        return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
+        abort(401)
 
 
-@app.route("/deleteRecordByNameBR19")
+@app.route("/runman/deleteRecordByNameBR19")
 @limiter.exempt
 def deleteRecordBR19ByName():
     newObj = RecordsTable()
@@ -278,9 +349,15 @@ def deleteRecordBR19ByName():
             return jsonify({"msg": f"Error 403: failed to delete name:{name}, name:{name} still exists", "statCode": 500})
 
     else:
-        return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
+            abort(401)
 
+
+##### errors
 
 @app.errorhandler(429)
 def ratelimit_handler(e):
   return jsonify({"msg": f"Error 429: you have exceeded your rate-limit, any requests won't be applied", "statCode": 429})
+
+@app.errorhandler(401)
+def ratelimit_handler(e):
+   return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
