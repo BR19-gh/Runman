@@ -1,8 +1,8 @@
 let pageName = window.location.pathname.split("/").pop();
 
-if (location.protocol !== "https:") {
-    location.protocol = "https:";
-}
+// if (location.protocol !== "https:") {
+//     location.protocol = "https:";
+// }
 
 window.addEventListener('load', function() {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
