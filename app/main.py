@@ -12,7 +12,7 @@ BR19_PASSWORD = os.environ.get('BR19_PASSWORD')
 
 
 app = Flask(__name__,template_folder='templates')
-CORS(app)
+cors = CORS(app, resources={r"/*": {"origins": "http://br19.me"}})
 limiter = Limiter(
     app,
     key_func=get_remote_address,
