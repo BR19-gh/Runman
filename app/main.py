@@ -12,7 +12,7 @@ BR19_PASSWORD = os.environ.get('BR19_PASSWORD')
 
 
 app = Flask(__name__,template_folder='templates')
-cors = CORS(app, resources={r"/*": {"origins": "http://br19.me"}})
+#CORS(app)
 limiter = Limiter(
     app,
     key_func=get_remote_address,
@@ -190,6 +190,7 @@ def addUser():
 
 @app.route("/addUserBR19")
 @limiter.exempt
+@cross_origin(origin='*')
 def addUserBR19():
     newObj = RecordsTable()
 
@@ -265,6 +266,7 @@ def displayRecords():
 
 @app.route("/displayRecordsBR19")
 @limiter.exempt
+@cross_origin(origin='*')
 def displayRecordsBR19():
     newObj = RecordsTable()
 
@@ -313,6 +315,7 @@ def searchNameExists():
 
 @app.route("/deleteRecordByIdBR19")
 @limiter.exempt
+@cross_origin(origin='*')
 def deleteRecordByIdBR19():
     newObj = RecordsTable()
 
@@ -345,6 +348,7 @@ def deleteRecordByIdBR19():
 
 @app.route("/deleteRecordByNameBR19")
 @limiter.exempt
+@cross_origin(origin='*')
 def deleteRecordBR19ByName():
     newObj = RecordsTable()
 
