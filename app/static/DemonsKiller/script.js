@@ -96,20 +96,24 @@ function clsPopupExplain() {
 
 
 function openArPage() {
-    window.location.assign("/ar")
+    window.location.assign("/demonskiller/ar")
 }
 
 function openEnPage() {
-    window.location.assign("/en")
+    window.location.assign("/demonskiller/en")
 }
 
 
 function waitToStart() {
     setTimeout(() => { document.getElementById("readyMsg").style.display = "block"; }, 200);
-    setTimeout(() => { document.getElementById("readyMsg").style.display = "none";
-        document.getElementById("goMsg").style.display = "block"; }, 1050);
-    setTimeout(() => { dontPause = 1;
-        document.getElementById("goMsg").style.display = "none"; }, 1900);
+    setTimeout(() => {
+        document.getElementById("readyMsg").style.display = "none";
+        document.getElementById("goMsg").style.display = "block";
+    }, 1050);
+    setTimeout(() => {
+        dontPause = 1;
+        document.getElementById("goMsg").style.display = "none";
+    }, 1900);
 }
 
 
@@ -137,11 +141,15 @@ function continuePressing() {
     document.getElementById("pausePopup").style.display = "none";
 
     setTimeout(() => { document.getElementById("readyMsg").style.display = "block"; }, 200);
-    setTimeout(() => { document.getElementById("readyMsg").style.display = "none";
-        document.getElementById("goMsg").style.display = "block"; }, 1050);
+    setTimeout(() => {
+        document.getElementById("readyMsg").style.display = "none";
+        document.getElementById("goMsg").style.display = "block";
+    }, 1050);
     setTimeout(() => { document.getElementById("goMsg").style.display = "none"; }, 1900);
-    setTimeout(() => { dontPause = 1;
-        firstShowDemon(); }, 2000);
+    setTimeout(() => {
+        dontPause = 1;
+        firstShowDemon();
+    }, 2000);
 
 
 }
@@ -156,199 +164,307 @@ function firstShowDemon(notShowDemonVar) {
         } while ((firstShowDemonVar1 == notShowDemonVar)); { if (pausePressedVal == 1) { return; } if (pausePressedVal == 0) {} }
         if (firstShowDemonVar1 == 1) {
             { if (pausePressedVal == 1) { return; } if (pausePressedVal == 0) {} }
-            changeToHuman(firstShowDemonVar1); if (pausePressedVal == 1) { return; }
+            changeToHuman(firstShowDemonVar1);
+            if (pausePressedVal == 1) { return; }
             document.getElementById("thing1").style.display = "block";
             demonKilled1 = 0;
-            setTimeout(function() { if (demonKilled1 == 0) { if (document.getElementById("thing1").innerText == '👹') { human = 0; } else { human = 1; }
+            setTimeout(function() {
+                if (demonKilled1 == 0) {
+                    if (document.getElementById("thing1").innerText == '👹') { human = 0; } else { human = 1; }
                     document.getElementById("thing1").style.display = "none";
                     changeOfPoints(demonKilled1, rechangeToHumanVar1);
                     gameOver();
                     rechangeToDemon(rechangeToHumanVar1, firstShowDemonVar1);
-                    firstShowDemon(1); } }, timeBetweenReturns); }
+                    firstShowDemon(1);
+                }
+            }, timeBetweenReturns);
+        }
         if (firstShowDemonVar1 == 2) {
             { if (pausePressedVal == 1) { return; } if (pausePressedVal == 0) {} }
-            changeToHuman(firstShowDemonVar1); if (pausePressedVal == 1) { return; }
+            changeToHuman(firstShowDemonVar1);
+            if (pausePressedVal == 1) { return; }
             document.getElementById("thing2").style.display = "block";
             demonKilled2 = 0;
-            setTimeout(function() { if (demonKilled2 == 0) { if (document.getElementById("thing2").innerText == '👹') { human = 0; } else { human = 1; }
+            setTimeout(function() {
+                if (demonKilled2 == 0) {
+                    if (document.getElementById("thing2").innerText == '👹') { human = 0; } else { human = 1; }
                     document.getElementById("thing2").style.display = "none";
                     changeOfPoints(demonKilled2, rechangeToHumanVar2);
                     gameOver();
                     rechangeToDemon(rechangeToHumanVar2, firstShowDemonVar1);
-                    firstShowDemon(2); } }, timeBetweenReturns); }
+                    firstShowDemon(2);
+                }
+            }, timeBetweenReturns);
+        }
         if (firstShowDemonVar1 == 3) {
             { if (pausePressedVal == 1) { return; } if (pausePressedVal == 0) {} }
-            changeToHuman(firstShowDemonVar1); if (pausePressedVal == 1) { return; }
+            changeToHuman(firstShowDemonVar1);
+            if (pausePressedVal == 1) { return; }
             document.getElementById("thing3").style.display = "block";
             demonKilled3 = 0;
-            setTimeout(function() { if (demonKilled3 == 0) { if (document.getElementById("thing3").innerText == '👹') { human = 0; } else { human = 1; }
+            setTimeout(function() {
+                if (demonKilled3 == 0) {
+                    if (document.getElementById("thing3").innerText == '👹') { human = 0; } else { human = 1; }
                     document.getElementById("thing3").style.display = "none";
                     changeOfPoints(demonKilled3, rechangeToHumanVar3);
                     gameOver();
                     rechangeToDemon(rechangeToHumanVar3, firstShowDemonVar1);
-                    firstShowDemon(3); } }, timeBetweenReturns); }
+                    firstShowDemon(3);
+                }
+            }, timeBetweenReturns);
+        }
         if (firstShowDemonVar1 == 4) {
             { if (pausePressedVal == 1) { return; } if (pausePressedVal == 0) {} }
-            changeToHuman(firstShowDemonVar1); if (pausePressedVal == 1) { return; }
+            changeToHuman(firstShowDemonVar1);
+            if (pausePressedVal == 1) { return; }
             document.getElementById("thing4").style.display = "block";
             demonKilled4 = 0;
-            setTimeout(function() { if (demonKilled4 == 0) { if (document.getElementById("thing4").innerText == '👹') { human = 0; } else { human = 1; }
+            setTimeout(function() {
+                if (demonKilled4 == 0) {
+                    if (document.getElementById("thing4").innerText == '👹') { human = 0; } else { human = 1; }
                     document.getElementById("thing4").style.display = "none";
                     changeOfPoints(demonKilled4, rechangeToHumanVar4);
                     gameOver();
                     rechangeToDemon(rechangeToHumanVar4, firstShowDemonVar1);
-                    firstShowDemon(4); } }, timeBetweenReturns); }
+                    firstShowDemon(4);
+                }
+            }, timeBetweenReturns);
+        }
         if (firstShowDemonVar1 == 5) {
             { if (pausePressedVal == 1) { return; } if (pausePressedVal == 0) {} }
-            changeToHuman(firstShowDemonVar1); if (pausePressedVal == 1) { return; }
+            changeToHuman(firstShowDemonVar1);
+            if (pausePressedVal == 1) { return; }
             document.getElementById("thing5").style.display = "block";
             demonKilled5 = 0;
-            setTimeout(function() { if (demonKilled5 == 0) { if (document.getElementById("thing5").innerText == '👹') { human = 0; } else { human = 1; }
+            setTimeout(function() {
+                if (demonKilled5 == 0) {
+                    if (document.getElementById("thing5").innerText == '👹') { human = 0; } else { human = 1; }
                     document.getElementById("thing5").style.display = "none";
                     changeOfPoints(demonKilled5, rechangeToHumanVar5);
                     gameOver();
                     rechangeToDemon(rechangeToHumanVar5, firstShowDemonVar1);
-                    firstShowDemon(5); } }, timeBetweenReturns); }
+                    firstShowDemon(5);
+                }
+            }, timeBetweenReturns);
+        }
         if (firstShowDemonVar1 == 6) {
             { if (pausePressedVal == 1) { return; } if (pausePressedVal == 0) {} }
-            changeToHuman(firstShowDemonVar1); if (pausePressedVal == 1) { return; }
+            changeToHuman(firstShowDemonVar1);
+            if (pausePressedVal == 1) { return; }
             document.getElementById("thing6").style.display = "block";
             demonKilled6 = 0;
-            setTimeout(function() { if (demonKilled6 == 0) { if (document.getElementById("thing6").innerText == '👹') { human = 0; } else { human = 1; }
+            setTimeout(function() {
+                if (demonKilled6 == 0) {
+                    if (document.getElementById("thing6").innerText == '👹') { human = 0; } else { human = 1; }
                     document.getElementById("thing6").style.display = "none";
                     changeOfPoints(demonKilled6, rechangeToHumanVar6);
                     gameOver();
                     rechangeToDemon(rechangeToHumanVar6, firstShowDemonVar1);
-                    firstShowDemon(6); } }, timeBetweenReturns); }
+                    firstShowDemon(6);
+                }
+            }, timeBetweenReturns);
+        }
         if (firstShowDemonVar1 == 7) {
             { if (pausePressedVal == 1) { return; } if (pausePressedVal == 0) {} }
-            changeToHuman(firstShowDemonVar1); if (pausePressedVal == 1) { return; }
+            changeToHuman(firstShowDemonVar1);
+            if (pausePressedVal == 1) { return; }
             document.getElementById("thing7").style.display = "block";
             demonKilled7 = 0;
-            setTimeout(function() { if (demonKilled7 == 0) { if (document.getElementById("thing7").innerText == '👹') { human = 0; } else { human = 1; }
+            setTimeout(function() {
+                if (demonKilled7 == 0) {
+                    if (document.getElementById("thing7").innerText == '👹') { human = 0; } else { human = 1; }
                     document.getElementById("thing7").style.display = "none";
                     changeOfPoints(demonKilled7, rechangeToHumanVar7);
                     gameOver();
                     rechangeToDemon(rechangeToHumanVar7, firstShowDemonVar1);
-                    firstShowDemon(7); } }, timeBetweenReturns); }
+                    firstShowDemon(7);
+                }
+            }, timeBetweenReturns);
+        }
         if (firstShowDemonVar1 == 8) {
             { if (pausePressedVal == 1) { return; } if (pausePressedVal == 0) {} }
-            changeToHuman(firstShowDemonVar1); if (pausePressedVal == 1) { return; }
+            changeToHuman(firstShowDemonVar1);
+            if (pausePressedVal == 1) { return; }
             document.getElementById("thing8").style.display = "block";
             demonKilled8 = 0;
-            setTimeout(function() { if (demonKilled8 == 0) { if (document.getElementById("thing8").innerText == '👹') { human = 0; } else { human = 1; }
+            setTimeout(function() {
+                if (demonKilled8 == 0) {
+                    if (document.getElementById("thing8").innerText == '👹') { human = 0; } else { human = 1; }
                     document.getElementById("thing8").style.display = "none";
                     changeOfPoints(demonKilled8, rechangeToHumanVar8);
                     gameOver();
                     rechangeToDemon(rechangeToHumanVar8, firstShowDemonVar1);
-                    firstShowDemon(8); } }, timeBetweenReturns); }
+                    firstShowDemon(8);
+                }
+            }, timeBetweenReturns);
+        }
         if (firstShowDemonVar1 == 9) {
             { if (pausePressedVal == 1) { return; } if (pausePressedVal == 0) {} }
-            changeToHuman(firstShowDemonVar1); if (pausePressedVal == 1) { return; }
+            changeToHuman(firstShowDemonVar1);
+            if (pausePressedVal == 1) { return; }
             document.getElementById("thing9").style.display = "block";
             demonKilled9 = 0;
-            setTimeout(function() { if (demonKilled9 == 0) { if (document.getElementById("thing9").innerText == '👹') { human = 0; } else { human = 1; }
+            setTimeout(function() {
+                if (demonKilled9 == 0) {
+                    if (document.getElementById("thing9").innerText == '👹') { human = 0; } else { human = 1; }
                     document.getElementById("thing9").style.display = "none";
                     changeOfPoints(demonKilled9, rechangeToHumanVar9);
                     gameOver();
                     rechangeToDemon(rechangeToHumanVar9, firstShowDemonVar1);
-                    firstShowDemon(9); } }, timeBetweenReturns); }
+                    firstShowDemon(9);
+                }
+            }, timeBetweenReturns);
+        }
     }
 }
 
-function demonSelector1() { if (document.getElementById("thing1").innerText == '👹') { human = 0;
-        heart = 0; } else if (document.getElementById("thing1").innerText == '♥') { heart = 1; } else { human = 1; }
+function demonSelector1() {
+    if (document.getElementById("thing1").innerText == '👹') {
+        human = 0;
+        heart = 0;
+    } else if (document.getElementById("thing1").innerText == '♥') { heart = 1; } else { human = 1; }
     killDemon(1);
     demonKilled1 = 1;
     changeOfPoints(demonKilled1, rechangeToHumanVar1);
     gameOver();
-    timeChnager(); }
+    timeChnager();
+}
 
-function demonSelector2() { if (document.getElementById("thing2").innerText == '👹') { human = 0;
-        heart = 0; } else if (document.getElementById("thing2").innerText == '♥') { heart = 1; } else { human = 1; }
+function demonSelector2() {
+    if (document.getElementById("thing2").innerText == '👹') {
+        human = 0;
+        heart = 0;
+    } else if (document.getElementById("thing2").innerText == '♥') { heart = 1; } else { human = 1; }
     killDemon(2);
     demonKilled2 = 1;
     changeOfPoints(demonKilled2, rechangeToHumanVar2);
     gameOver();
-    timeChnager(); }
+    timeChnager();
+}
 
-function demonSelector3() { if (document.getElementById("thing3").innerText == '👹') { human = 0;
-        heart = 0; } else if (document.getElementById("thing3").innerText == '♥') { heart = 1; } else { human = 1; }
+function demonSelector3() {
+    if (document.getElementById("thing3").innerText == '👹') {
+        human = 0;
+        heart = 0;
+    } else if (document.getElementById("thing3").innerText == '♥') { heart = 1; } else { human = 1; }
     killDemon(3);
     demonKilled3 = 1;
     changeOfPoints(demonKilled3, rechangeToHumanVar3);
     gameOver();
-    timeChnager(); }
+    timeChnager();
+}
 
-function demonSelector4() { if (document.getElementById("thing4").innerText == '👹') { human = 0;
-        heart = 0; } else if (document.getElementById("thing4").innerText == '♥') { heart = 1; } else { human = 1; }
+function demonSelector4() {
+    if (document.getElementById("thing4").innerText == '👹') {
+        human = 0;
+        heart = 0;
+    } else if (document.getElementById("thing4").innerText == '♥') { heart = 1; } else { human = 1; }
     killDemon(4);
     demonKilled4 = 1;
     changeOfPoints(demonKilled4, rechangeToHumanVar4);
     gameOver();
-    timeChnager(); }
+    timeChnager();
+}
 
-function demonSelector5() { if (document.getElementById("thing5").innerText == '👹') { human = 0;
-        heart = 0; } else if (document.getElementById("thing5").innerText == '♥') { heart = 1; } else { human = 1; }
+function demonSelector5() {
+    if (document.getElementById("thing5").innerText == '👹') {
+        human = 0;
+        heart = 0;
+    } else if (document.getElementById("thing5").innerText == '♥') { heart = 1; } else { human = 1; }
     killDemon(5);
     demonKilled5 = 1;
     changeOfPoints(demonKilled5, rechangeToHumanVar5);
     gameOver();
-    timeChnager(); }
+    timeChnager();
+}
 
-function demonSelector6() { if (document.getElementById("thing6").innerText == '👹') { human = 0;
-        heart = 0; } else if (document.getElementById("thing6").innerText == '♥') { heart = 1; } else { human = 1; }
+function demonSelector6() {
+    if (document.getElementById("thing6").innerText == '👹') {
+        human = 0;
+        heart = 0;
+    } else if (document.getElementById("thing6").innerText == '♥') { heart = 1; } else { human = 1; }
     killDemon(6);
     demonKilled6 = 1;
     changeOfPoints(demonKilled6, rechangeToHumanVar6);
     gameOver();
-    timeChnager(); }
+    timeChnager();
+}
 
-function demonSelector7() { if (document.getElementById("thing7").innerText == '👹') { human = 0;
-        heart = 0; } else if (document.getElementById("thing7").innerText == '♥') { heart = 1; } else { human = 1; }
+function demonSelector7() {
+    if (document.getElementById("thing7").innerText == '👹') {
+        human = 0;
+        heart = 0;
+    } else if (document.getElementById("thing7").innerText == '♥') { heart = 1; } else { human = 1; }
     killDemon(7);
     demonKilled7 = 1;
     changeOfPoints(demonKilled7, rechangeToHumanVar7);
     gameOver();
-    timeChnager(); }
+    timeChnager();
+}
 
-function demonSelector8() { if (document.getElementById("thing8").innerText == '👹') { human = 0;
-        heart = 0; } else if (document.getElementById("thing8").innerText == '♥') { heart = 1; } else { human = 1; }
+function demonSelector8() {
+    if (document.getElementById("thing8").innerText == '👹') {
+        human = 0;
+        heart = 0;
+    } else if (document.getElementById("thing8").innerText == '♥') { heart = 1; } else { human = 1; }
     killDemon(8);
     demonKilled8 = 1;
     changeOfPoints(demonKilled8, rechangeToHumanVar8);
     gameOver();
-    timeChnager(); }
+    timeChnager();
+}
 
-function demonSelector9() { if (document.getElementById("thing9").innerText == '👹') { human = 0;
-        heart = 0; } else if (document.getElementById("thing9").innerText == '♥') { heart = 1; } else { human = 1; }
+function demonSelector9() {
+    if (document.getElementById("thing9").innerText == '👹') {
+        human = 0;
+        heart = 0;
+    } else if (document.getElementById("thing9").innerText == '♥') { heart = 1; } else { human = 1; }
     killDemon(9);
     demonKilled9 = 1;
     changeOfPoints(demonKilled9, rechangeToHumanVar9);
     gameOver();
-    timeChnager(); }
+    timeChnager();
+}
 
 function killDemon(demonSelectorVar) {
 
 
-    if (demonSelectorVar == 1) { document.getElementById("thing1").style.display = "none";
-        returnDemon(1); }
-    if (demonSelectorVar == 2) { document.getElementById("thing2").style.display = "none";
-        returnDemon(2); }
-    if (demonSelectorVar == 3) { document.getElementById("thing3").style.display = "none";
-        returnDemon(3); }
-    if (demonSelectorVar == 4) { document.getElementById("thing4").style.display = "none";
-        returnDemon(4); }
-    if (demonSelectorVar == 5) { document.getElementById("thing5").style.display = "none";
-        returnDemon(5); }
-    if (demonSelectorVar == 6) { document.getElementById("thing6").style.display = "none";
-        returnDemon(6); }
-    if (demonSelectorVar == 7) { document.getElementById("thing7").style.display = "none";
-        returnDemon(7); }
-    if (demonSelectorVar == 8) { document.getElementById("thing8").style.display = "none";
-        returnDemon(8); }
-    if (demonSelectorVar == 9) { document.getElementById("thing9").style.display = "none";
-        returnDemon(9); }
+    if (demonSelectorVar == 1) {
+        document.getElementById("thing1").style.display = "none";
+        returnDemon(1);
+    }
+    if (demonSelectorVar == 2) {
+        document.getElementById("thing2").style.display = "none";
+        returnDemon(2);
+    }
+    if (demonSelectorVar == 3) {
+        document.getElementById("thing3").style.display = "none";
+        returnDemon(3);
+    }
+    if (demonSelectorVar == 4) {
+        document.getElementById("thing4").style.display = "none";
+        returnDemon(4);
+    }
+    if (demonSelectorVar == 5) {
+        document.getElementById("thing5").style.display = "none";
+        returnDemon(5);
+    }
+    if (demonSelectorVar == 6) {
+        document.getElementById("thing6").style.display = "none";
+        returnDemon(6);
+    }
+    if (demonSelectorVar == 7) {
+        document.getElementById("thing7").style.display = "none";
+        returnDemon(7);
+    }
+    if (demonSelectorVar == 8) {
+        document.getElementById("thing8").style.display = "none";
+        returnDemon(8);
+    }
+    if (demonSelectorVar == 9) {
+        document.getElementById("thing9").style.display = "none";
+        returnDemon(9);
+    }
 
 
 }
@@ -357,24 +473,42 @@ function killDemon(demonSelectorVar) {
 
 function changeToHuman(firstShowDemonVar1) {
     if ((Math.floor(Math.random() * rateOfChanging) + 1) == 1) {
-        if (firstShowDemonVar1 == 1) { if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing1").innerText = "♥"; } else { document.getElementById("thing1").innerText = "👩"; }
-            rechangeToHumanVar1 = 1; }
-        if (firstShowDemonVar1 == 2) { if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing2").innerText = "♥"; } else { document.getElementById("thing2").innerText = "👨"; }
-            rechangeToHumanVar2 = 1; }
-        if (firstShowDemonVar1 == 3) { if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing3").innerText = "♥"; } else { document.getElementById("thing3").innerText = "👵"; }
-            rechangeToHumanVar3 = 1; }
-        if (firstShowDemonVar1 == 4) { if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing4").innerText = "♥"; } else { document.getElementById("thing4").innerText = "👩‍🦱"; }
-            rechangeToHumanVar4 = 1; }
-        if (firstShowDemonVar1 == 5) { if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing5").innerText = "♥"; } else { document.getElementById("thing5").innerText = "🧕"; }
-            rechangeToHumanVar5 = 1; }
-        if (firstShowDemonVar1 == 6) { if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing6").innerText = "♥"; } else { document.getElementById("thing6").innerText = "👴"; }
-            rechangeToHumanVar6 = 1; }
-        if (firstShowDemonVar1 == 7) { if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing7").innerText = "♥"; } else { document.getElementById("thing7").innerText = "👱‍♂️"; }
-            rechangeToHumanVar7 = 1; }
-        if (firstShowDemonVar1 == 8) { if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing8").innerText = "♥"; } else { document.getElementById("thing8").innerText = "👶"; }
-            rechangeToHumanVar8 = 1; }
-        if (firstShowDemonVar1 == 9) { if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing9").innerText = "♥"; } else { document.getElementById("thing9").innerText = "👧"; }
-            rechangeToHumanVar9 = 1; }
+        if (firstShowDemonVar1 == 1) {
+            if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing1").innerText = "♥"; } else { document.getElementById("thing1").innerText = "👩"; }
+            rechangeToHumanVar1 = 1;
+        }
+        if (firstShowDemonVar1 == 2) {
+            if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing2").innerText = "♥"; } else { document.getElementById("thing2").innerText = "👨"; }
+            rechangeToHumanVar2 = 1;
+        }
+        if (firstShowDemonVar1 == 3) {
+            if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing3").innerText = "♥"; } else { document.getElementById("thing3").innerText = "👵"; }
+            rechangeToHumanVar3 = 1;
+        }
+        if (firstShowDemonVar1 == 4) {
+            if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing4").innerText = "♥"; } else { document.getElementById("thing4").innerText = "👩‍🦱"; }
+            rechangeToHumanVar4 = 1;
+        }
+        if (firstShowDemonVar1 == 5) {
+            if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing5").innerText = "♥"; } else { document.getElementById("thing5").innerText = "🧕"; }
+            rechangeToHumanVar5 = 1;
+        }
+        if (firstShowDemonVar1 == 6) {
+            if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing6").innerText = "♥"; } else { document.getElementById("thing6").innerText = "👴"; }
+            rechangeToHumanVar6 = 1;
+        }
+        if (firstShowDemonVar1 == 7) {
+            if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing7").innerText = "♥"; } else { document.getElementById("thing7").innerText = "👱‍♂️"; }
+            rechangeToHumanVar7 = 1;
+        }
+        if (firstShowDemonVar1 == 8) {
+            if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing8").innerText = "♥"; } else { document.getElementById("thing8").innerText = "👶"; }
+            rechangeToHumanVar8 = 1;
+        }
+        if (firstShowDemonVar1 == 9) {
+            if ((Math.floor(Math.random() * rateOfChangingHeart) + 1) == 1) { document.getElementById("thing9").innerText = "♥"; } else { document.getElementById("thing9").innerText = "👧"; }
+            rechangeToHumanVar9 = 1;
+        }
     } else {
         rechangeToHumanVar1 == 0;
         rechangeToHumanVar2 == 0;
@@ -395,24 +529,42 @@ function changeToHuman(firstShowDemonVar1) {
 function rechangeToDemon(rechangeToHumanVar, firstShowDemonVar1) {
 
     if (rechangeToHumanVar == 1) {
-        if (firstShowDemonVar1 == 1) { document.getElementById("thing1").innerText = "👹";
-            rechangeToHumanVar = 0; }
-        if (firstShowDemonVar1 == 2) { document.getElementById("thing2").innerText = "👹";
-            rechangeToHumanVar = 0; }
-        if (firstShowDemonVar1 == 3) { document.getElementById("thing3").innerText = "👹";
-            rechangeToHumanVar = 0; }
-        if (firstShowDemonVar1 == 4) { document.getElementById("thing4").innerText = "👹";
-            rechangeToHumanVar = 0; }
-        if (firstShowDemonVar1 == 5) { document.getElementById("thing5").innerText = "👹";
-            rechangeToHumanVar = 0; }
-        if (firstShowDemonVar1 == 6) { document.getElementById("thing6").innerText = "👹";
-            rechangeToHumanVar = 0; }
-        if (firstShowDemonVar1 == 7) { document.getElementById("thing7").innerText = "👹";
-            rechangeToHumanVar = 0; }
-        if (firstShowDemonVar1 == 8) { document.getElementById("thing8").innerText = "👹";
-            rechangeToHumanVar = 0; }
-        if (firstShowDemonVar1 == 9) { document.getElementById("thing9").innerText = "👹";
-            rechangeToHumanVar = 0; }
+        if (firstShowDemonVar1 == 1) {
+            document.getElementById("thing1").innerText = "👹";
+            rechangeToHumanVar = 0;
+        }
+        if (firstShowDemonVar1 == 2) {
+            document.getElementById("thing2").innerText = "👹";
+            rechangeToHumanVar = 0;
+        }
+        if (firstShowDemonVar1 == 3) {
+            document.getElementById("thing3").innerText = "👹";
+            rechangeToHumanVar = 0;
+        }
+        if (firstShowDemonVar1 == 4) {
+            document.getElementById("thing4").innerText = "👹";
+            rechangeToHumanVar = 0;
+        }
+        if (firstShowDemonVar1 == 5) {
+            document.getElementById("thing5").innerText = "👹";
+            rechangeToHumanVar = 0;
+        }
+        if (firstShowDemonVar1 == 6) {
+            document.getElementById("thing6").innerText = "👹";
+            rechangeToHumanVar = 0;
+        }
+        if (firstShowDemonVar1 == 7) {
+            document.getElementById("thing7").innerText = "👹";
+            rechangeToHumanVar = 0;
+        }
+        if (firstShowDemonVar1 == 8) {
+            document.getElementById("thing8").innerText = "👹";
+            rechangeToHumanVar = 0;
+        }
+        if (firstShowDemonVar1 == 9) {
+            document.getElementById("thing9").innerText = "👹";
+            rechangeToHumanVar = 0;
+        }
     } else {
         return;
     }
@@ -464,60 +616,92 @@ function returnDemon(demonSelectorVar) {
 
 function timeChnager() {
 
-    if (document.getElementById("score").innerText == 0) { timeBetweenReturns = 1000;
+    if (document.getElementById("score").innerText == 0) {
+        timeBetweenReturns = 1000;
         rateOfChanging = 7;
-        rateOfChangingHeart = 2; }
-    if (document.getElementById("score").innerText == 5) { timeBetweenReturns = 975;
+        rateOfChangingHeart = 2;
+    }
+    if (document.getElementById("score").innerText == 5) {
+        timeBetweenReturns = 975;
         rateOfChanging = 6;
-        rateOfChangingHeart = 3; }
-    if (document.getElementById("score").innerText == 10) { timeBetweenReturns = 950;
+        rateOfChangingHeart = 3;
+    }
+    if (document.getElementById("score").innerText == 10) {
+        timeBetweenReturns = 950;
         rateOfChanging = 6;
-        rateOfChangingHeart = 10; }
-    if (document.getElementById("score").innerText == 15) { timeBetweenReturns = 925;
+        rateOfChangingHeart = 10;
+    }
+    if (document.getElementById("score").innerText == 15) {
+        timeBetweenReturns = 925;
         rateOfChanging = 6;
-        rateOfChangingHeart = 10; }
-    if (document.getElementById("score").innerText == 20) { timeBetweenReturns = 900;
+        rateOfChangingHeart = 10;
+    }
+    if (document.getElementById("score").innerText == 20) {
+        timeBetweenReturns = 900;
         rateOfChanging = 5;
-        rateOfChangingHeart = 10; }
-    if (document.getElementById("score").innerText == 25) { timeBetweenReturns = 875;
+        rateOfChangingHeart = 10;
+    }
+    if (document.getElementById("score").innerText == 25) {
+        timeBetweenReturns = 875;
         rateOfChanging = 5;
-        rateOfChangingHeart = 10; }
-    if (document.getElementById("score").innerText == 30) { timeBetweenReturns = 850;
+        rateOfChangingHeart = 10;
+    }
+    if (document.getElementById("score").innerText == 30) {
+        timeBetweenReturns = 850;
         rateOfChanging = 4;
-        rateOfChangingHeart = 3; }
-    if (document.getElementById("score").innerText == 35) { timeBetweenReturns = 800;
+        rateOfChangingHeart = 3;
+    }
+    if (document.getElementById("score").innerText == 35) {
+        timeBetweenReturns = 800;
         rateOfChanging = 4;
-        rateOfChangingHeart = 10; }
-    if (document.getElementById("score").innerText == 40) { timeBetweenReturns = 700;
+        rateOfChangingHeart = 10;
+    }
+    if (document.getElementById("score").innerText == 40) {
+        timeBetweenReturns = 700;
         rateOfChanging = 4;
-        rateOfChangingHeart = 10; }
-    if (document.getElementById("score").innerText == 45) { timeBetweenReturns = 600;
+        rateOfChangingHeart = 10;
+    }
+    if (document.getElementById("score").innerText == 45) {
+        timeBetweenReturns = 600;
         rateOfChanging = 4;
-        rateOfChangingHeart = 10; }
-    if (document.getElementById("score").innerText == 50) { timeBetweenReturns = 600;
+        rateOfChangingHeart = 10;
+    }
+    if (document.getElementById("score").innerText == 50) {
+        timeBetweenReturns = 600;
         rateOfChanging = 5;
-        rateOfChangingHeart = 3; }
-    if (document.getElementById("score").innerText == 60) { timeBetweenReturns = 600;
+        rateOfChangingHeart = 3;
+    }
+    if (document.getElementById("score").innerText == 60) {
+        timeBetweenReturns = 600;
         rateOfChanging = 5;
-        rateOfChangingHeart = 10; }
-    if (document.getElementById("score").innerText == 80) { timeBetweenReturns = 600;
+        rateOfChangingHeart = 10;
+    }
+    if (document.getElementById("score").innerText == 80) {
+        timeBetweenReturns = 600;
         rateOfChanging = 5;
-        rateOfChangingHeart = 10; }
-    if (document.getElementById("score").innerText == 90) { timeBetweenReturns = 600;
+        rateOfChangingHeart = 10;
+    }
+    if (document.getElementById("score").innerText == 90) {
+        timeBetweenReturns = 600;
         rateOfChanging = 5;
-        rateOfChangingHeart = 10; }
-    if (document.getElementById("score").innerText == 100) { timeBetweenReturns = 500;
+        rateOfChangingHeart = 10;
+    }
+    if (document.getElementById("score").innerText == 100) {
+        timeBetweenReturns = 500;
         rateOfChanging = 5;
-        rateOfChangingHeart = 10; } else { return; }
+        rateOfChangingHeart = 10;
+    } else { return; }
 }
 
 function gameOver() {
     let tries = document.getElementById("tries").innerText;
-    if (tries == 0) { dontPause = 0;
+    if (tries == 0) {
+        dontPause = 0;
         document.getElementById("losingPopup").style.display = "block";
         document.getElementById("showScore").innerText = document.getElementById("score").innerText;
         gameOverVal = 1;
-        document.getElementById("tries").innerText = saveTriesNumber; }
+        document.getElementById("tries").innerText = saveTriesNumber;
+    }
 }
 
 function changeTriesNumber() {
