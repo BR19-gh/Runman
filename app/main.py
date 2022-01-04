@@ -163,7 +163,7 @@ def home_view_onethree():
 
 @app.route("/addUser", methods=['POST', 'GET'])
 @limiter.limit('1 per 30seconds')
-@cross_origin(origin='br19.me',headers=['Content- Type','Authorization'])
+@cross_origin(origin='br19.me')
 def addUser():
     print('The ip address: ',get_remote_address())
     newObj = RecordsTable()
@@ -214,7 +214,7 @@ def addUserBR19():
 
 @app.route("/updateUserRecords", methods=['PUT', 'GET'])
 @limiter.limit('1 per 30seconds')
-@cross_origin(origin='br19.me',headers=['Content- Type','Authorization'])
+@cross_origin(origin='br19.me')
 def updateUserRecords():
     print('The ip address: ',get_remote_address())
     newObj = RecordsTable()
@@ -238,7 +238,7 @@ def updateUserRecords():
 
 @app.route("/displayRecords")
 @limiter.exempt
-@cross_origin(origin='br19.me',headers=['Content- Type','Authorization'])
+@cross_origin(origin='br19.me')
 def displayRecords():
     print('The ip address: ',get_remote_address())
     newObj = RecordsTable()
@@ -298,7 +298,7 @@ def displayRecordsBR19():
 
 @app.route("/searchNameExists")
 @limiter.exempt
-@cross_origin(origin='br19.me',headers=['Content- Type','Authorization'])
+@cross_origin(origin='br19.me')
 def searchNameExists():
     newObj = RecordsTable()
 
