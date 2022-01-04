@@ -12,7 +12,7 @@ BR19_PASSWORD = os.environ.get('BR19_PASSWORD')
 
 
 app = Flask(__name__,template_folder='templates')
-cors = CORS(app, resources={r"/displayRecords": {"origins": "http://br19.me"}})
+cors = CORS(app, resources={r"/": {"origins": "br19.me"}})
 
 limiter = Limiter(
     app,
@@ -164,7 +164,7 @@ def home_view_onethree():
 
 @app.route("/addUser", methods=['POST', 'GET'])
 @limiter.limit('1 per 30seconds')
-@cross_origin(origin='br19.me')
+
 def addUser():
     print('The ip address: ',get_remote_address())
     newObj = RecordsTable()
@@ -191,7 +191,7 @@ def addUser():
 
 @app.route("/addUserBR19")
 @limiter.exempt
-@cross_origin(origin='*')
+
 def addUserBR19():
     newObj = RecordsTable()
 
@@ -216,7 +216,7 @@ def addUserBR19():
 
 @app.route("/updateUserRecords", methods=['PUT', 'GET'])
 @limiter.limit('1 per 30seconds')
-@cross_origin(origin='br19.me')
+
 def updateUserRecords():
     print('The ip address: ',get_remote_address())
     newObj = RecordsTable()
@@ -240,7 +240,7 @@ def updateUserRecords():
 
 @app.route("/displayRecords")
 @limiter.exempt
-@cross_origin(origin='br19.me')
+
 def displayRecords():
     print('The ip address: ',get_remote_address())
     newObj = RecordsTable()
@@ -267,7 +267,7 @@ def displayRecords():
 
 @app.route("/displayRecordsBR19")
 @limiter.exempt
-@cross_origin(origin='*')
+
 def displayRecordsBR19():
     newObj = RecordsTable()
 
@@ -301,7 +301,7 @@ def displayRecordsBR19():
 
 @app.route("/searchNameExists")
 @limiter.exempt
-@cross_origin(origin='br19.me')
+
 def searchNameExists():
     newObj = RecordsTable()
 
@@ -316,7 +316,7 @@ def searchNameExists():
 
 @app.route("/deleteRecordByIdBR19")
 @limiter.exempt
-@cross_origin(origin='*')
+
 def deleteRecordByIdBR19():
     newObj = RecordsTable()
 
@@ -349,7 +349,7 @@ def deleteRecordByIdBR19():
 
 @app.route("/deleteRecordByNameBR19")
 @limiter.exempt
-@cross_origin(origin='*')
+
 def deleteRecordBR19ByName():
     newObj = RecordsTable()
 
