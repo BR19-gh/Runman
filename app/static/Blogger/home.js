@@ -31,12 +31,12 @@ if (localStorage.getItem('isUserAdmin') == 1) {
 
 addBlogBtn.addEventListener('click', () => {
     if (localStorage.getItem('isUserAdmin') == 1) {
-        window.location.assign('/addBlog');
+        window.location.assign('blogger//addBlog');
     }
 });
 
 signInBtn.addEventListener('click', () => {
-    window.location.assign('/');
+    window.location.assign('/blogger');
 });
 
 
@@ -140,7 +140,7 @@ function deleteArticle() {
     articleInDel.details.shift();
     articleInDel.date.shift();
     localStorage.setItem("articleArray", JSON.stringify(articleInDel));
-    window.location.assign('/home');
+    window.location.assign('/blogger/home');
 }
 
 document.getElementById('delete').addEventListener('click', () => { deleteArticle() });

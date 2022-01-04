@@ -16,10 +16,10 @@ function login() {
     rememberMe();
     if (document.getElementById('username').value == 'admin' && document.getElementById('password').value == 'admin') {
         localStorage.setItem('isUserAdmin', 1);
-        window.location.assign('/home');
+        window.location.assign('/blogger/home');
     } else {
         localStorage.setItem('isUserAdmin', 0);
-        window.location.assign('/home');
+        window.location.assign('/blogger/home');
     }
 
 }
