@@ -161,7 +161,7 @@ def home_view_onethree():
 
 ###### Runman Backend
 
-@app.route("/runman/addUser", methods=['POST', 'GET'])
+@app.route("/addUser", methods=['POST', 'GET'])
 @limiter.limit('1 per 30seconds')
 def addUser():
     print('The ip address: ',get_remote_address())
@@ -187,7 +187,7 @@ def addUser():
         return jsonify({"msg": f"Unkown Error 500: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
 
 
-@app.route("/runman/addUserBR19")
+@app.route("/addUserBR19")
 @limiter.exempt
 def addUserBR19():
     newObj = RecordsTable()
@@ -211,7 +211,7 @@ def addUserBR19():
         abort(401)
 
 
-@app.route("/runman/updateUserRecords", methods=['PUT', 'GET'])
+@app.route("/updateUserRecords", methods=['PUT', 'GET'])
 @limiter.limit('1 per 30seconds')
 def updateUserRecords():
     print('The ip address: ',get_remote_address())
@@ -234,7 +234,7 @@ def updateUserRecords():
         return jsonify({"msg": f"Unkown Error 500: player {name} was not updated, old data:{oldUserRecord}, new data:{newObj.search(name)}", "statCode": 500})
 
 
-@app.route("/runman/displayRecords")
+@app.route("/displayRecords")
 @limiter.exempt
 def displayRecords():
     print('The ip address: ',get_remote_address())
@@ -260,7 +260,7 @@ def displayRecords():
     return jsonify(dictOfResult)
 
 
-@app.route("/runman/displayRecordsBR19")
+@app.route("/displayRecordsBR19")
 @limiter.exempt
 def displayRecordsBR19():
     newObj = RecordsTable()
@@ -293,7 +293,7 @@ def displayRecordsBR19():
         abort(401)
 
 
-@app.route("/runman/searchNameExists")
+@app.route("/searchNameExists")
 @limiter.exempt
 def searchNameExists():
     newObj = RecordsTable()
@@ -307,7 +307,7 @@ def searchNameExists():
         return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
 
 
-@app.route("/runman/deleteRecordByIdBR19")
+@app.route("/deleteRecordByIdBR19")
 @limiter.exempt
 def deleteRecordByIdBR19():
     newObj = RecordsTable()
@@ -339,7 +339,7 @@ def deleteRecordByIdBR19():
         abort(401)
 
 
-@app.route("/runman/deleteRecordByNameBR19")
+@app.route("/deleteRecordByNameBR19")
 @limiter.exempt
 def deleteRecordBR19ByName():
     newObj = RecordsTable()
