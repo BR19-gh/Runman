@@ -60,15 +60,15 @@ function playOrStop(sound, VoiceOn) {
 }
 
 
-let hitS = new sound("../static/sound/hit.wav");
-let coinS = new sound("../static/sound/coin.wav");
-let songS = new sound("../static/sound/song_hmmm101.wav");
-let jumpS = new sound("../static/sound/jump.wav");
-let losingS = new sound("../static/sound/losing.wav");
-let hurtS = new sound("../static/sound/hurt.wav");
-let menuS = new sound("../static/sound/menu.wav")
-let menuExitS = new sound("../static/sound/menuExit.wav")
-let startS = new sound("../static/sound/start.wav");
+let hitS = new sound("../static/Runman/sound/hit.wav");
+let coinS = new sound("../static/Runman/sound/coin.wav");
+let songS = new sound("../static/Runman/sound/song_hmmm101.wav");
+let jumpS = new sound("../static/Runman/sound/jump.wav");
+let losingS = new sound("../static/Runman/sound/losing.wav");
+let hurtS = new sound("../static/Runman/sound/hurt.wav");
+let menuS = new sound("../static/Runman/sound/menu.wav")
+let menuExitS = new sound("../static/Runman/sound/menuExit.wav")
+let startS = new sound("../static/Runman/sound/start.wav");
 
 
 
@@ -909,7 +909,7 @@ function countHighestScore() {
     if (nameStat == 'unknown name') {
         return
     } else {
-        fetch('https://www.br19.me/runman/searchNameExists?name=' + (localStorage.nickname), {
+        fetch('https://runman-backend.herokuapp.com/runman/searchNameExists?name=' + (localStorage.nickname), {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -943,7 +943,7 @@ function hasWhiteSpace(s) {
 document.getElementById('DoneName').addEventListener('click', () => {
     playOrStop(menuS, VoiceOn);
     inputValue = document.getElementById('enterNNPopupInput').value; {
-        fetch('https://www.br19.me/runman/searchNameExists?name=' + inputValue, {
+        fetch('https://runman-backend.herokuapp.com/runman/searchNameExists?name=' + inputValue, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -996,7 +996,7 @@ document.getElementById('DoneName').addEventListener('click', () => {
 
 function addUser(name, hcoins, htime) {
 
-    fetch('https://www.br19.me/runman/addUser?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
+    fetch('https://runman-backend.herokuapp.com/runman/addUser?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
             headers: {
                 'Method': 'POST',
                 'Content-Type': 'application/json',
@@ -1013,7 +1013,7 @@ function addUser(name, hcoins, htime) {
 
 function updateUserRecords(name, hcoins, htime) {
 
-    fetch('https://www.br19.me/runman/updateUserRecords?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
+    fetch('https://runman-backend.herokuapp.com/runman/updateUserRecords?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
             headers: {
                 'Method': 'PUT',
                 'Content-Type': 'application/json',
@@ -1031,7 +1031,7 @@ function updateUserRecords(name, hcoins, htime) {
 
 function displayRecordsForRanking() {
 
-    fetch('https://www.br19.me/runman/displayRecords?limit=10&order=' + order, {
+    fetch('https://runman-backend.herokuapp.com/runman/displayRecords?limit=10&order=' + order, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
