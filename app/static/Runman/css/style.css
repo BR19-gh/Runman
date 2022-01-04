@@ -429,7 +429,7 @@ body {
     top: 30px;
     left: 240px;
     animation: cloudAnimation 20s linear infinite;
-    background-image: url("../Runman/img/cloud/1.png");
+    background-image: url("../img/cloud/1.png");
     z-index: 200;
 }
 
@@ -535,7 +535,7 @@ body {
     background-color: rgba(0, 0, 255, 0);
     transition: 0.40s linear;
     background-size: cover;
-    background-image: url("../Runman/img/player/new/0.png");
+    background-image: url("../img/player/new/0.png");
     z-index: 203;
 }
 
@@ -546,7 +546,7 @@ body {
     top: 370px;
     left: 454px;
     background-color: rgba(238, 168, 39, 0);
-    background-image: url("../Runman/img/obstacle/1.png");
+    background-image: url("../img/obstacle/1.png");
     z-index: 100;
 }
 
@@ -557,7 +557,7 @@ body {
     top: 310px;
     left: 454px;
     background-color: rgba(119, 0, 20, 0);
-    background-image: url("../Runman/img/obstacle2/5.png");
+    background-image: url("../img/obstacle2/5.png");
     background-size: cover;
     z-index: 100;
 }
@@ -569,7 +569,7 @@ body {
     top: 270px;
     left: 454px;
     background-color: rgba(160, 131, 0, 0);
-    background-image: url("../Runman/img/coin/1.png");
+    background-image: url("../img/coin/1.png");
     background-size: cover;
     z-index: 100;
 }
@@ -709,66 +709,66 @@ body {
 @keyframes longJump {
     0% {
         top: 420px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     5% {
         top: 390px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     10% {
         top: 370px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     25% {
         top: 360px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     75% {
         top: 370px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     80% {
         top: 370px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     90% {
         top: 420px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     100% {
         top: 420px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
 }
 
 @keyframes jump {
     0% {
         top: 420px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     15% {
         top: 370px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     30% {
         top: 360px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     45% {
         top: 360px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     60% {
         top: 360px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     75% {
         top: 410px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
     90% {
         top: 420px;
-        background-image: url("../Runman/img/player/new/j3.png");
+        background-image: url("../img/player/new/j3.png");
     }
 }
 
@@ -832,138 +832,138 @@ body {
 @keyframes dying {
     0% {
         opacity: 100%;
-        background-image: url("../Runman/img/player/new/d.png");
+        background-image: url("../img/player/new/d.png");
     }
     100% {
         opacity: 0;
         width: 0;
-        background-image: url("../Runman/img/player/new/d.png");
+        background-image: url("../img/player/new/d.png");
     }
 }
 
 @keyframes playerAnimation {
     0% {
-        background-image: url("../Runman/img/player/new/1.png");
+        background-image: url("../img/player/new/1.png");
     }
     12.5% {
-        background-image: url("../Runman/img/player/new/8.png");
+        background-image: url("../img/player/new/8.png");
     }
     25% {
-        background-image: url("../Runman/img/player/new/7.png");
+        background-image: url("../img/player/new/7.png");
     }
     37.5% {
-        background-image: url("../Runman/img/player/new/6.png");
+        background-image: url("../img/player/new/6.png");
     }
     50% {
-        background-image: url("../Runman/img/player/new/5.png");
+        background-image: url("../img/player/new/5.png");
     }
     62.5% {
-        background-image: url("../Runman/img/player/new/4.png");
+        background-image: url("../img/player/new/4.png");
     }
     75% {
-        background-image: url("../Runman/img/player/new/3.png");
+        background-image: url("../img/player/new/3.png");
     }
     87.5% {
-        background-image: url("../Runman/img/player/new/2.png");
+        background-image: url("../img/player/new/2.png");
     }
     100% {
-        background-image: url("../Runman/img/player/new/1.png");
+        background-image: url("../img/player/new/1.png");
     }
 }
 
 @keyframes playerAnimationStanding {
     0% {
-        background-image: url("../Runman/img/player/new/0.png");
+        background-image: url("../img/player/new/0.png");
     }
     10% {
-        background-image: url("../Runman/img/player/new/01.png");
+        background-image: url("../img/player/new/01.png");
     }
     20% {
-        background-image: url("../Runman/img/player/new/0.png");
+        background-image: url("../img/player/new/0.png");
     }
     30% {
-        background-image: url("../Runman/img/player/new/02.png");
+        background-image: url("../img/player/new/02.png");
     }
     40% {
-        background-image: url("../Runman/img/player/new/0.png");
+        background-image: url("../img/player/new/0.png");
     }
     50% {
-        background-image: url("../Runman/img/player/new/0.png");
+        background-image: url("../img/player/new/0.png");
     }
     60% {
-        background-image: url("../Runman/img/player/new/0.png");
+        background-image: url("../img/player/new/0.png");
     }
     70% {
-        background-image: url("../Runman/img/player/new/01.png");
+        background-image: url("../img/player/new/01.png");
     }
     80% {
-        background-image: url("../Runman/img/player/new/0.png");
+        background-image: url("../img/player/new/0.png");
     }
     90% {
-        background-image: url("../Runman/img/player/new/02.png");
+        background-image: url("../img/player/new/02.png");
     }
     100% {
-        background-image: url("../Runman/img/player/new/0.png");
+        background-image: url("../img/player/new/0.png");
     }
 }
 
 @keyframes coinAnimation {
     0% {
-        background-image: url("../Runman/img/coin/3.png");
+        background-image: url("../img/coin/3.png");
     }
     16.67% {
-        background-image: url("../Runman/img/coin/4.png");
+        background-image: url("../img/coin/4.png");
     }
     33.34% {
-        background-image: url("../Runman/img/coin/4.png");
+        background-image: url("../img/coin/4.png");
     }
     50% {
-        background-image: url("../Runman/img/coin/3.png");
+        background-image: url("../img/coin/3.png");
     }
     66.67% {
-        background-image: url("../Runman/img/coin/2.png");
+        background-image: url("../img/coin/2.png");
     }
     83.34% {
-        background-image: url("../Runman/img/coin/1.png");
+        background-image: url("../img/coin/1.png");
     }
     100% {
-        background-image: url("../Runman/img/coin/2.png");
+        background-image: url("../img/coin/2.png");
     }
 }
 
 @keyframes obstacle2Animation {
     0% {
-        background-image: url("../Runman/img/obstacle2/3.png");
+        background-image: url("../img/obstacle2/3.png");
     }
     10% {
-        background-image: url("../Runman/img/obstacle2/3.png");
+        background-image: url("../img/obstacle2/3.png");
     }
     20% {
-        background-image: url("../Runman/img/obstacle2/4.png");
+        background-image: url("../img/obstacle2/4.png");
     }
     30% {
-        background-image: url("../Runman/img/obstacle2/4.png");
+        background-image: url("../img/obstacle2/4.png");
     }
     40% {
-        background-image: url("../Runman/img/obstacle2/5.png");
+        background-image: url("../img/obstacle2/5.png");
     }
     50% {
-        background-image: url("../Runman/img/obstacle2/5.png");
+        background-image: url("../img/obstacle2/5.png");
     }
     60% {
-        background-image: url("../Runman/img/obstacle2/5.png");
+        background-image: url("../img/obstacle2/5.png");
     }
     70% {
-        background-image: url("../Runman/img/obstacle2/5.png");
+        background-image: url("../img/obstacle2/5.png");
     }
     80% {
-        background-image: url("../Runman/img/obstacle2/4.png");
+        background-image: url("../img/obstacle2/4.png");
     }
     90% {
-        background-image: url("../Runman/img/obstacle2/4.png");
+        background-image: url("../img/obstacle2/4.png");
     }
     100% {
-        background-image: url("../Runman/img/obstacle2/4.png");
+        background-image: url("../img/obstacle2/4.png");
     }
 }
 
