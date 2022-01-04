@@ -3,7 +3,7 @@ import os
 from flask.wrappers import Response
 import psycopg2
 import psycopg2.extras as ext
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
@@ -163,6 +163,7 @@ def home_view_onethree():
 
 @app.route("/addUser", methods=['POST', 'GET'])
 @limiter.limit('1 per 30seconds')
+@cross_origin(origin='br19.me',headers=['Content- Type','Authorization'])
 def addUser():
     print('The ip address: ',get_remote_address())
     newObj = RecordsTable()
@@ -213,6 +214,7 @@ def addUserBR19():
 
 @app.route("/updateUserRecords", methods=['PUT', 'GET'])
 @limiter.limit('1 per 30seconds')
+@cross_origin(origin='br19.me',headers=['Content- Type','Authorization'])
 def updateUserRecords():
     print('The ip address: ',get_remote_address())
     newObj = RecordsTable()
@@ -236,6 +238,7 @@ def updateUserRecords():
 
 @app.route("/displayRecords")
 @limiter.exempt
+@cross_origin(origin='br19.me',headers=['Content- Type','Authorization'])
 def displayRecords():
     print('The ip address: ',get_remote_address())
     newObj = RecordsTable()
@@ -295,6 +298,7 @@ def displayRecordsBR19():
 
 @app.route("/searchNameExists")
 @limiter.exempt
+@cross_origin(origin='br19.me',headers=['Content- Type','Authorization'])
 def searchNameExists():
     newObj = RecordsTable()
 
