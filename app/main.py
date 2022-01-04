@@ -135,17 +135,17 @@ def home_view_dawrati():
 
 @app.route("/blogger")
 @limiter.exempt
-def home_view_blogger():
+def home_view_blogger1():
     return render_template('Blogger/login.html')
 
 @app.route("/blogger/home")
 @limiter.exempt
-def home_view_blogger():
+def home_view_blogger2():
     return render_template('Blogger/home.html')
 
 @app.route("/blogger/addBlog")
 @limiter.exempt
-def home_view_blogger():
+def home_view_blogger3():
     return render_template('Blogger/addBlog.html')
 
 ###### onethree
