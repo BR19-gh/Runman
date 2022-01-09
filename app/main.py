@@ -177,7 +177,9 @@ def home_view_onethree():
 
 @app.route("/runman/user", methods=['POST', 'PUT'])
 @app.route("/runman/user/<string:nameIn>", methods=['DELETE', 'GET'])
-@limiter.limit('1 per 30seconds', methods=['POST', 'PUT', 'DELETE'])
+@limiter.limit('1 per 30seconds', methods='DELETE')
+@limiter.limit('1 per 30seconds', methods='POST')
+@limiter.limit('1 per 30seconds', methods='PUT')
 def user(nameIn=None):
     print('The ip address: ', get_remote_address())
     newObj = RecordsTable()
