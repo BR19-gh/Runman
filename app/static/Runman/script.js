@@ -830,7 +830,7 @@ if (currentDiff == null) {
     localStorage.setItem("currentDiff", 'easy');
     currentDiff = localStorage.getItem("currentDiff");
 } else if (currentDiff == 'hard') {
-    if (currentPage == 'indexAr.html') {
+    if (currentPage == 'ar') {
         document.getElementById("difficultyText").innerText = "صعب";
         document.getElementById("difficultyText").title = "صعب: قفز ومدى ضرب أقصر";
     } else {
@@ -838,7 +838,7 @@ if (currentDiff == null) {
         document.getElementById("difficultyText").title = "Hard: short jump and hit range";
     }
 } else if (currentDiff == 'easy') {
-    if (currentPage == 'indexAr.html') {
+    if (currentPage == 'ar') {
         document.getElementById("difficultyText").innerText = "سهل";
         document.getElementById("difficultyText").title = "سهل: قفز ومدى ضرب أطول";
     } else {
@@ -852,7 +852,7 @@ function changeDiff() {
     playOrStop(menuS, VoiceOn);
 
     if (currentDiff == 'easy') {
-        if (currentPage == 'indexAr.html') {
+        if (currentPage == 'ar') {
             document.getElementById("difficultyText").innerText = "صعب";
             document.getElementById("difficultyText").title = "صعب: قفز ومدى ضرب أقصر";
         } else {
@@ -862,7 +862,7 @@ function changeDiff() {
         localStorage.setItem("currentDiff", 'hard');
         currentDiff = localStorage.getItem("currentDiff");
     } else if (currentDiff == 'hard') {
-        if (currentPage == 'indexAr.html') {
+        if (currentPage == 'ar') {
             document.getElementById("difficultyText").innerText = "سهل";
             document.getElementById("difficultyText").title = "سهل: قفز ومدى ضرب أطول";
         } else {
@@ -958,7 +958,7 @@ document.getElementById('DoneName').addEventListener('click', () => {
                 return responseJson.statCode
             }).then((statusCode) => {
                 if (inputValue == undefined || inputValue == null || inputValue == '' || inputValue == ' ' || hasWhiteSpace(inputValue) == true) {
-                    if (currentPage == 'indexAr.html') {
+                    if (currentPage == 'ar') {
                         alert("الاسم الذي أدخلته غير صالح لاحتوائه على مسافات، الرجاء إدخال اسم آخر. أو اضغط × إن كنت لا تريد كتابة اسم")
                         nameStat = 'unknown name'
                         return
@@ -971,7 +971,7 @@ document.getElementById('DoneName').addEventListener('click', () => {
                 }
 
                 if (statusCode == 403) {
-                    if (currentPage == 'indexAr.html') {
+                    if (currentPage == 'ar') {
                         alert("الاسم الذي أدخلته محجوز، الرجاء إدخال اسم آخر. أو اضغط × إن كنت لا تريد كتابة اسم")
                         nameStat = 'unknown name'
                         return
@@ -1073,19 +1073,19 @@ function displayRecordsForRanking() {
                     rank.setAttribute('style', 'background-color: #00000010;');
                 }
                 if ('1' == rank.innerText) {
-                    if (currentPage == 'indexAr.html') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
+                    if (currentPage == 'ar') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
                     rank.innerHTML = '<img style="width: 16px; height: 17px;" ="../../static/Runman/img/coin/gold.png" alt="1st">';
                     if (localStorage.nickname == usersFetched[i]['name']) {
                         document.getElementsByClassName('rank')[i].style.backgroundColor = "#00000010";
                     }
                 } else if ('2' == rank.innerText) {
-                    if (currentPage == 'indexAr.html') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
+                    if (currentPage == 'ar') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
                     rank.innerHTML = '<img style="width: 16px; height: 17px;" ="../../static/Runman/img/coin/silver.png" alt="2nd">';
                     if (localStorage.nickname == usersFetched[i]['name']) {
                         document.getElementsByClassName('rank')[i].style.backgroundColor = "#00000010";
                     }
                 } else if ('3' == rank.innerText) {
-                    if (currentPage == 'indexAr.html') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
+                    if (currentPage == 'ar') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
                     rank.innerHTML = '<img style="width: 16px; height: 17px;" ="../../static/Runman/img/coin/bronze.png" alt="3rd">';
                     if (localStorage.nickname == usersFetched[i]['name']) {
                         document.getElementsByClassName('rank')[i].style.backgroundColor = "#00000010";
@@ -1140,14 +1140,14 @@ displayRecordsForRanking();
 document.getElementById("orderBtn").addEventListener("click", () => {
 
     if (order == 2) {
-        if (currentPage == 'indexAr.html') {
+        if (currentPage == 'ar') {
             document.getElementById('orderBtn').innerHTML = 'عدد<br><img style="width: 12px; height: 13px;" ="../../static/Runman/img/coin/0.png" alt="Coins">'
         } else {
             document.getElementById('orderBtn').innerHTML = '# of <img style="width: 12px; height: 13px;" ="../../static/Runman/img/coin/0.png" alt="Coins">'
         }
         order = 1;
     } else if (order == 1) {
-        if (currentPage == 'indexAr.html') {
+        if (currentPage == 'ar') {
             document.getElementById('orderBtn').innerHTML = '<div style="direction: rtl;">الوقت (ثوان)</div>'
         } else {
             document.getElementById('orderBtn').innerText = 'time (sec)'
