@@ -909,13 +909,13 @@ function countHighestScore() {
     if (nameStat == 'unknown name') {
         return
     } else {
-        fetch('http://www.br19.me/searchNameExists?name=' + (localStorage.nickname), {
+        fetch(`http://www.br19.me/runman/user/${localStorage.nickname}`, {
                 headers: {
-
+                    'Method': 'GET',
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 }
-            }, { mode: 'cors' })
+            })
             .then((response) => {
                 return response.json();
             }).then((responseJson) => {
@@ -944,13 +944,13 @@ function hasWhiteSpace(s) {
 document.getElementById('DoneName').addEventListener('click', () => {
     playOrStop(menuS, VoiceOn);
     inputValue = document.getElementById('enterNNPopupInput').value; {
-        fetch('http://www.br19.me/searchNameExists?name=' + inputValue, {
+        fetch(`http://www.br19.me/runman/user/${inputValue}`, {
                 headers: {
-
+                    'Method': 'GET',
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 }
-            }, { mode: 'cors' })
+            })
             .then((response) => {
                 return response.json();
             }).then((responseJson) => {
@@ -997,14 +997,19 @@ document.getElementById('DoneName').addEventListener('click', () => {
 
 function addUser(name, hcoins, htime) {
 
-    fetch('http://www.br19.me/addUser?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
+    fetch('http://www.br19.me/runman/user', {
             headers: {
 
                 'Method': 'POST',
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
-            }
-        }, { mode: 'cors' })
+            },
+            body: JSON.stringify({
+                name: name,
+                hcoins: hcoins,
+                htime: htime
+            })
+        })
         .then((response) => {
             return response.json();
         }).then((responseJson) => {
@@ -1015,14 +1020,19 @@ function addUser(name, hcoins, htime) {
 
 function updateUserRecords(name, hcoins, htime) {
 
-    fetch('http://www.br19.me/updateUserRecords?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
+    fetch('http://www.br19.me/runman/user', {
             headers: {
 
                 'Method': 'PUT',
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
-            }
-        }, { mode: 'cors' })
+            },
+            body: JSON.stringify({
+                name: name,
+                hcoins: hcoins,
+                htime: htime
+            })
+        })
         .then((response) => {
             return response.json();
         }).then((responseJson) => {
@@ -1034,13 +1044,13 @@ function updateUserRecords(name, hcoins, htime) {
 
 function displayRecordsForRanking() {
 
-    fetch('http://www.br19.me/displayRecords?limit=10&order=' + order, {
+    fetch(`http://www.br19.me/runman/users/10/${order}`, {
             headers: {
-
+                'Method': 'GET',
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
-        }, { mode: 'cors' })
+        })
         .then((response) => {
             return response.json();
         }).then((usersFetched) => {

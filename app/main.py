@@ -12,13 +12,15 @@ DATABASE_URL = os.environ.get('DATABASE_URL')
 BR19_PASSWORD = os.environ.get('BR19_PASSWORD')
 
 
-app = Flask(__name__,template_folder='templates')
+app = Flask(__name__, template_folder='templates')
 #cors = CORS(app)
 limiter = Limiter(
     app,
     key_func=get_remote_address,
     default_limits=["1 per 30seconds", "50 per hour"]
 )
+
+
 class RecordsTable:
 
     def __init__(self):
@@ -62,91 +64,105 @@ class RecordsTable:
         self.conn.close()
 
 
-##### routes
+# routes
 
-###### main
+# main
 
 @app.route("/")
 @limiter.exempt
 def home_view():
     return render_template('index.html')
 
+
 @app.route("/en")
 @limiter.exempt
 def home_view_en():
     return render_template('index.html')
+
 
 @app.route("/ar")
 @limiter.exempt
 def home_view_ar():
     return render_template('indexAr.html')
 
-###### Runman
+# Runman
+
 
 @app.route("/runman")
 @limiter.exempt
 def home_view_runman():
     return render_template('Runman/index.html')
 
+
 @app.route("/runman/en")
 @limiter.exempt
 def home_view_runman_en():
     return render_template('Runman/index.html')
+
 
 @app.route("/runman/ar")
 @limiter.exempt
 def home_view_runman_ar():
     return render_template('Runman/indexAr.html')
 
-###### DemonsKiller
+# DemonsKiller
+
 
 @app.route("/demonskiller")
 @limiter.exempt
 def home_view_demonskiller():
     return render_template('DemonsKiller/index.html')
 
+
 @app.route("/demonskiller/en")
 @limiter.exempt
 def home_view_demonskiller_en():
     return render_template('DemonsKiller/index.html')
+
 
 @app.route("/demonskiller/ar")
 @limiter.exempt
 def home_view_demonskiller_ar():
     return render_template('DemonsKiller/indexAr.html')
 
-###### Dagshtick
+# Dagshtick
+
 
 @app.route("/dagshtick")
 @limiter.exempt
 def home_view_dagshtick():
     return render_template('Dagshtick/index.html')
 
-###### dawrati
+# dawrati
+
 
 @app.route("/dawrati")
 @limiter.exempt
 def home_view_dawrati():
     return render_template('dawrati/home.html')
 
-###### Blogger
+# Blogger
+
 
 @app.route("/blogger")
 @limiter.exempt
 def home_view_blogger1():
     return render_template('Blogger/login.html')
 
+
 @app.route("/blogger/home")
 @limiter.exempt
 def home_view_blogger2():
     return render_template('Blogger/home.html')
+
 
 @app.route("/blogger/addBlog")
 @limiter.exempt
 def home_view_blogger3():
     return render_template('Blogger/addBlog.html')
 
-###### onethree
+# onethree
+
 
 @app.route("/onethree")
 @limiter.exempt
@@ -154,110 +170,127 @@ def home_view_onethree():
     return render_template('onethree/index.html')
 
 
-##### end of routes
+# end of routes
 
 
-###### Runman Backend
+# Runman Backend
 
-@app.route("/addUser", methods=['POST', 'GET'])
-@limiter.limit('1 per 30seconds')
-
-def addUser():
-    print('The ip address: ',get_remote_address())
+@app.route("/runman/user", methods=['POST', 'PUT'])
+@app.route("/runman/user/<str:nameIn>", methods=['DELETE', 'GET'])
+@limiter.limit('1 per 30seconds', methods=['POST', 'PUT', 'DELETE'])
+def user(nameIn, id):
+    print('The ip address: ', get_remote_address())
     newObj = RecordsTable()
 
-    name = request.args.get('name')
-    hcoins = request.args.get('hcoins')
-    htime = request.args.get('htime')
+    if request.method == 'POST':
 
-    if " " in name or "\t" in name or f"\n" in name or name == None:
-        return jsonify({"msg": f"Invalid input 400: name:{name} contains spaces or invalid characters, therefore player:{name} will not be added", "statCode": 400})
-    if int(hcoins)>700:
-        return jsonify({"msg": f"Invalid input 400: hcoins:{hcoins} is too much, therefore player:{name} will not be added", "statCode": 400})
-    if int(htime)>100:
-        return jsonify({"msg": f"Invalid input 400: htime:{htime} is too much, therefore player:{name} will not be added", "statCode": 400})
-    
-    result = newObj.search(name)
-    if result == None:
-        pass
-    else:
-        return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
+        data = request.get_json()
+        name = data['name']
+        hcoins = data['hcoins']
+        htime = data['htime']
 
-    newObj.insert(name, hcoins, htime)
-   
-    recordSearched = newObj.search(name)
-    if (recordSearched[0] == name):
-        return jsonify({"msg": f"Success 200: player:{name} is recorded, the name matches {(newObj.search(name))[0]}", "statCode": 200})
-    else:
-        return jsonify({"msg": f"Unkown Error 500: player:{name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
+        if " " in name or "\t" in name or f"\n" in name or name == None:
+            return jsonify({"msg": f"Invalid input 400: name:{name} contains spaces or invalid characters, therefore player:{name} will not be added", "statCode": 400})
+        if int(hcoins) > 700:
+            return jsonify({"msg": f"Invalid input 400: hcoins:{hcoins} is too much, therefore player:{name} will not be added", "statCode": 400})
+        if int(htime) > 100:
+            return jsonify({"msg": f"Invalid input 400: htime:{htime} is too much, therefore player:{name} will not be added", "statCode": 400})
 
-
-@app.route("/addUserBR19")
-@limiter.exempt
-
-def addUserBR19():
-    newObj = RecordsTable()
-
-    password = request.args.get('password')
-    if password == BR19_PASSWORD:
-
-        name = request.args.get('name')
-        hcoins = request.args.get('hcoins')
-        htime = request.args.get('htime')
+        result = newObj.search(name)
+        if result == None:
+            pass
+        else:
+            return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
 
         newObj.insert(name, hcoins, htime)
-        recordSearched = newObj.search(name)
 
+        recordSearched = newObj.search(name)
         if (recordSearched[0] == name):
             return jsonify({"msg": f"Success 200: player:{name} is recorded, the name matches {(newObj.search(name))[0]}", "statCode": 200})
         else:
             return jsonify({"msg": f"Unkown Error 500: player:{name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
 
-    else:
-        abort(401)
+    elif request.method == 'PUT':
+
+        data = request.get_json()
+        name = data['name']
+        hcoins = data['hcoins']
+        htime = data['htime']
+
+        if int(hcoins) > 700:
+            return jsonify({"msg": f"Invalid input 400: hcoins:{hcoins} is too much, therefore player:{name} will not be updated", "statCode": 400})
+        if int(htime) > 100:
+            return jsonify({"msg": f"Invalid input 400: htime:{htime} is too much, therefore player:{name} will not be updated", "statCode": 400})
+
+        oldUserRecord = newObj.search(name)
+
+        newObj.update(name, hcoins, htime)
+
+        recordSearched = newObj.search(name)
+        if recordSearched == None:
+            return jsonify({"msg": f"Error 404: player:{name} was not updated because they didn't have a record before (maybe first time playing?) ", "statCode": 404})
+        elif (recordSearched[0] == name):
+            return jsonify({"msg": f"Success 200: player:{name} is updated, old data:{oldUserRecord}, new data:{newObj.search(name)}", "statCode": 200})
+        else:
+            return jsonify({"msg": f"Unkown Error 500: player:{name} was not updated, old data:{oldUserRecord}, new data:{newObj.search(name)}", "statCode": 500})
+
+    elif request.method == 'GET':
+
+        result = newObj.search(nameIn)
+
+        if result == None:
+            return jsonify({"msg": f"Success 200: the name {nameIn} doesn't exists, so it can be added", "statCode": 200})
+        else:
+            return jsonify({"msg": f"Error 403: the name {nameIn} already exists", "statCode": 403})
+
+    elif request.method == 'DELETE':
+
+        newObj.delete(nameIn)
+
+        result = newObj.search(nameIn)
+
+        if result == None:
+            return jsonify({"msg": f"Success 200: name:{nameIn} is deleted successfully, name:{nameIn} doesn't exists anymore", "statCode": 200})
+        else:
+            return jsonify({"msg": f"Error 403: failed to delete name:{nameIn}, name:{nameIn} still exists", "statCode": 500})
 
 
-@app.route("/updateUserRecords", methods=['PUT', 'GET'])
-@limiter.limit('1 per 30seconds')
-
-def updateUserRecords():
-    print('The ip address: ',get_remote_address())
+@app.route("/runman/user/<int:id>", methods=['DELETE'])
+@limiter.limit('1 per 30seconds', methods=['DELETE'])
+def userDeleteId(id):
     newObj = RecordsTable()
 
-    name = request.args.get('name')
-    hcoins = request.args.get('hcoins')
-    htime = request.args.get('htime')
+    result = newObj.display()
+    resultSorted = sorted(result, key=lambda tup: tup[2], reverse=True)
+    dictOfResult = {}
+    j = 0
+    for i in resultSorted:
+        dictOfResult[j] = {'name': i[0], 'hcoins': i[1], 'htime': i[2]}
+        j += 1
+    name = dictOfResult[id]['name']
+    newObj.delete(dictOfResult[id]['name'])
 
-    if int(hcoins)>700:
-        return jsonify({"msg": f"Invalid input 400: hcoins:{hcoins} is too much, therefore player:{name} will not be updated", "statCode": 400})
-    if int(htime)>100:
-        return jsonify({"msg": f"Invalid input 400: htime:{htime} is too much, therefore player:{name} will not be updated", "statCode": 400})
-    
+    result = newObj.search(dictOfResult[id]['name'])
 
-    oldUserRecord = newObj.search(name)
-
-    newObj.update(name, hcoins, htime)
-
-    recordSearched = newObj.search(name)
-    if recordSearched == None:
-        return jsonify({"msg": f"Error 404: player:{name} was not updated because they didn't have a record before (maybe first time playing?) ", "statCode": 404})
-    elif (recordSearched[0] == name):
-        return jsonify({"msg": f"Success 200: player:{name} is updated, old data:{oldUserRecord}, new data:{newObj.search(name)}", "statCode": 200})
+    if result == None:
+        return jsonify({"msg": f"Success 200: (id:{id}, name:{name}) is deleted successfully, (id:{id}, name:{name}) doesn't exists anymore", "statCode": 200})
     else:
-        return jsonify({"msg": f"Unkown Error 500: player:{name} was not updated, old data:{oldUserRecord}, new data:{newObj.search(name)}", "statCode": 500})
+        return jsonify({"msg": f"Error 403: failed to delete name (id:{id}, name:{name}), (id:{id}, name:{name}) still exists", "statCode": 500})
 
 
-@app.route("/displayRecords")
+@app.route("/runman/users/")
+@app.route("/runman/users/<int:limit>/")
+@app.route("/runman/users/<int:order>/")
+@app.route("/runman/users/<int:limit>/<int:order>")
 @limiter.exempt
-
-def displayRecords():
-    print('The ip address: ',get_remote_address())
+def users(limit, order):
+    print('The ip address: ', get_remote_address())
     newObj = RecordsTable()
 
-    limit = request.args.get('limit')
-    order = request.args.get('order')
-    limit = int(limit)
-    order = int(order)
+    if limit == None:
+        limit = 0
+    if order == None:
+        order = 2
 
     result = newObj.display()
     resultSorted = sorted(result, key=lambda tup: tup[order], reverse=True)
@@ -274,123 +307,19 @@ def displayRecords():
     return jsonify(dictOfResult)
 
 
-@app.route("/displayRecordsBR19")
-@limiter.exempt
-
-def displayRecordsBR19():
-    newObj = RecordsTable()
-
-    password = request.args.get('password')
-    if password == BR19_PASSWORD:
-
-        newObj = RecordsTable()
-
-        limit = request.args.get('limit')
-        order = request.args.get('order')
-        limit = int(limit)
-        order = int(order)
-
-        result = newObj.display()
-        resultSorted = sorted(result, key=lambda tup: tup[order], reverse=True)
-        if limit != 0:
-            resultSorted = resultSorted[:limit]
-        else:
-            pass
-        dictOfResult = {}
-        j = 0
-        for i in resultSorted:
-            dictOfResult[j] = {'name': i[0], 'hcoins': i[1], 'htime': i[2]}
-            j += 1
-
-        return jsonify(dictOfResult)
-
-    else:
-        abort(401)
-
-
-@app.route("/searchNameExists")
-@limiter.exempt
-
-def searchNameExists():
-    newObj = RecordsTable()
-
-    name = request.args.get('name')
-    result = newObj.search(name)
-
-    if result == None:
-        return jsonify({"msg": f"Success 200: the name {name} doesn't exists, so it can be added", "statCode": 200})
-    else:
-        return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
-
-
-@app.route("/deleteRecordByIdBR19")
-@limiter.exempt
-
-def deleteRecordByIdBR19():
-    newObj = RecordsTable()
-
-    password = request.args.get('password')
-    if password == BR19_PASSWORD:
-
-        id = request.args.get('id')
-        id = int(id)
-
-        result = newObj.display()
-        resultSorted = sorted(result, key=lambda tup: tup[2], reverse=True)
-        dictOfResult = {}
-        j = 0
-        for i in resultSorted:
-            dictOfResult[j] = {'name': i[0], 'hcoins': i[1], 'htime': i[2]}
-            j += 1
-        name = dictOfResult[id]['name']
-        newObj.delete(dictOfResult[id]['name'])
-
-        result = newObj.search(dictOfResult[id]['name'])
-
-        if result == None:
-            return jsonify({"msg": f"Success 200: (id:{id}, name:{name}) is deleted successfully, (id:{id}, name:{name}) doesn't exists anymore", "statCode": 200})
-        else:
-            return jsonify({"msg": f"Error 403: failed to delete name (id:{id}, name:{name}), (id:{id}, name:{name}) still exists", "statCode": 500})
-
-    else:
-        abort(401)
-
-
-@app.route("/deleteRecordByNameBR19")
-@limiter.exempt
-
-def deleteRecordBR19ByName():
-    newObj = RecordsTable()
-
-    password = request.args.get('password')
-    if password == BR19_PASSWORD:
-
-        name = request.args.get('name')
-
-        newObj.delete(name)
-
-        result = newObj.search(name)
-
-        if result == None:
-            return jsonify({"msg": f"Success 200: name:{name} is deleted successfully, name:{name} doesn't exists anymore", "statCode": 200})
-        else:
-            return jsonify({"msg": f"Error 403: failed to delete name:{name}, name:{name} still exists", "statCode": 500})
-
-    else:
-            abort(401)
-
-
-##### errors
+# errors
 
 @app.errorhandler(429)
 def ratelimit_handler(e):
-  return jsonify({"msg": f"Error 429: you have exceeded your rate-limit, any requests won't be applied", "statCode": 429})
+    return jsonify({"msg": f"Error 429: you have exceeded your rate-limit, any requests won't be applied", "statCode": 429})
+
 
 @app.errorhandler(401)
 def ratelimit_handler(e):
-   return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
+    return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
 
-##### other
+
+# other
 
 @app.route('/favicon.ico')
 def favicon():
