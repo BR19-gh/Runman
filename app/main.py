@@ -256,10 +256,11 @@ def user(nameIn=None):
 
 
 @app.route("/runman/user/<string:nameIn>/<string:password>", methods=['DELETE'])
-def userBR19(nameIn=None,password=None):
+@limiter.exempt
+def userDeleteBR19(nameIn=None, password=None):
     print('The ip address: ', get_remote_address())
 
-    if BR19_PASSWORD==password:
+    if BR19_PASSWORD == password:
 
         newObj = RecordsTable()
 
