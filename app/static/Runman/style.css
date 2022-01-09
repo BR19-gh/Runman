@@ -1012,13 +1012,10 @@ body {
         left: 240px;
         opacity: 0;
     }
-    10% {
+    20% {
         opacity: 1;
     }
-    90% {
-        opacity: 1;
-    }
-    95% {
+    80% {
         opacity: 1;
     }
     100% {
