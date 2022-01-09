@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runman Dashbord</title>
+</head>
+
+<body>
+
+    <ol id="listContainer">
+        <li class="mainAlist">
+            <div class="proto">Rank</div>
+            <div class="proto">Name</div>
+            <div class="proto">Coins</div>
+            <div class="proto">Time</div>
+            <div class="proto">Delete</div>
+        </li>
+    </ol>
+    <div id="msg"></div>
+
+</body>
+<style>
+    #listContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        user-select: none;
+    }
+    
+    .alist,
+    .mainAlist {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 20px;
+        font-size: 18px;
+    }
+    
+    .alist div,
+    .mainAlist div {
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+        width: 20%;
+        line-height: 20px;
+    }
+    
+    .mainAlist div {
+        border-bottom: black solid 1px;
+    }
+    
+    .alist div {
+        padding-top: 10px;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+    
+    .proto {
+        font-weight: bold;
+        font-size: 15px;
+    }
+    
+    .deleteBtn {
+        color: red;
+        font-weight: bold;
+        font-size: 30px;
+        cursor: pointer;
+    }
+</style>
+<script>
+    let order = 2;
+    fetch('https://br19-backend.herokuapp.com/displayRecords?limit=0&order=' + order, {
+            headers: {
+
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }, {
+            mode: 'cors'
+        })
+        .then((response) => {
+            return response.json();
+        }).then((usersFetched) => {
+            let listContainer = document.getElementById('listContainer');
+            if (document.getElementsByClassName('alist')[0]) {
+                const elements = document.getElementsByClassName('alist');
+                while (elements.length > 0) {
+                    elements[0].parentNode.removeChild(elements[0]);
+                }
+            }
+            for (let i of Object.keys(usersFetched)) {
+
+                //alist
+                let alist = document.createElement('li');
+                alist.setAttribute('class', 'alist');
+                listContainer.appendChild(alist);
+                //alist
+
+
+                //rank
+                let rank = document.createElement('div');
+                rank.setAttribute('class', 'rank');
+
+                alist.appendChild(rank);
+                rank.innerText = `${Number(i) + 1}`
+                    //rank
+
+                //nameInList
+                let nameInList = document.createElement('div');
+                nameInList.setAttribute('class', 'nameInList');
+                alist.appendChild(nameInList);
+                nameInList.innerText = `${usersFetched[i]['name']}`
+                    //nameInList
+
+                //hcoinInList
+                let hcoinInList = document.createElement('div');
+                hcoinInList.setAttribute('class', 'hcoinInList');
+                alist.appendChild(hcoinInList);
+                hcoinInList.innerText = `${usersFetched[i]['hcoins']}`;
+                //hcoinInList
+
+                //htimeInList
+                let htimeInList = document.createElement('div');
+                htimeInList.setAttribute('class', 'htimeInList');
+                alist.appendChild(htimeInList);
+                htimeInList.innerText = `${usersFetched[i]['htime']}`;
+                //htimeInList
+
+                //deleteBtn
+                let deleteBtn = document.createElement('div');
+                deleteBtn.setAttribute('class', 'deleteBtn');
+                alist.appendChild(deleteBtn);
+                deleteBtn.innerText = '×';
+                //deleteBtn
+            }
+
+
+        });
+
+    function deleteRecord(i) {
+        let name = document.getElementsByClassName("nameInList")[i].innerText;
+
+        fetch(`https://br19-backend.herokuapp.com/deleteRecordByNameBR19?name=${name}&password=IBb1324656`, {
+                headers: {
+
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            }, {
+                mode: 'cors'
+            })
+            .then((response) => {
+                return response.json();
+            }).then((responseJson) => {
+
+                if (responseJson.statCode == 200) {
+                    document.getElementById('msg').innerText = '<b style="color:green">Deleted Successfully</b>';
+                    setTimeout(() => {
+                        document.getElementById('msg').innerText = '';
+                        location.reload();
+                    }, 2000);
+                } else {
+                    document.getElementById('msg').innerHTML = '<b style="color:red">Deletion Failed!!</b>';
+                    setTimeout(() => {
+                        document.getElementById('msg').innerText = '';
+                    }, 2000);
+                }
+
+            });
+
+
+    }
+    var elements = document.getElementsByClassName("deleteBtn");
+    for (var i = 0; i < elements.length; i++) {
+        console.log("yes")
+        elements[i].addEventListener('click', () => {
+            deleteRecord(i);
+        });
+    }
+</script>
+
+</html>
