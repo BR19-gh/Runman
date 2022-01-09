@@ -319,6 +319,11 @@ def ratelimit_handler(e):
     return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
 
 
+@app.errorhandler(500)
+def ratelimit_handler(e):
+    return jsonify({"msg": f"Error 500: something in our side went wrong, surly we are working to fix it soon", "statCode": 500})
+
+
 # other
 
 @app.route('/favicon.ico')
