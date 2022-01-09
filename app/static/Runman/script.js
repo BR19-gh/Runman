@@ -194,6 +194,7 @@ function showEnterNNPopup() {
 }
 
 function gameover() {
+    allowJumpHitSound == 0;
     clearInterval(chooseObstacleInterval);
     clearTimeout(timer);
     showEnterNNPopup();
@@ -207,7 +208,6 @@ function gameover() {
     }, 505);
     playOrStop(losingS, VoiceOn);
     playOrStop(songS, 0);
-    allowJumpHitSound == 0;
     document.getElementById("gameoverPopup").style.display = "block";
     allowRestart = 1;
     allowStart = 0;
