@@ -310,7 +310,7 @@ def users(limit=None, order=None):
 
 @app.errorhandler(429)
 def ratelimit_handler(e):
-    return jsonify({"msg": f"Error 429: you have exceeded your rate-limit, any requests won't be applied", "statCode": 429})
+    return jsonify({"msg": f"Error 429: you have exceeded your rate-limit, any further requests won't be applied", "statCode": 429})
 
 
 @app.errorhandler(401)
