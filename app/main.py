@@ -256,7 +256,7 @@ def user(nameIn=None):
 
 
 @app.route("/runman/user/<string:nameIn>/<string:password>", methods=['DELETE'])
-def user(nameIn=None,password=None):
+def userBR19(nameIn=None,password=None):
     print('The ip address: ', get_remote_address())
 
     if BR19_PASSWORD==password:
