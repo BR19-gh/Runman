@@ -1151,9 +1151,9 @@ document.getElementById("orderBtn").addEventListener("click", () => {
 
     if (order == 2) {
         if (currentPage == 'ar') {
-            document.getElementById('orderBtn').innerHTML = 'عدد<br><img style="width: 12px; height: 13px;" ="../../static/Runman/img/coin/0.png" alt="Coins">'
+            document.getElementById('orderBtn').innerHTML = 'عدد<br><img style="width: 12px; height: 13px;" ="../static/Runman/img/coin/0.png" alt="Coins">'
         } else {
-            document.getElementById('orderBtn').innerHTML = '# of <img style="width: 12px; height: 13px;" ="../../static/Runman/img/coin/0.png" alt="Coins">'
+            document.getElementById('orderBtn').innerHTML = '# of <img style="width: 12px; height: 13px;" ="../static/Runman/img/coin/0.png" alt="Coins">'
         }
         order = 1;
     } else if (order == 1) {
