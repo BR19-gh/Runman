@@ -61,15 +61,15 @@ function playOrStop(sound, VoiceOn) {
 }
 
 
-let hitS = new sound("/sound/hit.wav");
-let coinS = new sound("/sound/coin.wav");
-let songS = new sound("/sound/song_hmmm101.wav");
-let jumpS = new sound("/sound/jump.wav");
-let losingS = new sound("/sound/losing.wav");
-let hurtS = new sound("/sound/hurt.wav");
-let menuS = new sound("/sound/menu.wav")
-let menuExitS = new sound("/sound/menuExit.wav")
-let startS = new sound("/sound/start.wav");
+let hitS = new sound("../../static/Runman/sound/hit.wav");
+let coinS = new sound("../../static/Runman/sound/coin.wav");
+let songS = new sound("../../static/Runman/sound/song_hmmm101.wav");
+let jumpS = new sound("../../static/Runman/sound/jump.wav");
+let losingS = new sound("../../static/Runman/sound/losing.wav");
+let hurtS = new sound("../../static/Runman/sound/hurt.wav");
+let menuS = new sound("../../static/Runman/sound/menu.wav")
+let menuExitS = new sound("../../static/Runman/sound/menuExit.wav")
+let startS = new sound("../../static/Runman/sound/start.wav");
 
 
 
@@ -250,15 +250,15 @@ function chooseObstacle() {
 
         let picPicked = Math.floor(Math.random() * 5) + 1;
         if (picPicked == 1) {
-            document.getElementById("obstacle").style.backgroundImage = 'url("img/obstacle/1.png")';
+            document.getElementById("obstacle").style.backgroundImage = 'url("../../static/Runman/img/obstacle/1.png")';
         } else if (picPicked == 2) {
-            document.getElementById("obstacle").style.backgroundImage = 'url("img/obstacle/2.png")';
+            document.getElementById("obstacle").style.backgroundImage = 'url("../../static/Runman/img/obstacle/2.png")';
         } else if (picPicked == 3) {
-            document.getElementById("obstacle").style.backgroundImage = 'url("img/obstacle/3.png")';
+            document.getElementById("obstacle").style.backgroundImage = 'url("../../static/Runman/img/obstacle/3.png")';
         } else if (picPicked == 4) {
-            document.getElementById("obstacle").style.backgroundImage = 'url("img/obstacle/4.png")';
+            document.getElementById("obstacle").style.backgroundImage = 'url("../../static/Runman/img/obstacle/4.png")';
         } else if (picPicked == 5) {
-            document.getElementById("obstacle").style.backgroundImage = 'url("img/obstacle/5.png")';
+            document.getElementById("obstacle").style.backgroundImage = 'url("../../static/Runman/img/obstacle/5.png")';
         }
         setTimeout(() => {
             obstacle.style.display = "none";
@@ -523,7 +523,7 @@ var timer;
 
 cloudChangerVal = setInterval(() => {
     let cloudChooserVal = Math.floor(Math.random() * 3) + 1;
-    if (cloudChooserVal == 1) { cloud.style.backgroundImage = 'url("img/cloud/1.png")'; } else if (cloudChooserVal == 2) { cloud.style.backgroundImage = 'url("img/cloud/2.png")'; } else { cloud.style.backgroundImage = 'url("img/cloud/3.png")'; }
+    if (cloudChooserVal == 1) { cloud.style.backgroundImage = 'url("../../static/Runman/../../static/Runman/img/cloud/1.png")'; } else if (cloudChooserVal == 2) { cloud.style.backgroundImage = 'url("../../static/Runman/img/cloud/2.png")'; } else { cloud.style.backgroundImage = 'url("../../static/Runman/img/cloud/3.png")'; }
 }, 20000);
 
 
