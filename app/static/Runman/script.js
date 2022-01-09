@@ -61,15 +61,15 @@ function playOrStop(sound, VoiceOn) {
 }
 
 
-let hitS = new sound("../../static/Runman/sound/hit.wav");
-let coinS = new sound("../../static/Runman/coin.wav");
-let songS = new sound("../../static/Runman/song_hmmm101.wav");
-let jumpS = new sound("../../static/Runman/jump.wav");
-let losingS = new sound("../../static/Runman/losing.wav");
-let hurtS = new sound("../../static/Runman/hurt.wav");
-let menuS = new sound("../../static/Runman/menu.wav")
-let menuExitS = new sound("../../static/Runman/menuExit.wav")
-let startS = new sound("../../static/Runman/start.wav");
+let hitS = new sound("sound/hit.wav");
+let coinS = new sound("sound/coin.wav");
+let songS = new sound("sound/song_hmmm101.wav");
+let jumpS = new sound("sound/jump.wav");
+let losingS = new sound("sound/losing.wav");
+let hurtS = new sound("sound/hurt.wav");
+let menuS = new sound("sound/menu.wav")
+let menuExitS = new sound("sound/menuExit.wav")
+let startS = new sound("sound/start.wav");
 
 
 
