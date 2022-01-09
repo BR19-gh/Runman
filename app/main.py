@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify, request, abort
 import os
+from flask.helpers import send_from_directory
 from flask.wrappers import Response
 import psycopg2
 import psycopg2.extras as ext
@@ -12,8 +13,7 @@ BR19_PASSWORD = os.environ.get('BR19_PASSWORD')
 
 
 app = Flask(__name__,template_folder='templates')
-cors = CORS(app, resources={r"/": {"origins": "br19.me"}})
-
+#cors = CORS(app)
 limiter = Limiter(
     app,
     key_func=get_remote_address,
@@ -61,9 +61,6 @@ class RecordsTable:
     def __del__(self):
         self.conn.close()
 
-
-app = Flask(__name__,template_folder='templates')
-CORS(app)
 
 ##### routes
 
@@ -173,20 +170,26 @@ def addUser():
     hcoins = request.args.get('hcoins')
     htime = request.args.get('htime')
 
+    if " " in name or "\t" in name or f"\n" in name or name == None:
+        return jsonify({"msg": f"Invalid input 400: name:{name} contains spaces or invalid characters, therefore player:{name} will not be added", "statCode": 400})
+    if int(hcoins)>700:
+        return jsonify({"msg": f"Invalid input 400: hcoins:{hcoins} is too much, therefore player:{name} will not be added", "statCode": 400})
+    if int(htime)>100:
+        return jsonify({"msg": f"Invalid input 400: htime:{htime} is too much, therefore player:{name} will not be added", "statCode": 400})
+    
     result = newObj.search(name)
-
     if result == None:
         pass
     else:
         return jsonify({"msg": f"Error 403: the name {name} already exists", "statCode": 403})
 
     newObj.insert(name, hcoins, htime)
+   
     recordSearched = newObj.search(name)
-
     if (recordSearched[0] == name):
-        return jsonify({"msg": f"Success 200: player {name} is recorded, the name matches {(newObj.search(name))[0]}", "statCode": 200})
+        return jsonify({"msg": f"Success 200: player:{name} is recorded, the name matches {(newObj.search(name))[0]}", "statCode": 200})
     else:
-        return jsonify({"msg": f"Unkown Error 500: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
+        return jsonify({"msg": f"Unkown Error 500: player:{name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
 
 
 @app.route("/addUserBR19")
@@ -206,9 +209,9 @@ def addUserBR19():
         recordSearched = newObj.search(name)
 
         if (recordSearched[0] == name):
-            return jsonify({"msg": f"Success 200: player {name} is recorded, the name matches {(newObj.search(name))[0]}", "statCode": 200})
+            return jsonify({"msg": f"Success 200: player:{name} is recorded, the name matches {(newObj.search(name))[0]}", "statCode": 200})
         else:
-            return jsonify({"msg": f"Unkown Error 500: player {name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
+            return jsonify({"msg": f"Unkown Error 500: player:{name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
 
     else:
         abort(401)
@@ -225,17 +228,23 @@ def updateUserRecords():
     hcoins = request.args.get('hcoins')
     htime = request.args.get('htime')
 
+    if int(hcoins)>700:
+        return jsonify({"msg": f"Invalid input 400: hcoins:{hcoins} is too much, therefore player:{name} will not be updated", "statCode": 400})
+    if int(htime)>100:
+        return jsonify({"msg": f"Invalid input 400: htime:{htime} is too much, therefore player:{name} will not be updated", "statCode": 400})
+    
+
     oldUserRecord = newObj.search(name)
 
     newObj.update(name, hcoins, htime)
 
     recordSearched = newObj.search(name)
     if recordSearched == None:
-        return jsonify({"msg": f"Error 404: player {name} was not updated because they didn't have a record before (maybe first time playing?) ", "statCode": 404})
+        return jsonify({"msg": f"Error 404: player:{name} was not updated because they didn't have a record before (maybe first time playing?) ", "statCode": 404})
     elif (recordSearched[0] == name):
-        return jsonify({"msg": f"Success 200: player {name} is updated, old data:{oldUserRecord}, new data:{newObj.search(name)}", "statCode": 200})
+        return jsonify({"msg": f"Success 200: player:{name} is updated, old data:{oldUserRecord}, new data:{newObj.search(name)}", "statCode": 200})
     else:
-        return jsonify({"msg": f"Unkown Error 500: player {name} was not updated, old data:{oldUserRecord}, new data:{newObj.search(name)}", "statCode": 500})
+        return jsonify({"msg": f"Unkown Error 500: player:{name} was not updated, old data:{oldUserRecord}, new data:{newObj.search(name)}", "statCode": 500})
 
 
 @app.route("/displayRecords")
@@ -380,3 +389,10 @@ def ratelimit_handler(e):
 @app.errorhandler(401)
 def ratelimit_handler(e):
    return jsonify({"msg": f"Error 401: unauthrized access", "statCode": 401})
+
+##### other
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static', 'img'),
+                               'favicon.ico', mimetype='image/png')
