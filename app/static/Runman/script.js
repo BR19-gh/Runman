@@ -523,7 +523,7 @@ var timer;
 
 cloudChangerVal = setInterval(() => {
     let cloudChooserVal = Math.floor(Math.random() * 3) + 1;
-    if (cloudChooserVal == 1) { cloud.style.backgroundImage = 'url("../../static/Runman/../../static/Runman/img/cloud/1.png")'; } else if (cloudChooserVal == 2) { cloud.style.backgroundImage = 'url("../../static/Runman/img/cloud/2.png")'; } else { cloud.style.backgroundImage = 'url("../../static/Runman/img/cloud/3.png")'; }
+    if (cloudChooserVal == 1) { cloud.style.backgroundImage = 'url("../../static/Runman/img/cloud/1.png")'; } else if (cloudChooserVal == 2) { cloud.style.backgroundImage = 'url("../../static/Runman/img/cloud/2.png")'; } else { cloud.style.backgroundImage = 'url("../../static/Runman/img/cloud/3.png")'; }
 }, 20000);
 
 
