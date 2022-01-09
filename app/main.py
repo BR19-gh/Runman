@@ -108,7 +108,7 @@ def home_view_runman_ar():
 
 @app.route("/runman/db")
 @limiter.exempt
-def home_view_runman_ar():
+def home_view_runman_db():
     return render_template('Runman/Dashboard.html')
 
 # DemonsKiller
