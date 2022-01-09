@@ -178,7 +178,7 @@ def home_view_onethree():
 @app.route("/runman/user", methods=['POST', 'PUT'])
 @app.route("/runman/user/<string:nameIn>", methods=['DELETE', 'GET'])
 @limiter.limit('1 per 30seconds', methods=['POST', 'PUT', 'DELETE'])
-def user(nameIn, id):
+def user(nameIn=None):
     print('The ip address: ', get_remote_address())
     newObj = RecordsTable()
 
@@ -283,7 +283,7 @@ def userDeleteId(id):
 @app.route("/runman/users/<int:order>/")
 @app.route("/runman/users/<int:limit>/<int:order>")
 @limiter.exempt
-def users(limit, order):
+def users(limit=None, order=None):
     print('The ip address: ', get_remote_address())
     newObj = RecordsTable()
 
