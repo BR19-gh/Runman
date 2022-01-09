@@ -77,14 +77,12 @@
 </style>
 <script>
     let order = 2;
-    fetch('https://br19-backend.herokuapp.com/displayRecords?limit=0&order=' + order, {
+    fetch('http://www.br19.me/users', {
             headers: {
 
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
-        }, {
-            mode: 'cors'
         })
         .then((response) => {
             return response.json();
@@ -148,14 +146,13 @@
     function deleteRecord(i) {
         let name = document.getElementsByClassName("nameInList")[i].innerText;
 
-        fetch(`https://br19-backend.herokuapp.com/deleteRecordByNameBR19?name=${name}&password=IBb1324656`, {
+        fetch(`http://www.br19.me/runman/user/${name}/HelloWorld1432`, {
                 headers: {
 
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
-                }
-            }, {
-                mode: 'cors'
+                },
+                method: 'DELETE'
             })
             .then((response) => {
                 return response.json();
