@@ -176,7 +176,7 @@ def home_view_onethree():
 # Runman Backend
 
 @app.route("/runman/user", methods=['POST', 'PUT'])
-@app.route("/runman/user/<str:nameIn>", methods=['DELETE', 'GET'])
+@app.route("/runman/user/<string:nameIn>", methods=['DELETE', 'GET'])
 @limiter.limit('1 per 30seconds', methods=['POST', 'PUT', 'DELETE'])
 def user(nameIn, id):
     print('The ip address: ', get_remote_address())
