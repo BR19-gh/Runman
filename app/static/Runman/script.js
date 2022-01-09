@@ -754,7 +754,7 @@ let voiceStopped = localStorage.getItem("voiceStopped");
 if (voiceStopped == 1) {
     localStorage.setItem("voiceStopped", 1);
     VoiceOn = 0;
-    document.getElementById("Voice").innerHTML = '<img ="../../static/Runman/img/icons/VoiceOff.png" alt="Voice Off">';
+    document.getElementById("Voice").innerHTML = '<img src="../../static/Runman/img/icons/VoiceOff.png" alt="Voice Off">';
 }
 
 document.getElementById("Voice").addEventListener("click", () => {
@@ -762,12 +762,12 @@ document.getElementById("Voice").addEventListener("click", () => {
     if (VoiceOn == 1) {
         localStorage.setItem("voiceStopped", 1);
         VoiceOn = 0;
-        document.getElementById("Voice").innerHTML = '<img ="../../static/Runman/img/icons/VoiceOff.png" alt="Voice Off">';
+        document.getElementById("Voice").innerHTML = '<img src="../../static/Runman/img/icons/VoiceOff.png" alt="Voice Off">';
     } else {
         playOrStop(menuS, VoiceOn);
         localStorage.setItem("voiceStopped", 0);
         VoiceOn = 1;
-        document.getElementById("Voice").innerHTML = '<img ="../../static/Runman/img/icons/VoiceOn.png" alt="Voice On">';
+        document.getElementById("Voice").innerHTML = '<img src="../../static/Runman/img/icons/VoiceOn.png" alt="Voice On">';
     }
 
 
@@ -1084,19 +1084,19 @@ function displayRecordsForRanking() {
                 }
                 if ('1' == rank.innerText) {
                     if (currentPage == 'ar') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
-                    rank.innerHTML = '<img style="width: 16px; height: 17px;" src="../static/Runman/img/coin/gold.png" alt="1st">';
+                    rank.innerHTML = '<img style="width: 16px; height: 17px;" src="../../static/Runman/img/coin/gold.png" alt="1st">';
                     if (localStorage.nickname == usersFetched[i]['name']) {
                         document.getElementsByClassName('rank')[i].style.backgroundColor = "#00000010";
                     }
                 } else if ('2' == rank.innerText) {
                     if (currentPage == 'ar') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
-                    rank.innerHTML = '<img style="width: 16px; height: 17px;" src="../static/Runman/img/coin/silver.png" alt="2nd">';
+                    rank.innerHTML = '<img style="width: 16px; height: 17px;" src="../../static/Runman/img/coin/silver.png" alt="2nd">';
                     if (localStorage.nickname == usersFetched[i]['name']) {
                         document.getElementsByClassName('rank')[i].style.backgroundColor = "#00000010";
                     }
                 } else if ('3' == rank.innerText) {
                     if (currentPage == 'ar') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
-                    rank.innerHTML = '<img style="width: 16px; height: 17px;" src="../static/Runman/img/coin/bronze.png" alt="3rd">';
+                    rank.innerHTML = '<img style="width: 16px; height: 17px;" src="../../static/Runman/img/coin/bronze.png" alt="3rd">';
                     if (localStorage.nickname == usersFetched[i]['name']) {
                         document.getElementsByClassName('rank')[i].style.backgroundColor = "#00000010";
                     }
