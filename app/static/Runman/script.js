@@ -1074,19 +1074,19 @@ function displayRecordsForRanking() {
                 }
                 if ('1' == rank.innerText) {
                     if (currentPage == 'ar') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
-                    rank.innerHTML = '<img style="width: 16px; height: 17px;" ="../../static/Runman/img/coin/gold.png" alt="1st">';
+                    rank.innerHTML = '<img style="width: 16px; height: 17px;" ="../static/Runman/img/coin/gold.png" alt="1st">';
                     if (localStorage.nickname == usersFetched[i]['name']) {
                         document.getElementsByClassName('rank')[i].style.backgroundColor = "#00000010";
                     }
                 } else if ('2' == rank.innerText) {
                     if (currentPage == 'ar') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
-                    rank.innerHTML = '<img style="width: 16px; height: 17px;" ="../../static/Runman/img/coin/silver.png" alt="2nd">';
+                    rank.innerHTML = '<img style="width: 16px; height: 17px;" ="../static/Runman/img/coin/silver.png" alt="2nd">';
                     if (localStorage.nickname == usersFetched[i]['name']) {
                         document.getElementsByClassName('rank')[i].style.backgroundColor = "#00000010";
                     }
                 } else if ('3' == rank.innerText) {
                     if (currentPage == 'ar') { rank.setAttribute('style', 'line-height: 11px;'); } else { rank.setAttribute('style', 'line-height: 21px;'); }
-                    rank.innerHTML = '<img style="width: 16px; height: 17px;" ="../../static/Runman/img/coin/bronze.png" alt="3rd">';
+                    rank.innerHTML = '<img style="width: 16px; height: 17px;" ="../static/Runman/img/coin/bronze.png" alt="3rd">';
                     if (localStorage.nickname == usersFetched[i]['name']) {
                         document.getElementsByClassName('rank')[i].style.backgroundColor = "#00000010";
                     }
