@@ -280,7 +280,6 @@ def userDeleteId(id):
 
 @app.route("/runman/users/")
 @app.route("/runman/users/<int:limit>/")
-@app.route("/runman/users/<int:order>/")
 @app.route("/runman/users/<int:limit>/<int:order>")
 @limiter.exempt
 def users(limit=None, order=None):
