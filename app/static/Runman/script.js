@@ -1004,6 +1004,7 @@ function addUser(name, hcoins, htime) {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
+            method = 'POST',
             body: JSON.stringify({
                 name: name,
                 hcoins: hcoins,
@@ -1027,6 +1028,7 @@ function updateUserRecords(name, hcoins, htime) {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
+            method = 'PUT',
             body: JSON.stringify({
                 name: name,
                 hcoins: hcoins,
