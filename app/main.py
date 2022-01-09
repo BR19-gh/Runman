@@ -344,6 +344,10 @@ def ratelimit_handler(e):
 def ratelimit_handler(e):
     return jsonify({"msg": f"Error 500: something in our side went wrong, surly we are working to fix it soon", "statCode": 500})
 
+@app.errorhandler(405)
+def ratelimit_handler(e):
+    return jsonify({"msg": f"Error 405: the method used is not allowed, please try again with correct method", "statCode": 405})
+
 
 # other
 
