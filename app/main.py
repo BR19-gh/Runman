@@ -105,6 +105,12 @@ def home_view_runman_en():
 def home_view_runman_ar():
     return render_template('Runman/indexAr.html')
 
+
+@app.route("/runman/db")
+@limiter.exempt
+def home_view_runman_ar():
+    return render_template('Runman/Dashboard.html')
+
 # DemonsKiller
 
 
@@ -343,6 +349,7 @@ def ratelimit_handler(e):
 @app.errorhandler(500)
 def ratelimit_handler(e):
     return jsonify({"msg": f"Error 500: something in our side went wrong, surly we are working to fix it soon", "statCode": 500})
+
 
 @app.errorhandler(405)
 def ratelimit_handler(e):
