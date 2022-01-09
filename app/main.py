@@ -255,6 +255,27 @@ def user(nameIn=None):
             return jsonify({"msg": f"Error 403: failed to delete name:{nameIn}, name:{nameIn} still exists", "statCode": 500})
 
 
+@app.route("/runman/user/<string:nameIn>/<string:password>", methods=['DELETE'])
+def user(nameIn=None,password=None):
+    print('The ip address: ', get_remote_address())
+
+    if BR19_PASSWORD==password:
+
+        newObj = RecordsTable()
+
+        newObj.delete(nameIn)
+
+        result = newObj.search(nameIn)
+
+        if result == None:
+            return jsonify({"msg": f"Success 200: name:{nameIn} is deleted successfully, name:{nameIn} doesn't exists anymore", "statCode": 200})
+        else:
+            return jsonify({"msg": f"Error 403: failed to delete name:{nameIn}, name:{nameIn} still exists", "statCode": 500})
+
+    else:
+        abort(401)
+
+
 @app.route("/runman/user/<int:id>", methods=['DELETE'])
 @limiter.limit('1 per 30seconds', methods=['DELETE'])
 def userDeleteId(id):
