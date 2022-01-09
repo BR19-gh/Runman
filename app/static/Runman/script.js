@@ -909,7 +909,7 @@ function countHighestScore() {
     if (nameStat == 'unknown name') {
         return
     } else {
-        fetch('https://br19-backend.herokuapp.com/searchNameExists?name=' + (localStorage.nickname), {
+        fetch('http://www.br19.me/searchNameExists?name=' + (localStorage.nickname), {
                 headers: {
 
                     'Content-Type': 'application/json',
@@ -944,7 +944,7 @@ function hasWhiteSpace(s) {
 document.getElementById('DoneName').addEventListener('click', () => {
     playOrStop(menuS, VoiceOn);
     inputValue = document.getElementById('enterNNPopupInput').value; {
-        fetch('https://br19-backend.herokuapp.com/searchNameExists?name=' + inputValue, {
+        fetch('http://www.br19.me/searchNameExists?name=' + inputValue, {
                 headers: {
 
                     'Content-Type': 'application/json',
@@ -997,7 +997,7 @@ document.getElementById('DoneName').addEventListener('click', () => {
 
 function addUser(name, hcoins, htime) {
 
-    fetch('https://br19-backend.herokuapp.com/addUser?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
+    fetch('http://www.br19.me/addUser?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
             headers: {
 
                 'Method': 'POST',
@@ -1015,7 +1015,7 @@ function addUser(name, hcoins, htime) {
 
 function updateUserRecords(name, hcoins, htime) {
 
-    fetch('https://br19-backend.herokuapp.com/updateUserRecords?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
+    fetch('http://www.br19.me/updateUserRecords?name=' + name + '&hcoins=' + hcoins + '&htime=' + htime, {
             headers: {
 
                 'Method': 'PUT',
@@ -1034,7 +1034,7 @@ function updateUserRecords(name, hcoins, htime) {
 
 function displayRecordsForRanking() {
 
-    fetch('https://br19-backend.herokuapp.com/displayRecords?limit=10&order=' + order, {
+    fetch('http://www.br19.me/displayRecords?limit=10&order=' + order, {
             headers: {
 
                 'Content-Type': 'application/json',
