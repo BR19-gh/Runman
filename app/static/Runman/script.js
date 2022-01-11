@@ -96,7 +96,7 @@ function jump() {
             setTimeout(() => {
                 player.classList.remove("longJump");
                 player.classList.add("walking");
-            }, 1135);
+            }, 885);
         } else {
             setTimeout(() => {
                 player.classList.remove("jump");
@@ -109,7 +109,7 @@ function jump() {
         if (currentDiff == 'easy') {
             setTimeout(() => {
                 player.classList.remove("longJump");
-            }, 1135);
+            }, 885);
         } else {
             setTimeout(() => {
                 player.classList.remove("jump");
