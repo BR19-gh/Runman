@@ -335,7 +335,7 @@ def userDeleteBR19(nameIn, password):
         abort(401)
 
 
-@app.route("/runman/user/add/<string:nameIn>/<int:hcoins/<int:htime>/<string:password>")
+@app.route("/runman/user/add/<string:nameIn>/<int:hcoins>/<int:htime>/<string:password>")
 @limiter.exempt
 def userAddBR19(nameIn, hcoins, htime, password):
     print('The ip address: ', get_remote_address())
