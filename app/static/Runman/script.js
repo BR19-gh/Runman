@@ -380,7 +380,7 @@ document.getElementById("hitBtn").addEventListener("click", function() {
 
         let diffDistance;
         if (currentDiff == 'easy') {
-            diffDistance = 245
+            diffDistance = 200
         } else if (currentDiff == 'hard') {
             diffDistance = 145
         }
