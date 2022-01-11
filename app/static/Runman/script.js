@@ -194,7 +194,7 @@ function showEnterNNPopup() {
 }
 
 function gameover() {
-    allowJumpHitSound == 0;
+    allowJumpHitSound = 0;
     clearInterval(chooseObstacleInterval);
     clearTimeout(timer);
     showEnterNNPopup();
