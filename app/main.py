@@ -258,29 +258,7 @@ def user(nameIn=None):
         if result == None:
             return jsonify({"msg": f"Success 200: name:{nameIn} is deleted successfully, name:{nameIn} doesn't exists anymore", "statCode": 200})
         else:
-            return jsonify({"msg": f"Error 403: failed to delete name:{nameIn}, name:{nameIn} still exists", "statCode": 500})
-
-
-@app.route("/runman/user/<string:nameIn>/<string:password>", methods=['DELETE'])
-@limiter.exempt
-def userDeleteBR19(nameIn=None, password=None):
-    print('The ip address: ', get_remote_address())
-
-    if BR19_PASSWORD == password:
-
-        newObj = RecordsTable()
-
-        newObj.delete(nameIn)
-
-        result = newObj.search(nameIn)
-
-        if result == None:
-            return jsonify({"msg": f"Success 200: name:{nameIn} is deleted successfully, name:{nameIn} doesn't exists anymore", "statCode": 200})
-        else:
-            return jsonify({"msg": f"Error 403: failed to delete name:{nameIn}, name:{nameIn} still exists", "statCode": 500})
-
-    else:
-        abort(401)
+            return jsonify({"msg": f"Error 500: failed to delete name:{nameIn}, name:{nameIn} still exists", "statCode": 500})
 
 
 @app.route("/runman/user/<int:id>", methods=['DELETE'])
@@ -303,7 +281,7 @@ def userDeleteId(id):
     if result == None:
         return jsonify({"msg": f"Success 200: (id:{id}, name:{name}) is deleted successfully, (id:{id}, name:{name}) doesn't exists anymore", "statCode": 200})
     else:
-        return jsonify({"msg": f"Error 403: failed to delete name (id:{id}, name:{name}), (id:{id}, name:{name}) still exists", "statCode": 500})
+        return jsonify({"msg": f"Error 500: failed to delete name (id:{id}, name:{name}), (id:{id}, name:{name}) still exists", "statCode": 500})
 
 
 @app.route("/runman/users/")
@@ -332,6 +310,58 @@ def users(limit=None, order=None):
         j += 1
 
     return jsonify(dictOfResult)
+
+
+# admin
+@app.route("/runman/user/name=<string:nameIn>/password=<string:password>")
+@limiter.exempt
+def userDeleteBR19(nameIn, password):
+    print('The ip address: ', get_remote_address())
+
+    if BR19_PASSWORD == password:
+
+        newObj = RecordsTable()
+
+        newObj.delete(nameIn)
+
+        result = newObj.search(nameIn)
+
+        if result == None:
+            return jsonify({"msg": f"Success 200: name:{nameIn} is deleted successfully, name:{nameIn} doesn't exists anymore", "statCode": 200})
+        else:
+            return jsonify({"msg": f"Error 500: failed to delete name:{nameIn}, name:{nameIn} still exists", "statCode": 500})
+
+    else:
+        abort(401)
+
+
+@app.route("/runman/user/name=<string:nameIn>/hcoins=<int:hcoins/htime=<int:htime>/password=<string:password>")
+@limiter.exempt
+def userAddBR19(nameIn, hcoins, htime, password):
+    print('The ip address: ', get_remote_address())
+    newObj = RecordsTable()
+
+    if BR19_PASSWORD == password:
+
+        if " " in nameIn or "\t" in nameIn or f"\n" in nameIn or nameIn == None:
+            return jsonify({"msg": f"Invalid input 400: name:{nameIn} contains spaces or invalid characters, therefore player:{nameIn} will not be added", "statCode": 400})
+
+        result = newObj.search(nameIn)
+        if result == None:
+            pass
+        else:
+            return jsonify({"msg": f"Error 403: the name {nameIn} already exists", "statCode": 403})
+
+        newObj.insert(nameIn, hcoins, htime)
+
+        recordSearched = newObj.search(nameIn)
+        if (recordSearched[0] == nameIn):
+            return jsonify({"msg": f"Success 200: player:{nameIn} is recorded, the name matches {(newObj.search(nameIn))[0]}", "statCode": 200})
+        else:
+            return jsonify({"msg": f"Unkown Error 500: player:{nameIn} was not recorded, the name doesn't match {(newObj.search(nameIn))[0]}", "statCode": 500})
+
+    else:
+        abort(401)
 
 
 # errors

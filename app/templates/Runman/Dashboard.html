@@ -16,8 +16,8 @@
             <div class="proto">Name</div>
             <div class="proto">Coins</div>
             <div class="proto">Time</div>
-            <div class="proto">Delete</div>
         </li>
+
     </ol>
     <div id="msg"></div>
 
@@ -132,20 +132,12 @@
                 alist.appendChild(htimeInList);
                 htimeInList.innerText = `${usersFetched[i]['htime']}`;
                 //htimeInList
-
-                //deleteBtn
-                let deleteBtn = document.createElement('div');
-                deleteBtn.setAttribute('class', 'deleteBtn');
-                alist.appendChild(deleteBtn);
-                deleteBtn.innerText = '×';
-                //deleteBtn
             }
 
 
         });
 
-    function deleteRecord(i) {
-        let name = document.getElementsByClassName("nameInList")[i].innerText;
+    function deleteRecord(name) {
 
         fetch(`http://www.br19.me/runman/user/${name}/HelloWorld1432`, {
                 headers: {
@@ -175,13 +167,6 @@
             });
 
 
-    }
-    var elements = document.getElementsByClassName("deleteBtn");
-    for (var i = 0; i < elements.length; i++) {
-        console.log("yes")
-        elements[i].addEventListener('click', () => {
-            deleteRecord(i);
-        });
     }
 </script>
 
