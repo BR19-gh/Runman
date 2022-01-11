@@ -380,7 +380,7 @@ document.getElementById("hitBtn").addEventListener("click", function() {
 
         let diffDistance;
         if (currentDiff == 'easy') {
-            diffDistance = 145
+            diffDistance = 245
         } else if (currentDiff == 'hard') {
             diffDistance = 145
         }
@@ -424,7 +424,7 @@ function checkKeyPress2(key) {
 
             let diffDistance;
             if (currentDiff == 'easy') {
-                diffDistance = 345
+                diffDistance = 245
             } else if (currentDiff == 'hard') {
                 diffDistance = 145
             }
