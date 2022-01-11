@@ -313,7 +313,7 @@ def users(limit=None, order=None):
 
 
 # admin
-@app.route("/runman/user/name=<string:nameIn>/password=<string:password>")
+@app.route("/runman/user/<string:nameIn>/<string:password>")
 @limiter.exempt
 def userDeleteBR19(nameIn, password):
     print('The ip address: ', get_remote_address())
@@ -335,7 +335,7 @@ def userDeleteBR19(nameIn, password):
         abort(401)
 
 
-@app.route("/runman/user/name=<string:nameIn>/hcoins=<int:hcoins/htime=<int:htime>/password=<string:password>")
+@app.route("/runman/user/<string:nameIn>/<int:hcoins/<int:htime>/<string:password>")
 @limiter.exempt
 def userAddBR19(nameIn, hcoins, htime, password):
     print('The ip address: ', get_remote_address())
