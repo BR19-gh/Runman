@@ -197,9 +197,9 @@ def user(nameIn=None):
 
         if " " in name or "\t" in name or f"\n" in name or name == None:
             return jsonify({"msg": f"Invalid input 400: name:{name} contains spaces or invalid characters, therefore player:{name} will not be added", "statCode": 400})
-        if int(hcoins) > 700:
+        if int(hcoins) > 100:
             return jsonify({"msg": f"Invalid input 400: hcoins:{hcoins} is too much, therefore player:{name} will not be added", "statCode": 400})
-        if int(htime) > 100:
+        if int(htime) > 700:
             return jsonify({"msg": f"Invalid input 400: htime:{htime} is too much, therefore player:{name} will not be added", "statCode": 400})
 
         result = newObj.search(name)
