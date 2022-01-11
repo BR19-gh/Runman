@@ -665,7 +665,7 @@ body {
 }
 
 .longJump {
-    animation: longJump 1.2s linear;
+    animation: longJump 0.9s linear;
 }
 
 .walking {

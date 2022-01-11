@@ -380,7 +380,7 @@ document.getElementById("hitBtn").addEventListener("click", function() {
 
         let diffDistance;
         if (currentDiff == 'easy') {
-            diffDistance = 345
+            diffDistance = 245
         } else if (currentDiff == 'hard') {
             diffDistance = 145
         }
@@ -832,18 +832,18 @@ if (currentDiff == null) {
 } else if (currentDiff == 'hard') {
     if (currentPage == 'ar') {
         document.getElementById("difficultyText").innerText = "صعب";
-        document.getElementById("difficultyText").title = "صعب: قفز ومدى ضرب أقصر";
+        document.getElementById("difficultyText").title = "صعب: قفز أقصر ومدى ضرب أضيق";
     } else {
         document.getElementById("difficultyText").innerText = "Hard";
-        document.getElementById("difficultyText").title = "Hard: short jump and hit range";
+        document.getElementById("difficultyText").title = "Hard: short jump and narrow hit range";
     }
 } else if (currentDiff == 'easy') {
     if (currentPage == 'ar') {
         document.getElementById("difficultyText").innerText = "سهل";
-        document.getElementById("difficultyText").title = "سهل: قفز ومدى ضرب أطول";
+        document.getElementById("difficultyText").title = "سهل: قفز أطول ومدى ضرب أوسع";
     } else {
         document.getElementById("difficultyText").innerText = "Easy";
-        document.getElementById("difficultyText").title = "Easy: long jump and hit range";
+        document.getElementById("difficultyText").title = "Easy: long jump and wide hit range";
     }
 }
 
@@ -854,20 +854,20 @@ function changeDiff() {
     if (currentDiff == 'easy') {
         if (currentPage == 'ar') {
             document.getElementById("difficultyText").innerText = "صعب";
-            document.getElementById("difficultyText").title = "صعب: قفز ومدى ضرب أقصر";
+            document.getElementById("difficultyText").title = "صعب: قفز أقصر ومدى ضرب أضيق";
         } else {
             document.getElementById("difficultyText").innerText = "Hard";
-            document.getElementById("difficultyText").title = "Hard: short jump and hit range";
+            document.getElementById("difficultyText").title = "Hard: short jump and narrow hit range";
         }
         localStorage.setItem("currentDiff", 'hard');
         currentDiff = localStorage.getItem("currentDiff");
     } else if (currentDiff == 'hard') {
         if (currentPage == 'ar') {
             document.getElementById("difficultyText").innerText = "سهل";
-            document.getElementById("difficultyText").title = "سهل: قفز ومدى ضرب أطول";
+            document.getElementById("difficultyText").title = "سهل: قفز أطول ومدى ضرب أوسع";
         } else {
             document.getElementById("difficultyText").innerText = "Easy";
-            document.getElementById("difficultyText").title = "Easy: long jump and hit range";
+            document.getElementById("difficultyText").title = "Easy: long jump and wide hit range";
         }
         localStorage.setItem("currentDiff", 'easy');
         currentDiff = localStorage.getItem("currentDiff");

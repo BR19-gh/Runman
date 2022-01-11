@@ -223,9 +223,9 @@ def user(nameIn=None):
         hcoins = data['hcoins']
         htime = data['htime']
 
-        if int(hcoins) > 700:
+        if int(hcoins) > 100:
             return jsonify({"msg": f"Invalid input 400: hcoins:{hcoins} is too much, therefore player:{name} will not be updated", "statCode": 400})
-        if int(htime) > 100:
+        if int(htime) > 700:
             return jsonify({"msg": f"Invalid input 400: htime:{htime} is too much, therefore player:{name} will not be updated", "statCode": 400})
 
         oldUserRecord = newObj.search(name)
