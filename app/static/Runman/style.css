@@ -1012,7 +1012,7 @@ body {
         left: 240px;
         opacity: 0;
     }
-    20% {
+    15% {
         opacity: 0;
     }
     30% {
@@ -1021,7 +1021,7 @@ body {
     70% {
         opacity: 1;
     }
-    80% {
+    85% {
         opacity: 0;
     }
     100% {
