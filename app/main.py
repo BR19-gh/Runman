@@ -252,7 +252,7 @@ def user(nameIn=None):
 
         result = newObj.search(nameIn)
         if result == None:
-              return jsonify({"msg": f"Error 404: name:{nameIn} was not found, it may doesn't exists", "statCode": 404})
+            return jsonify({"msg": f"Error 404: name:{nameIn} was not found, it may doesn't exists", "statCode": 404})
 
         newObj.delete(nameIn)
 
@@ -277,10 +277,10 @@ def userDeleteId(id):
         dictOfResult[j] = {'name': i[0], 'hcoins': i[1], 'htime': i[2]}
         j += 1
     name = dictOfResult[id]['name']
-    
+
     result = newObj.search(name)
     if result == None:
-            return jsonify({"msg": f"Error 404: name:{name} was not found, it may doesn't exists", "statCode": 404})
+        return jsonify({"msg": f"Error 404: name:{name} was not found, it may doesn't exists", "statCode": 404})
 
     newObj.delete(name)
 
@@ -374,9 +374,12 @@ def userAddBR19(nameIn, hcoins, htime, password):
 
     else:
         abort(401)
+
+
 gdgd
 
 # errors
+
 
 @app.errorhandler(429)
 def ratelimit_handler(e):
@@ -393,9 +396,15 @@ def ratelimit_handler(e):
     return jsonify({"msg": f"Error 500: something in our side went wrong, surly we are working to fix it soon, please try again later", "statCode": 500})
 
 
+@app.errorhandler(503)
+def ratelimit_handler(e):
+    return jsonify({"msg": f"Error 500: something in our side went wrong, surly we are working to fix it soon, please try again later", "statCode": 500})
+
+
 @app.errorhandler(405)
 def ratelimit_handler(e):
     return jsonify({"msg": f"Error 405: the method used is not allowed, please try again with correct method", "statCode": 405})
+
 
 @app.errorhandler(404)
 def ratelimit_handler(e):
