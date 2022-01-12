@@ -183,7 +183,8 @@ def home_view_onethree():
 
 @app.route("/runman/user", methods=['POST', 'PUT'])
 @app.route("/runman/user/<string:nameIn>", methods=['DELETE', 'GET'])
-@limiter.limit('1 per 30seconds', per_method=True, methods=['POST', 'PUT', 'DELETE'])
+@limiter.limit('1 per 30seconds', per_method=True, methods=['PUT'])
+@limiter.limit('1 per 90seconds', per_method=True, methods=['POST', 'DELETE'])
 def user(nameIn=None):
     print('The ip address: ', get_remote_address())
     newObj = RecordsTable()
@@ -378,12 +379,16 @@ def ratelimit_handler(e):
 
 @app.errorhandler(500)
 def ratelimit_handler(e):
-    return jsonify({"msg": f"Error 500: something in our side went wrong, surly we are working to fix it soon", "statCode": 500})
+    return jsonify({"msg": f"Error 500: something in our side went wrong, surly we are working to fix it soon, please try again later", "statCode": 500})
 
 
 @app.errorhandler(405)
 def ratelimit_handler(e):
     return jsonify({"msg": f"Error 405: the method used is not allowed, please try again with correct method", "statCode": 405})
+
+@app.errorhandler(404)
+def ratelimit_handler(e):
+    return jsonify({"msg": f"Error 404: the requested URL was not found on the server. If you entered the URL manually please check your spelling and try again", "statCode": 404})
 
 
 # other
