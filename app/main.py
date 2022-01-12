@@ -143,7 +143,7 @@ def home_view_dagshtick():
 @app.route("/dawrati")
 @limiter.exempt
 def home_view_dawrati():
-    return render_template('dawrati/home.html')
+    return render_template('dawrati/main.html')
 
 # Blogger
 
