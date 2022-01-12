@@ -250,7 +250,8 @@ def user(nameIn=None):
 
     elif request.method == 'DELETE':
 
-        if nameIn == None:
+        result = newObj.search(nameIn)
+        if result == None:
               return jsonify({"msg": f"Error 404: name:{nameIn} was not found, it may doesn't exists", "statCode": 404})
 
         newObj.delete(nameIn)
@@ -276,9 +277,14 @@ def userDeleteId(id):
         dictOfResult[j] = {'name': i[0], 'hcoins': i[1], 'htime': i[2]}
         j += 1
     name = dictOfResult[id]['name']
-    newObj.delete(dictOfResult[id]['name'])
+    
+    result = newObj.search(name)
+    if result == None:
+            return jsonify({"msg": f"Error 404: name:{name} was not found, it may doesn't exists", "statCode": 404})
 
-    result = newObj.search(dictOfResult[id]['name'])
+    newObj.delete(name)
+
+    result = newObj.search(name)
 
     if result == None:
         return jsonify({"msg": f"Success 204: (id:{id}, name:{name}) is deleted successfully, (id:{id}, name:{name}) doesn't exists anymore", "statCode": 204})
@@ -323,6 +329,10 @@ def userDeleteBR19(nameIn, password):
     if BR19_PASSWORD == password:
 
         newObj = RecordsTable()
+
+        result = newObj.search(nameIn)
+        if result == None:
+            return jsonify({"msg": f"Error 404: name:{nameIn} was not found, it may doesn't exists", "statCode": 404})
 
         newObj.delete(nameIn)
 
