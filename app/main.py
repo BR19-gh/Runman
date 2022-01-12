@@ -213,7 +213,7 @@ def user(nameIn=None):
 
         recordSearched = newObj.search(name)
         if (recordSearched[0] == name):
-            return jsonify({"msg": f"Success 200: player:{name} is recorded, the name matches {(newObj.search(name))[0]}", "statCode": 200})
+            return jsonify({"msg": f"Success 201: player:{name} is recorded, the name matches {(newObj.search(name))[0]}", "statCode": 201})
         else:
             return jsonify({"msg": f"Unkown Error 500: player:{name} was not recorded, the name doesn't match {(newObj.search(name))[0]}", "statCode": 500})
 
@@ -246,24 +246,27 @@ def user(nameIn=None):
         result = newObj.search(nameIn)
 
         if result == None:
-            return jsonify({"msg": f"Success 200: the name {nameIn} doesn't exists, so it can be added", "statCode": 200})
+            return jsonify({"msg": f"Success 202: the name {nameIn} doesn't exists, so it can be added", "statCode": 202})
         else:
             return jsonify({"msg": f"Error 403: the name {nameIn} already exists", "statCode": 403})
 
     elif request.method == 'DELETE':
+
+        if nameIn == None:
+              return jsonify({"msg": f"Error 404: name:{nameIn} was not found, it may doesn't exists", "statCode": 404})
 
         newObj.delete(nameIn)
 
         result = newObj.search(nameIn)
 
         if result == None:
-            return jsonify({"msg": f"Success 200: name:{nameIn} is deleted successfully, name:{nameIn} doesn't exists anymore", "statCode": 200})
+            return jsonify({"msg": f"Success 204: name:{nameIn} is deleted successfully, name:{nameIn} doesn't exists anymore", "statCode": 204})
         else:
             return jsonify({"msg": f"Error 500: failed to delete name:{nameIn}, name:{nameIn} still exists", "statCode": 500})
 
 
 @app.route("/runman/user/<int:id>", methods=['DELETE'])
-@limiter.limit('1 per 30seconds', methods=['DELETE'])
+@limiter.limit('1 per 90seconds', methods=['DELETE'])
 def userDeleteId(id):
     newObj = RecordsTable()
 
@@ -280,7 +283,7 @@ def userDeleteId(id):
     result = newObj.search(dictOfResult[id]['name'])
 
     if result == None:
-        return jsonify({"msg": f"Success 200: (id:{id}, name:{name}) is deleted successfully, (id:{id}, name:{name}) doesn't exists anymore", "statCode": 200})
+        return jsonify({"msg": f"Success 204: (id:{id}, name:{name}) is deleted successfully, (id:{id}, name:{name}) doesn't exists anymore", "statCode": 204})
     else:
         return jsonify({"msg": f"Error 500: failed to delete name (id:{id}, name:{name}), (id:{id}, name:{name}) still exists", "statCode": 500})
 
@@ -328,7 +331,7 @@ def userDeleteBR19(nameIn, password):
         result = newObj.search(nameIn)
 
         if result == None:
-            return jsonify({"msg": f"Success 200: name:{nameIn} is deleted successfully, name:{nameIn} doesn't exists anymore", "statCode": 200})
+            return jsonify({"msg": f"Success 204: name:{nameIn} is deleted successfully, name:{nameIn} doesn't exists anymore", "statCode": 204})
         else:
             return jsonify({"msg": f"Error 500: failed to delete name:{nameIn}, name:{nameIn} still exists", "statCode": 500})
 
@@ -357,7 +360,7 @@ def userAddBR19(nameIn, hcoins, htime, password):
 
         recordSearched = newObj.search(nameIn)
         if (recordSearched[0] == nameIn):
-            return jsonify({"msg": f"Success 200: player:{nameIn} is recorded, the name matches {(newObj.search(nameIn))[0]}", "statCode": 200})
+            return jsonify({"msg": f"Success 201: player:{nameIn} is recorded, the name matches {(newObj.search(nameIn))[0]}", "statCode": 201})
         else:
             return jsonify({"msg": f"Unkown Error 500: player:{nameIn} was not recorded, the name doesn't match {(newObj.search(nameIn))[0]}", "statCode": 500})
 
