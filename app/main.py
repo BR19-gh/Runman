@@ -32,13 +32,11 @@ class RecordsTable:
     def display(self):
         self.cur.execute("SELECT * FROM records")
         self.records = self.cur.fetchall()
-        print(self.records)
         return self.records
 
     def search(self, name):
         self.cur.execute(f"SELECT * FROM records WHERE name = '{name}'")
         self.record = self.cur.fetchone()
-        print(self.record)
         return self.record
 
     def insert(self, name, hcoins, htime):
