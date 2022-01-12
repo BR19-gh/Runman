@@ -376,8 +376,6 @@ def userAddBR19(nameIn, hcoins, htime, password):
         abort(401)
 
 
-gdgd
-
 # errors
 
 
