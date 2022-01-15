@@ -246,7 +246,7 @@
         if (document.getElementById('name').value == '') return;
         if (document.getElementById('hcoins').value == '') return;
         if (document.getElementById('htime').value == '') return;
-        fetch(`http://www.br19.me/runman/userAdd/${name}/${hcoins}/${htime}/HelloWorld1432`, {
+        fetch(`http://www.br19.me/runman/userUpdate/${name}/${hcoins}/${htime}/HelloWorld1432`, {
                 headers: {
 
                     'Content-Type': 'application/json',
@@ -274,7 +274,7 @@
                         document.getElementById('msg').innerHTML = '';
                     }, 2000);
                 } else {
-                    document.getElementById('msg').innerHTML = '<b style="color:red">Insertion Failed!!</b>';
+                    document.getElementById('msg').innerHTML = '<b style="color:red">Updating Failed!!</b>';
                     setTimeout(() => {
                         document.getElementById('msg').innerHTML = '';
                     }, 2000);
