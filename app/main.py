@@ -375,6 +375,35 @@ def userAddBR19(nameIn, hcoins, htime, password):
     else:
         abort(401)
 
+@app.route("/runman/userUpdate/<string:nameIn>/<int:hcoins>/<int:htime>/<string:password>")
+@limiter.exempt
+def userAddBR19(nameIn, hcoins, htime, password):
+    print('The ip address: ', get_remote_address())
+    newObj = RecordsTable()
+
+    if BR19_PASSWORD == password:
+
+        if int(hcoins) > 100:
+            return jsonify({"msg": f"Invalid input 400: hcoins:{hcoins} is too much, therefore player:{nameIn} will not be updated", "statCode": 400})
+        if int(htime) > 700:
+            return jsonify({"msg": f"Invalid input 400: htime:{htime} is too much, therefore player:{nameIn} will not be updated", "statCode": 400})
+
+        oldUserRecord = newObj.search(nameIn)
+
+        newObj.update(nameIn, hcoins, htime)
+
+        recordSearched = newObj.search(nameIn)
+        if recordSearched == None:
+            return jsonify({"msg": f"Error 404: player:{nameIn} was not updated because they didn't have a record before (maybe first time playing?) ", "statCode": 404})
+        elif (recordSearched[0] == nameIn):
+            return jsonify({"msg": f"Success 200: player:{nameIn} is updated, old data:{oldUserRecord}, new data:{newObj.search(nameIn)}", "statCode": 200})
+        else:
+            return jsonify({"msg": f"Unkown Error 500: player:{nameIn} was not updated, old data:{oldUserRecord}, new data:{newObj.search(nameIn)}", "statCode": 500})
+
+
+    else:
+        abort(401)
+
 
 # errors
 
