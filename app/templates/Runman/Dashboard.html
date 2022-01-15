@@ -28,7 +28,6 @@
 
     <div id="btnContainer">
         <button id="insert" type="button">Insert</button>
-        <button id="update" type="button">Update</button>
         <button id="delete" type="button">Delete</button>
     </div>
     <div id="msg"></div>
@@ -161,20 +160,25 @@
 
     function deleteRecord(name) {
 
-        fetch(`http://www.br19.me/runman/user/${name}/HelloWorld1432`, {
+        fetch(`http://www.br19.me/runman/userDelete/${name}/HelloWorld1432`, {
                 headers: {
 
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
-                },
-                method: 'DELETE'
+                }
             })
             .then((response) => {
                 return response.json();
             }).then((responseJson) => {
 
-                if (responseJson.statCode == 200) {
+                if (responseJson.statCode == 204) {
                     document.getElementById('msg').innerText = '<b style="color:green">Deleted Successfully</b>';
+                    setTimeout(() => {
+                        document.getElementById('msg').innerText = '';
+                        location.reload();
+                    }, 2000);
+                } else if (responseJson.statCode == 404) {
+                    document.getElementById('msg').innerText = '<b style="color:purple">User not found</b>';
                     setTimeout(() => {
                         document.getElementById('msg').innerText = '';
                         location.reload();
@@ -187,13 +191,56 @@
                 }
 
             });
-
-
     }
 
     document.getElementById('delete').addEventListener('click', () => {
         deleteRecord((document.getElementById('name').value))
-    })
+    });
+
+    function insertRecord(name, hcoins, htime) {
+
+        fetch(`http://www.br19.me/runman/userAdd/${name}/${hcoins}/${htime}/HelloWorld1432`, {
+                headers: {
+
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
+            .then((response) => {
+                return response.json();
+            }).then((responseJson) => {
+
+                if (responseJson.statCode == 201) {
+                    document.getElementById('msg').innerText = '<b style="color:green">Inserted Successfully</b>';
+                    setTimeout(() => {
+                        document.getElementById('msg').innerText = '';
+                        location.reload();
+                    }, 2000);
+                } else if (responseJson.statCode == 400) {
+                    document.getElementById('msg').innerText = '<b style="color:red">Invalid inputs</b>';
+                    setTimeout(() => {
+                        document.getElementById('msg').innerText = '';
+                        location.reload();
+                    }, 2000);
+                } else if (responseJson.statCode == 403) {
+                    document.getElementById('msg').innerText = '<b style="color:purple">Name already exists</b>';
+                    setTimeout(() => {
+                        document.getElementById('msg').innerText = '';
+                        location.reload();
+                    }, 2000);
+                } else {
+                    document.getElementById('msg').innerHTML = '<b style="color:red">Insertion Failed!!</b>';
+                    setTimeout(() => {
+                        document.getElementById('msg').innerText = '';
+                    }, 2000);
+                }
+
+            });
+    }
+
+    document.getElementById('insert').addEventListener('click', () => {
+        insertRecord((document.getElementById('name').value), (document.getElementById('hcoins').value), (document.getElementById('htime').value))
+    });
 </script>
 
 </html>
