@@ -1,17 +1,18 @@
-#darktMod{
+#darktMod {
     display: none;
 }
 
-*{
+* {
     font-family: 'Tajawal', sans-serif;
 }
 
-body{
+body {
     background-color: #7b7bd4;
     overflow: hidden;
-    }
+}
 
-#readyMsg,#goMsg{
+#readyMsg,
+#goMsg {
     position: absolute;
     font-size: 100px;
     font-weight: bolder;
@@ -22,28 +23,27 @@ body{
     display: none;
 }
 
-#topArea{
+#topArea {
     display: flex;
     text-align: center;
     background-color: #b5b5ff;
-    padding-top:1% ;
+    padding-top: 1%;
     font-size: x-large;
     justify-content: space-evenly;
 }
 
-#score,#tries{
+#score,
+#tries {
     font-size: xx-large;
     font-weight: bolder;
 }
 
-
-#bordersContainer{
+#bordersContainer {
     display: flex;
     justify-content: space-between;
 }
 
-
-#startPopup{
+#startPopup {
     display: inline-block;
     position: absolute;
     background-color: #7373fd;
@@ -56,12 +56,11 @@ body{
     text-align: center;
     padding-top: 5%;
     z-index: 10;
-     border: black solid 1px;
-   
-
+    border: black solid 1px;
 }
 
-#losingPopup,#pausePopup {
+#losingPopup,
+#pausePopup {
     display: none;
     position: absolute;
     background-color: #7373fd;
@@ -72,89 +71,81 @@ body{
     border-radius: 50px;
     text-align: center;
     z-index: 10;
-    font-size:23.5px;
+    font-size: 23.5px;
     border: black solid 1px;
 }
 
-#pausePopup{
-  padding-top:10px;
-      height: 34%;
+#pausePopup {
+    padding-top: 10px;
+    height: 34%;
 }
 
-#showScoreTitle{
-    font-size:30px;
+#showScoreTitle {
+    font-size: 30px;
     font-weight: bold;
-
 }
-#showScore{
-    font-size:35px;
+
+#showScore {
+    font-size: 35px;
     font-weight: bolder;
-    
 }
 
-
-
-#replayBtn{
-    text-align: center;
-    background-color: #5555ff;
-font-size: 60px;
-width: 12%;
-border-radius: 100%;
-margin-left: 44%;
-cursor: pointer;
-margin-bottom: 10%;
-transition:  100ms ease-in-out;
-}
-
-
-
-#gameLogo{
-    width: 100%;
-}
-
-#gameLogoContainer{
-margin-bottom: 5%;
-background-color: #5555ff;
-width: 20%;
-border-radius: 90%;
-margin-left: 40%;
-
-
-}
-
-#startBtn{
+#replayBtn {
     text-align: center;
     background-color: #5555ff;
     font-size: 60px;
-width: 12%;
-border-radius: 100%;
-margin-left: 44%;
-cursor: pointer;
-margin-bottom: 10%;
-transition:  100ms ease-in-out;
+    width: 12%;
+    border-radius: 100%;
+    margin-left: 44%;
+    cursor: pointer;
+    margin-bottom: 10%;
+    transition: 100ms ease-in-out;
 }
 
-#startBtn:hover{
-    background-color: #5c5cff;
-
+#gameLogo {
+    width: 100%;
 }
 
-.btns{
+#gameLogoContainer {
+    margin-bottom: 5%;
+    background-color: #5555ff;
+    width: 20%;
+    border-radius: 90%;
+    margin-left: 40%;
+}
+
+#startBtn {
     text-align: center;
     background-color: #5555ff;
-font-size: 40px;
-width: 6%;
-border-radius: 100%;
-cursor: pointer;
-transition:  100ms ease-in-out;
+    font-size: 60px;
+    width: 12%;
+    border-radius: 100%;
+    margin-left: 44%;
+    cursor: pointer;
+    margin-bottom: 10%;
+    transition: 100ms ease-in-out;
 }
 
-.btns:hover,#pauseBtn:hover{
+#startBtn:hover {
     background-color: #5c5cff;
-
 }
 
-#pauseBtn{
+.btns {
+    text-align: center;
+    background-color: #5555ff;
+    font-size: 40px;
+    width: 6%;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+}
+
+.btns:hover,
+#pauseBtn:hover {
+    background-color: #5c5cff;
+}
+
+#pauseBtn {
     position: absolute;
     right: 3%;
     top: 5%;
@@ -163,90 +154,91 @@ transition:  100ms ease-in-out;
     font-size: 20px;
     width: 40px;
     height: 40px;
-border-radius: 100%;
-cursor: pointer;
-transition:  100ms ease-in-out;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
 }
 
-#BtnContainer{
+#BtnContainer {
     display: flex;
     justify-content: space-around;
 }
 
-
-#popupInfo{
+#popupInfo {
     position: absolute;
     display: none;
     background-color: rgb(210, 210, 255);
     border: black solid 1px;
     width: 40%;
-    top:45% ;
-    bottom:10% ;
-    left:1% ;
+    top: 45%;
+    bottom: 10%;
+    left: 1%;
 }
 
-#popupInfoTitle{
+#popupInfoTitle {
     margin-top: 5px;
     margin-bottom: 0px;
     padding-bottom: 5px;
     border-bottom: solid 1px black;
 }
 
-#popupInfoCloseBtn{
+#popupInfoCloseBtn {
     position: absolute;
-    top:-4% ;
-    bottom:1% ;
-    left:1% ;
+    top: -4%;
+    bottom: 1%;
+    left: 1%;
     font-size: 40px;
     cursor: pointer;
 }
 
-.accounts{
+.accounts {
     font-size: larger;
     font-weight: 900;
     margin-top: 4%;
     margin-bottom: 5%;
-  
 }
 
-#twitterAccount a,#LinkedinAccount a,#emailAddress a,#website a{
+#twitterAccount a,
+#LinkedinAccount a,
+#emailAddress a,
+#website a {
     text-decoration: none;
     color: black;
 }
 
-#popupSettings{
+#popupSettings {
     position: absolute;
     display: none;
     background-color: rgb(210, 210, 255);
     border: black solid 1px;
     width: 40%;
-    top:45% ;
-    bottom:10% ;
+    top: 45%;
+    bottom: 10%;
     left: 30%;
 }
 
-#popupSettingsTitle{
+#popupSettingsTitle {
     margin-top: 5px;
     margin-bottom: 0px;
     padding-bottom: 5px;
     border-bottom: solid 1px black;
 }
 
-#popupSettingsCloseBtn{
+#popupSettingsCloseBtn {
     position: absolute;
-    top:-4% ;
-    bottom:1% ;
-    left:1% ;
+    top: -4%;
+    bottom: 1%;
+    left: 1%;
     font-size: 40px;
     cursor: pointer;
 }
 
-#langBoxContainer{
+#langBoxContainer {
     display: flex;
     justify-content: space-evenly;
 }
 
-#langBox{
+#langBox {
     width: 30%;
     font-size: 35px;
     border: 1px black solid;
@@ -256,10 +248,9 @@ transition:  100ms ease-in-out;
     text-align: center;
     display: flex;
     justify-content: space-evenly;
-
 }
 
-#langBoxBefore{
+#langBoxBefore {
     margin-top: 3px;
     font-size: 25px;
     cursor: default;
@@ -267,13 +258,12 @@ transition:  100ms ease-in-out;
     color: rgb(0, 0, 0);
 }
 
-.options{
+.options {
     margin-top: 3px;
     font-size: 25px;
 }
 
-
-#en{
+#en {
     font-size: 29px;
     border: 1px black solid;
     border-radius: 16%;
@@ -286,39 +276,34 @@ transition:  100ms ease-in-out;
     margin-top: 2%;
     line-height: 142%;
     font-family: 'Merriweather';
-    transition:  100ms ease-in-out;
-   
+    transition: 100ms ease-in-out;
 }
 
-
-#ar{
-line-height: 120%;
-font-size: 29px;
-border: 1px black solid;
-border-radius: 16%;
-color: rgb(0, 0, 0);
-background-color: #7373fd;
-text-align: center;
-cursor: pointer;
-width: 34%;
-height: 81%;
-margin-top: 2%;
-font-family: 'Merriweather';
-transition:  100ms ease-in-out;
+#ar {
+    line-height: 120%;
+    font-size: 29px;
+    border: 1px black solid;
+    border-radius: 16%;
+    color: rgb(0, 0, 0);
+    background-color: #7373fd;
+    text-align: center;
+    cursor: pointer;
+    width: 34%;
+    height: 81%;
+    margin-top: 2%;
+    font-family: 'Merriweather';
+    transition: 100ms ease-in-out;
 }
 
-#en:hover{
+#en:hover {
     background-color: #6b6bff;
-
 }
 
-#ar:hover{
+#ar:hover {
     background-color: #6b6bff;
-
 }
 
-
-#themeBox{
+#themeBox {
     width: 60%;
     font-size: 13px;
     border: 1px black solid;
@@ -327,74 +312,71 @@ transition:  100ms ease-in-out;
     background-color: #5555ff;
     text-align: center;
     display: inline-block;
-  
-
 }
 
-.themeMode{
-font-size: 11px;
-font-weight: bold;
-
+.themeMode {
+    font-size: 11px;
+    font-weight: bold;
 }
 
-#setBtn{
-        display: inline-block;
-        background-color: #5555ff;
-        cursor: pointer;
-        border: black 1px solid;
-        font-size: small;
-        border-radius: 5px;
-        width: 7%;
-        color: black;
-        transition:  100ms ease-in-out;
+#setBtn {
+    display: inline-block;
+    background-color: #5555ff;
+    cursor: pointer;
+    border: black 1px solid;
+    font-size: small;
+    border-radius: 5px;
+    width: 7%;
+    color: black;
+    transition: 100ms ease-in-out;
 }
 
-#setBtn:hover{
+#setBtn:hover {
     background-color: #5c5cff;
 }
 
-#popupExplain{
+#popupExplain {
     position: absolute;
-    display: none;    
+    display: none;
     background-color: rgb(210, 210, 255);
     border: black solid 1px;
     width: 40%;
-    top:45% ;
-    bottom:10% ;
-    left:59% ;
+    top: 45%;
+    bottom: 10%;
+    left: 59%;
 }
 
-#popupExplainTitle{
+#popupExplainTitle {
     margin-top: 5px;
     margin-bottom: 0px;
     padding-bottom: 5px;
     border-bottom: solid 1px black;
 }
 
-#popupExplainCloseBtn{
+#popupExplainCloseBtn {
     position: absolute;
-    top:-4% ;
-    bottom:1% ;
-    left:1% ;
+    top: -4%;
+    bottom: 1%;
+    left: 1%;
     font-size: 40px;
     cursor: pointer;
 }
 
-#popupExplainPara{
-
+#popupExplainPara {
     margin-top: 5%;
     font-size: 25px;
+}
 
+.popupTitle {
+    font-size: xx-large;
 }
-.popupTitle{
-font-size: xx-large;
-}
-#bodyArea{
+
+#bodyArea {
     margin-top: 0.5%;
     height: 50%;
     width: 90%;
-    background-color:#8989cf ;
-    font-size:150px ;
+    background-color: #8989cf;
+    font-size: 150px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -404,39 +386,43 @@ font-size: xx-large;
     cursor: default;
 }
 
-.borders{
+.borders {
     width: 5%;
 }
 
-
-.places{
+.places {
     border-top: black solid 0.1px;
     width: 33%;
     height: 33%;
-    color:#8989cf ;
-   
-    
+    color: #8989cf;
 }
 
-#place7,#place8,#place9{
+#place7,
+#place8,
+#place9 {
     border-bottom: black solid 0.1px;
 }
 
-#place2,#place5,#place8{
+#place2,
+#place5,
+#place8 {
     border-right: black solid 0.1px;
     border-left: black solid 0.1px;
 }
 
-#place1,#place4,#place7{
+#place1,
+#place4,
+#place7 {
     border-left: black solid 0.1px;
 }
 
-#place3,#place6,#place9{
+#place3,
+#place6,
+#place9 {
     border-right: black solid 0.1px;
 }
 
-
-.things{
+.things {
     height: 20%;
     width: 10%;
     background-color: brown;
@@ -444,56 +430,52 @@ font-size: xx-large;
     color: rgb(255, 255, 255);
     border-radius: 30%;
     position: absolute;
-    transition:  100ms ease-in-out;
-   cursor: pointer;
-   display: none;
+    transition: 100ms ease-in-out;
+    cursor: pointer;
+    display: none;
 }
 
-
-
-
-#thing1{
+#thing1 {
     left: 15%;
     top: 18%;
 }
 
-#thing2{
+#thing2 {
     left: 45%;
     top: 18%;
 }
 
-#thing3{
+#thing3 {
     left: 75%;
     top: 18%;
 }
 
-#thing4{
+#thing4 {
     left: 15%;
     top: 46%;
 }
 
-#thing5{
+#thing5 {
     left: 45%;
     top: 46%;
 }
 
-#thing6{
+#thing6 {
     left: 75%;
     top: 46%;
 }
 
-#thing7{
+#thing7 {
     left: 15%;
     top: 73%;
 }
 
-#thing8{
+#thing8 {
     left: 45%;
     top: 73%;
 }
 
-
-#thing9{
+#thing9 {
     left: 75%;
     top: 73%;
 }

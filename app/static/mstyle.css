@@ -1,178 +1,117 @@
-
- @media (max-width: 600px){
-      
-      #popupInfo,#popupProjects,#popupLinkedIn{
-        width:90%;
-      }
-
-      #langBox{
-        top: 1%; left: 41%;
-      }
-    
-    #langBoxBefore{
+@media (max-width: 600px) {
+    #popupInfo,
+    #popupProjects,
+    #popupLinkedIn {
+        width: 90%;
+    }
+    #langBox {
+        top: 1%;
+        left: 41%;
+    }
+    #langBoxBefore {
         left: 47%;
         top: 1%;
-   
     }
-
- .carHovers, .carStart{
-        background-color: #0000008f; 
+    .carHovers,
+    .carStart {
+        background-color: #0000008f;
         border-radius: 2rem;
-        
     }
-
-    .carHovers{
+    .carHovers {
         height: 140px;
     }
-
-    .carHovers p, .carHovers h5{
+    .carHovers p,
+    .carHovers h5 {
         color: #ffffff;
     }
-    
-    .carHovers h5{
+    .carHovers h5 {
         padding-top: 5px;
     }
-
     @media (prefers-color-scheme: dark) {
-
- #popupProjects{
-    box-shadow: 0 0 30px rgb(255 255 255 / 15%);
-    
-}
-#popupProjects:hover{
-    box-shadow: 0 0 30px rgb(255 255 255 / 25%);
-}
-
-      
-}}
-
-    @media (prefers-color-scheme: dark) {
-
-   html{
-background-color: black;
-}
-        body{
-
-            background-image: url("img/backgroundDark.jpg");
-            background-color: black;
-
-        }    
-        #langBox{
-
-         
-            color: white;
-            background-color: #ffffff00;
-            border-color:#ffffff00 ;
-
-           
+        #popupProjects {
+            box-shadow: 0 0 30px rgb(255 255 255 / 15%);
         }
-        
-        #langBoxBefore{
-
-            color: #181b35;
-            border-color: #0a0b14;
-            background-color: #343b6e;
-            border: 1px solid;
-            
-        }
-        
-        
-        
-          
-        #en,#ar{
-
-             color:white;
-            background-color: #343b6e;
-            border: 1px solid #000000;  
-    
-            }
-
-        
-        #en:hover,#ar:hover{
-              color: #f1f1f1;
-               background-color: #282d5a;
-        
-        }
-        
-
-        #popupProjects{
-            box-shadow: 0 0 30px rgb(0 0 0 / 20%);
-            
-        }
-        #popupProjects:hover{
-            box-shadow: 0 0 30px rgb(0 0 0 / 40%);
-        }
-        
-        .card:hover{
-            transform: scale(1.01,1.01);
+        #popupProjects:hover {
             box-shadow: 0 0 30px rgb(255 255 255 / 25%);
         }
-        
-        
-        /**/
-        
-   
-        .btn-outline-info {
-            color: #181b35;
-            border-color: #0a0b14;
-            background-color: #343b6e;
-            border: 1px solid;
-        }
-        
-        .btn-outline-info:hover{
-            color: #ffffff;
-            border-color: #0a0b14;
-            background-color: #181b35;
-        }
-   
-      .card-title-info{
-    color: white;
-  }
-        
-        .myProjectsTitle{
-
-            color: white;
-        }
-        .card{
-
-
-            border: 2px solid #0a0b14;
-
-            background-color: #202444;
-
-        }
-        
-        
-        .card-title {
-
-            color: white;
-
-        }
-        
-        .card-body{
-
-          background-color: #2b315c;
-
-        }
-        .card-text{
-            color: white;
-                   }
-        
-        
-        
-        
-        
-                   #verL{
-                    display: none;
-         
-                }
-                
-                
-                #verD{ display: block;
-            
-                }
-        
-
-
     }
-    
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: black;
+    }
+    body {
+        background-image: url("img/backgroundDark.jpg");
+        background-color: black;
+    }
+    #langBox {
+        color: white;
+        background-color: #ffffff00;
+        border-color: #ffffff00;
+    }
+    #langBoxBefore {
+        color: #181b35;
+        border-color: #0a0b14;
+        background-color: #343b6e;
+        border: 1px solid;
+    }
+    #en,
+    #ar {
+        color: white;
+        background-color: #343b6e;
+        border: 1px solid #000000;
+    }
+    #en:hover,
+    #ar:hover {
+        color: #f1f1f1;
+        background-color: #282d5a;
+    }
+    #popupProjects {
+        box-shadow: 0 0 30px rgb(0 0 0 / 20%);
+    }
+    #popupProjects:hover {
+        box-shadow: 0 0 30px rgb(0 0 0 / 40%);
+    }
+    .card:hover {
+        transform: scale(1.01, 1.01);
+        box-shadow: 0 0 30px rgb(255 255 255 / 25%);
+    }
+    /**/
+    .btn-outline-info {
+        color: #181b35;
+        border-color: #0a0b14;
+        background-color: #343b6e;
+        border: 1px solid;
+    }
+    .btn-outline-info:hover {
+        color: #ffffff;
+        border-color: #0a0b14;
+        background-color: #181b35;
+    }
+    .card-title-info {
+        color: white;
+    }
+    .myProjectsTitle {
+        color: white;
+    }
+    .card {
+        border: 2px solid #0a0b14;
+        background-color: #202444;
+    }
+    .card-title {
+        color: white;
+    }
+    .card-body {
+        background-color: #2b315c;
+    }
+    .card-text {
+        color: white;
+    }
+    #verL {
+        display: none;
+    }
+    #verD {
+        display: block;
+    }
+}

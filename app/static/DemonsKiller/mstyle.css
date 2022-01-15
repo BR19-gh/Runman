@@ -1,267 +1,214 @@
 @media only screen and (max-width: 1000px) {
-:root {
-    touch-action: pan-x pan-y;
-    height: 100% 
-  }
-
-  .btns{ padding-top: 5%}
+    :root {
+        touch-action: pan-x pan-y;
+        height: 100%
+    }
+    .btns {
+        padding-top: 5%
+    }
     #losingPopup {
         width: 84.66%;
         top: 37%;
         height: 52%;
         left: 7%;
         padding-top: 7%;
-  
     }
-
     #replayBtn {
         font-size: 60px;
         width: 40%;
         margin-left: 30%;
-      padding-top: 5%
+        padding-top: 5%
     }
-
     #startPopup {
-
         width: 88%;
         top: 12%;
         height: 85%;
         left: 6%;
-   
     }
-
     #gameLogoContainer {
         margin-bottom: 5%;
         width: 35%;
         border-radius: 90%;
         margin-left: 33%;
-        
     }
-
-
     #startBtn {
         margin-bottom: 5%;
         font-size: 50px;
         width: 35%;
         border-radius: 100%;
         margin-left: 33%;
-padding-top: 15px;
+        padding-top: 15px;
     }
-
     .btns {
-text-align: center;
+        text-align: center;
         font-size: 40px;
         width: 17%;
-      line-height: 70px;
-
+        line-height: 70px;
     }
-  
-  #pauseBtn{
-   line-height: 50px;
-  }
-
+    #pauseBtn {
+        line-height: 50px;
+    }
     #popupInfo {
         width: 97%;
         top: 46%;
         bottom: 8%;
         left: 1%;
     }
-
-
     #popupSettings {
         width: 97%;
         top: 46%;
         bottom: 8%;
         left: 1%;
     }
-
     #popupExplain {
         width: 97%;
         top: 46%;
         bottom: 8%;
         left: 1%;
     }
-
-
-
-    .things{
+    .things {
         font-size: 50px;
         line-height: 257%;
         height: 15%;
         width: 20%;
     }
-
-    #thing1,#thing4,#thing7{
+    #thing1,
+    #thing4,
+    #thing7 {
         left: 12%;
     }
-
-    #thing2,#thing5,#thing8{
+    #thing2,
+    #thing5,
+    #thing8 {
         left: 40%;
     }
-
-    #thing3,#thing6,#thing9{
+    #thing3,
+    #thing6,
+    #thing9 {
         left: 69%;
     }
-
 }
-
 
 @media only screen and (max-width: 600px) {
-#gameLogoContainer {
-    margin-bottom: 20%;
-    width: 50%;
-    border-radius: 90%;
-    margin-left: 25%;
-}
-
-
-#startBtn {
-    margin-bottom: 10%;
-    font-size: 50px;
-    width: 35%;
-    border-radius: 100%;
-    margin-left: 33%;
-
-}
+    #gameLogoContainer {
+        margin-bottom: 20%;
+        width: 50%;
+        border-radius: 90%;
+        margin-left: 25%;
+    }
+    #startBtn {
+        margin-bottom: 10%;
+        font-size: 50px;
+        width: 35%;
+        border-radius: 100%;
+        margin-left: 33%;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
-
-#lightMode{
-    display: none;
-}
-  
-  #darktMod{ display: block; }
-    
-    body{
+    #lightMode {
+        display: none;
+    }
+    #darktMod {
+        display: block;
+    }
+    body {
         background-color: #000000;
-        }
-    
-    #topArea{
+    }
+    #topArea {
         background-color: #38384e;
         color: white;
     }
-    
-    
-    
-    #readyMsg,#goMsg{ color: white;}
-    
-    #startPopup{
-        background-color: #0d0d1d;
-           border: #000000 solid 1px;
+    #readyMsg,
+    #goMsg {
+        color: white;
     }
-    
-    #losingPopup,#pausePopup {
+    #startPopup {
+        background-color: #0d0d1d;
+        border: #000000 solid 1px;
+    }
+    #losingPopup,
+    #pausePopup {
         background-color: #0d0d1d;
         border: #000000 solid 1px;
         color: white;
     }
-    
-    
-    #replayBtn{
+    #replayBtn {
         background-color: #131338;
     }
-    
-    #gameLogoContainer{
-    background-color: #131338;
-    
+    #gameLogoContainer {
+        background-color: #131338;
     }
-    
-    #startBtn{
+    #startBtn {
         background-color: #131338;
         color: white;
     }
-    
-    #startBtn:hover{
+    #startBtn:hover {
         background-color: #1b1b50;
-    
     }
-    
-    .btns,#pauseBtn{
+    .btns,
+    #pauseBtn {
         background-color: #131338;
         color: white;
     }
-    
-    .btns:hover,#pauseBtn:hover{
+    .btns:hover,
+    #pauseBtn:hover {
         background-color: #1b1b50;
-    
     }
-    
-
-    #popupInfo{
+    #popupInfo {
         background-color: #111114;
         border: #000000 solid 1px;
         color: white;
     }
-    
-    #popupInfoTitle{
+    #popupInfoTitle {
         border-bottom: solid 1px #000000;
     }
-    
-    #popupInfoCloseBtn{
+    #popupInfoCloseBtn {
         color: white;
     }
-    
-    
-    #twitterAccount a,#LinkedinAccount a,#emailAddress a,#website a{
+    #twitterAccount a,
+    #LinkedinAccount a,
+    #emailAddress a,
+    #website a {
         color: white;
     }
-    
-    #popupSettings{
+    #popupSettings {
         background-color: #111114;
         border: #000000 solid 1px;
         color: white;
     }
-    
-    #popupSettingsTitle{
+    #popupSettingsTitle {
         border-bottom: solid 1px #000000;
         color: white;
     }
-    
-    #popupSettingsCloseBtn{
+    #popupSettingsCloseBtn {
         color: white;
     }
-    
-
-    
-    #langBox{
+    #langBox {
         border: 1px #000000 solid;
         color: rgb(0, 0, 0);
-        background-color: #131338;    
+        background-color: #131338;
     }
-    
-    #langBoxBefore{
+    #langBoxBefore {
         color: rgb(255, 255, 255);
     }
-    
-
-    
-    
-    #en{
+    #en {
         border: 1px #000000 solid;
         color: rgb(255, 255, 255);
-        background-color: #1b1b3b; 
+        background-color: #1b1b3b;
     }
-    
-    
-    #ar{
-    border: 1px #000000 solid;
-    color: rgb(255, 255, 255);
-    background-color: #1b1b3b;
+    #ar {
+        border: 1px #000000 solid;
+        color: rgb(255, 255, 255);
+        background-color: #1b1b3b;
     }
-    
-    #en:hover{
+    #en:hover {
         background-color: #212161;
-    
     }
-    
-    #ar:hover{
+    #ar:hover {
         background-color: #212161;
-    
     }
-    
-    
-    #themeBox{
+    #themeBox {
         width: 60%;
         font-size: 15px;
         border: 1px #000000 solid;
@@ -270,78 +217,62 @@ text-align: center;
         background-color: #131338;
         text-align: center;
         display: inline-block;
-      
-    
     }
-
-    #setBtn{
+    #setBtn {
         background-color: #131338;
         border: #000000 1px solid;
         color: #ffffff;
-}
-
-#setBtn:hover{
-    background-color: #1b1b50;
-}
-    
-    #popupExplain{
-
+    }
+    #setBtn:hover {
+        background-color: #1b1b50;
+    }
+    #popupExplain {
         background-color: #111114;
         border: #000000 solid 1px;
-    
     }
-    
-    #popupExplainTitle{
-    color: white;
+    #popupExplainTitle {
+        color: white;
         border-bottom: solid 1px #000000;
     }
-    
-    #popupExplainCloseBtn{
+    #popupExplainCloseBtn {
         color: white;
     }
-    
-    #popupExplainPara{
+    #popupExplainPara {
         color: white;
     }
-    
-    #bodyArea{
-        background-color:#29293d ;
+    #bodyArea {
+        background-color: #29293d;
     }
-    
-    
-    .places{
+    .places {
         border-top: #8fb3ff solid 0.1px;
-        color:#29293d ;
-       
-        
+        color: #29293d;
     }
-    
-    #place7,#place8,#place9{
+    #place7,
+    #place8,
+    #place9 {
         border-bottom: #8fb3ff solid 0.1px;
     }
-    
-    #place2,#place5,#place8{
+    #place2,
+    #place5,
+    #place8 {
         border-right: #8fb3ff solid 0.1px;
         border-left: #8fb3ff solid 0.1px;
     }
-    
-    #place1,#place4,#place7{
+    #place1,
+    #place4,
+    #place7 {
         border-left: #8fb3ff solid 0.1px;
     }
-    
-    #place3,#place6,#place9{
+    #place3,
+    #place6,
+    #place9 {
         border-right: #8fb3ff solid 0.1px;
     }
-    
-    
-    .things{
+    .things {
         background-color: rgb(58, 14, 14);
         color: rgb(0, 0, 0);
     }
-
-    .things:hover{
+    .things:hover {
         background-color: rgb(80, 19, 19);
-        
     }
-    
 }
