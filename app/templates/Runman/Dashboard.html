@@ -20,6 +20,7 @@
 
     </ol>
 
+    <div id="msg"><b style="color:black">No response from the server yet...</b></div>
     <div id="inputsContainer">
         <input placeholder="name" id="name" onfocus="this.value=''" type="text">
         <input placeholder="hcoins" id="hcoins" onfocus="this.value=''" type="tel">
@@ -31,7 +32,6 @@
         <button id="update" type="button">Update</button>
         <button id="delete" type="button">Delete</button>
     </div>
-    <div id="msg"></div>
 
 </body>
 <style>
@@ -201,18 +201,18 @@
                 if (responseJson.statCode == 204) {
                     document.getElementById('msg').innerHTML = '<b style="color:green">Deleted Successfully</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerHTML = '';
+                        document.getElementById('msg').innerHTML = '<b style="color:black">No response from the server yet...</b>';
                         location.reload();
                     }, 2000);
                 } else if (responseJson.statCode == 404) {
                     document.getElementById('msg').innerHTML = '<b style="color:purple">User not found</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerHTML = '';
+                        document.getElementById('msg').innerHTML = '<b style="color:black">No response from the server yet...</b>';
                     }, 2000);
                 } else {
                     document.getElementById('msg').innerHTML = '<b style="color:red">Deletion Failed!!</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerHTML = '';
+                        document.getElementById('msg').innerHTML = '<b style="color:black">No response from the server yet...</b>';
                     }, 2000);
                 }
 
@@ -241,23 +241,23 @@
                 if (responseJson.statCode == 201) {
                     document.getElementById('msg').innerHTML = '<b style="color:green">Inserted Successfully</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerHTML = '';
+                        document.getElementById('msg').innerHTML = '<b style="color:black">No response from the server yet...</b>';
                         location.reload();
                     }, 2000);
                 } else if (responseJson.statCode == 400) {
                     document.getElementById('msg').innerHTML = '<b style="color:red">Invalid inputs</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerHTML = '';
+                        document.getElementById('msg').innerHTML = '<b style="color:black">No response from the server yet...</b>';
                     }, 2000);
                 } else if (responseJson.statCode == 403) {
                     document.getElementById('msg').innerHTML = '<b style="color:purple">Name already exists</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerHTML = '';
+                        document.getElementById('msg').innerHTML = '<b style="color:black">No response from the server yet...</b>';
                     }, 2000);
                 } else {
                     document.getElementById('msg').innerHTML = '<b style="color:red">Insertion Failed!!</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerHTML = '';
+                        document.getElementById('msg').innerHTML = '<b style="color:black">No response from the server yet...</b>';
                     }, 2000);
                 }
 
@@ -286,23 +286,23 @@
                 if (responseJson.statCode == 200) {
                     document.getElementById('msg').innerHTML = '<b style="color:green">Updated Successfully</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerHTML = '';
+                        document.getElementById('msg').innerHTML = '<b style="color:black">No response from the server yet...</b>';
                         location.reload();
                     }, 2000);
                 } else if (responseJson.statCode == 400) {
                     document.getElementById('msg').innerHTML = '<b style="color:red">Invalid inputs</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerHTML = '';
+                        document.getElementById('msg').innerHTML = '<b style="color:black">No response from the server yet...</b>';
                     }, 2000);
                 } else if (responseJson.statCode == 404) {
                     document.getElementById('msg').innerHTML = '<b style="color:purple">Name not found</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerHTML = '';
+                        document.getElementById('msg').innerHTML = '<b style="color:black">No response from the server yet...</b>';
                     }, 2000);
                 } else {
                     document.getElementById('msg').innerHTML = '<b style="color:red">Updating Failed!!</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerHTML = '';
+                        document.getElementById('msg').innerHTML = '<b style="color:black">No response from the server yet...</b>';
                     }, 2000);
                 }
 
