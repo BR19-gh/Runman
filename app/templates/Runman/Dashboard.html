@@ -159,7 +159,7 @@
         });
 
     function deleteRecord(name) {
-
+        if (document.getElementById('name').value == '') return;
         fetch(`http://www.br19.me/runman/userDelete/${name}/HelloWorld1432`, {
                 headers: {
 
@@ -181,7 +181,6 @@
                     document.getElementById('msg').innerHTML = '<b style="color:purple">User not found</b>';
                     setTimeout(() => {
                         document.getElementById('msg').innerHTML = '';
-                        location.reload();
                     }, 2000);
                 } else {
                     document.getElementById('msg').innerHTML = '<b style="color:red">Deletion Failed!!</b>';
@@ -198,7 +197,9 @@
     });
 
     function insertRecord(name, hcoins, htime) {
-
+        if (document.getElementById('name').value == '') return;
+        if (document.getElementById('hcoins').value == '') return;
+        if (document.getElementById('htime').value == '') return;
         fetch(`http://www.br19.me/runman/userAdd/${name}/${hcoins}/${htime}/HelloWorld1432`, {
                 headers: {
 
@@ -220,13 +221,11 @@
                     document.getElementById('msg').innerHTML = '<b style="color:red">Invalid inputs</b>';
                     setTimeout(() => {
                         document.getElementById('msg').innerHTML = '';
-                        location.reload();
                     }, 2000);
                 } else if (responseJson.statCode == 403) {
                     document.getElementById('msg').innerHTML = '<b style="color:purple">Name already exists</b>';
                     setTimeout(() => {
                         document.getElementById('msg').innerHTML = '';
-                        location.reload();
                     }, 2000);
                 } else {
                     document.getElementById('msg').innerHTML = '<b style="color:red">Insertion Failed!!</b>';
