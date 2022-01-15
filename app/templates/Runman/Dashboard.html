@@ -268,11 +268,6 @@
                     setTimeout(() => {
                         document.getElementById('msg').innerHTML = '';
                     }, 2000);
-                } else if (responseJson.statCode == 403) {
-                    document.getElementById('msg').innerHTML = '<b style="color:purple">Name already exists</b>';
-                    setTimeout(() => {
-                        document.getElementById('msg').innerHTML = '';
-                    }, 2000);
                 } else if (responseJson.statCode == 404) {
                     document.getElementById('msg').innerHTML = '<b style="color:purple">Name not found</b>';
                     setTimeout(() => {
