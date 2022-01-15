@@ -96,13 +96,6 @@
         font-weight: bold;
         font-size: 15px;
     }
-    
-    .deleteBtn {
-        color: red;
-        font-weight: bold;
-        font-size: 30px;
-        cursor: pointer;
-    }
 </style>
 <script>
     let order = 2;
@@ -197,6 +190,10 @@
 
 
     }
+
+    document.getElementById('delete').addEventListener('click', () => {
+        deleteRecord((document.getElementById('name').value))
+    })
 </script>
 
 </html>
