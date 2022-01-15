@@ -377,7 +377,7 @@ def userAddBR19(nameIn, hcoins, htime, password):
 
 @app.route("/runman/userUpdate/<string:nameIn>/<int:hcoins>/<int:htime>/<string:password>")
 @limiter.exempt
-def userAddBR19(nameIn, hcoins, htime, password):
+def userUpdateBR19(nameIn, hcoins, htime, password):
     print('The ip address: ', get_remote_address())
     newObj = RecordsTable()
 
