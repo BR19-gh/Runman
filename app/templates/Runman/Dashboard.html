@@ -10,16 +10,11 @@
 
 <body>
 
-    <ol id="listContainer">
-        <li class="mainAlist">
-            <div class="proto">Rank</div>
-            <div class="proto">Name</div>
-            <div class="proto">Coins</div>
-            <div class="proto">Time</div>
-        </li>
-
-    </ol>
-    <div>
+    <div style="position: fixed;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;">
         <div id="inputsContainer">
             <input placeholder="name" id="name" onfocus="this.value=''" type="text">
             <input placeholder="hcoins" id="hcoins" onfocus="this.value=''" type="tel">
@@ -33,6 +28,16 @@
         </div>
         <div id="msg"></div>
     </div>
+
+    <ol id="listContainer">
+        <li class="mainAlist">
+            <div class="proto">Rank</div>
+            <div class="proto">Name</div>
+            <div class="proto">Coins</div>
+            <div class="proto">Time</div>
+        </li>
+
+    </ol>
 
 </body>
 <style>
