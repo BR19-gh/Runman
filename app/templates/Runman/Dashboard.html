@@ -174,19 +174,19 @@
                 if (responseJson.statCode == 204) {
                     document.getElementById('msg').innerText = '<b style="color:green">Deleted Successfully</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerText = '';
+                        document.getElementById('msg').innerHTML = '';
                         location.reload();
                     }, 2000);
                 } else if (responseJson.statCode == 404) {
-                    document.getElementById('msg').innerText = '<b style="color:purple">User not found</b>';
+                    document.getElementById('msg').innerHTML = '<b style="color:purple">User not found</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerText = '';
+                        document.getElementById('msg').innerHTML = '';
                         location.reload();
                     }, 2000);
                 } else {
                     document.getElementById('msg').innerHTML = '<b style="color:red">Deletion Failed!!</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerText = '';
+                        document.getElementById('msg').innerHTML = '';
                     }, 2000);
                 }
 
@@ -211,27 +211,27 @@
             }).then((responseJson) => {
 
                 if (responseJson.statCode == 201) {
-                    document.getElementById('msg').innerText = '<b style="color:green">Inserted Successfully</b>';
+                    document.getElementById('msg').innerHTML = '<b style="color:green">Inserted Successfully</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerText = '';
+                        document.getElementById('msg').innerHTML = '';
                         location.reload();
                     }, 2000);
                 } else if (responseJson.statCode == 400) {
-                    document.getElementById('msg').innerText = '<b style="color:red">Invalid inputs</b>';
+                    document.getElementById('msg').innerHTML = '<b style="color:red">Invalid inputs</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerText = '';
+                        document.getElementById('msg').innerHTML = '';
                         location.reload();
                     }, 2000);
                 } else if (responseJson.statCode == 403) {
-                    document.getElementById('msg').innerText = '<b style="color:purple">Name already exists</b>';
+                    document.getElementById('msg').innerHTML = '<b style="color:purple">Name already exists</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerText = '';
+                        document.getElementById('msg').innerHTML = '';
                         location.reload();
                     }, 2000);
                 } else {
                     document.getElementById('msg').innerHTML = '<b style="color:red">Insertion Failed!!</b>';
                     setTimeout(() => {
-                        document.getElementById('msg').innerText = '';
+                        document.getElementById('msg').innerHTML = '';
                     }, 2000);
                 }
 
