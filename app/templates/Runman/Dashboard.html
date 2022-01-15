@@ -172,7 +172,7 @@
             }).then((responseJson) => {
 
                 if (responseJson.statCode == 204) {
-                    document.getElementById('msg').innerText = '<b style="color:green">Deleted Successfully</b>';
+                    document.getElementById('msg').innerHTML = '<b style="color:green">Deleted Successfully</b>';
                     setTimeout(() => {
                         document.getElementById('msg').innerHTML = '';
                         location.reload();
