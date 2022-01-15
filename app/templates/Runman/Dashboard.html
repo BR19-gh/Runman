@@ -19,17 +19,18 @@
         </li>
 
     </ol>
+    <div style="position: fixed">
+        <div id="inputsContainer">
+            <input placeholder="name" id="name" onfocus="this.value=''" type="text">
+            <input placeholder="hcoins" id="hcoins" onfocus="this.value=''" type="tel">
+            <input placeholder="htime" id="htime" onfocus="this.value=''" type="tel">
+        </div>
 
-    <div id="inputsContainer">
-        <input placeholder="name" id="name" onfocus="this.value=''" type="text">
-        <input placeholder="hcoins" id="hcoins" onfocus="this.value=''" type="tel">
-        <input placeholder="htime" id="htime" onfocus="this.value=''" type="tel">
-    </div>
-
-    <div id="btnContainer">
-        <button id="insert" type="button">Insert</button>
-        <button id="update" type="button">Update</button>
-        <button id="delete" type="button">Delete</button>
+        <div id="btnContainer">
+            <button id="insert" type="button">Insert</button>
+            <button id="update" type="button">Update</button>
+            <button id="delete" type="button">Delete</button>
+        </div>
     </div>
     <div id="msg"></div>
 
@@ -38,6 +39,7 @@
     html {
         background-color: black;
         color: white;
+        margin: 10px;
     }
     
     #inputsContainer,
