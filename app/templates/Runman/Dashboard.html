@@ -178,7 +178,8 @@
                         document.getElementById('msg').innerHTML = '';
                         location.reload();
                     }, 2000);
-                } else if (responseJson.statCode == 404) {
+                }
+                if (responseJson.statCode == 404) {
                     document.getElementById('msg').innerHTML = '<b style="color:purple">User not found</b>';
                     setTimeout(() => {
                         document.getElementById('msg').innerHTML = '';
@@ -218,12 +219,14 @@
                         document.getElementById('msg').innerHTML = '';
                         location.reload();
                     }, 2000);
-                } else if (responseJson.statCode == 400) {
+                }
+                if (responseJson.statCode == 400) {
                     document.getElementById('msg').innerHTML = '<b style="color:red">Invalid inputs</b>';
                     setTimeout(() => {
                         document.getElementById('msg').innerHTML = '';
                     }, 2000);
-                } else if (responseJson.statCode == 403) {
+                }
+                if (responseJson.statCode == 403) {
                     document.getElementById('msg').innerHTML = '<b style="color:purple">Name already exists</b>';
                     setTimeout(() => {
                         document.getElementById('msg').innerHTML = '';
@@ -241,6 +244,7 @@
     document.getElementById('insert').addEventListener('click', () => {
         insertRecord((document.getElementById('name').value), (document.getElementById('hcoins').value), (document.getElementById('htime').value))
     });
+
 
     function updateRecord(name, hcoins, htime) {
         if (document.getElementById('name').value == '') return;
@@ -263,17 +267,20 @@
                         document.getElementById('msg').innerHTML = '';
                         location.reload();
                     }, 2000);
-                } else if (responseJson.statCode == 400) {
+                }
+                if (responseJson.statCode == 400) {
                     document.getElementById('msg').innerHTML = '<b style="color:red">Invalid inputs</b>';
                     setTimeout(() => {
                         document.getElementById('msg').innerHTML = '';
                     }, 2000);
-                } else if (responseJson.statCode == 403) {
+                }
+                if (responseJson.statCode == 403) {
                     document.getElementById('msg').innerHTML = '<b style="color:purple">Name already exists</b>';
                     setTimeout(() => {
                         document.getElementById('msg').innerHTML = '';
                     }, 2000);
-                } else if (responseJson.statCode == 404) {
+                }
+                if (responseJson.statCode == 404) {
                     document.getElementById('msg').innerHTML = '<b style="color:purple">Name not found</b>';
                     setTimeout(() => {
                         document.getElementById('msg').innerHTML = '';
