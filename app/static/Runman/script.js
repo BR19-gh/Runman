@@ -37,6 +37,81 @@ let nameStat = 'unknown name';
 let order = 2;
 let screenSize;
 
+if (document.images) {
+    img1 = new Image();
+    img1.src = "../../static/Runman/img/cloud/1.png";
+    img2 = new Image();
+    img2.src = "../../static/Runman/img/cloud/2.png";
+    img3 = new Image();
+    img3.src = "../../static/Runman/img/cloud/3.png";
+
+    img4 = new Image();
+    img4.src = "../../static/Runman/img/coin/0.png";
+    img5 = new Image();
+    img5.src = "../../static/Runman/img/coin/1.png";
+    img6 = new Image();
+    img6.src = "../../static/Runman/img/coin/2.png";
+    img7 = new Image();
+    img7.src = "../../static/Runman/img/coin/3.png";
+    img8 = new Image();
+    img8.src = "../../static/Runman/img/coin/4.png";
+    img8a = new Image();
+    img8a.src = "../../static/Runman/img/coin/gold.png";
+    img8b = new Image();
+    img8b.src = "../../static/Runman/img/coin/silver.png";
+    img8c = new Image();
+    img8c.src = "../../static/Runman/img/coin/bronze.png";
+
+    img9 = new Image();
+    img9.src = "../../static/Runman/img/obstacle/1.png";
+    img10 = new Image();
+    img10.src = "../../static/Runman/img/obstacle/2.png";
+    img11 = new Image();
+    img11.src = "../../static/Runman/img/obstacle/3.png";
+    img12 = new Image();
+    img12.src = "../../static/Runman/img/obstacle/4.png";
+    img13 = new Image();
+    img13.src = "../../static/Runman/img/obstacle/5.png";
+
+    img14 = new Image();
+    img14.src = "../../static/Runman/img/obstacle2/1.png";
+    img15 = new Image();
+    img15.src = "../../static/Runman/img/obstacle2/2.png";
+    img16 = new Image();
+    img16.src = "../../static/Runman/img/obstacle2/3.png";
+    img17 = new Image();
+    img17.src = "../../static/Runman/img/obstacle2/4.png";
+    img18 = new Image();
+    img18.src = "../../static/Runman/img/obstacle2/5.png";
+
+    img19 = new Image();
+    img19.src = "../../static/Runman/img/player/new/0.png";
+    img20 = new Image();
+    img20.src = "../../static/Runman/img/player/new/01.png";
+    img21 = new Image();
+    img21.src = "../../static/Runman/img/player/new/02.png";
+    img22 = new Image();
+    img22.src = "../../static/Runman/img/player/new/1.png";
+    img23 = new Image();
+    img23.src = "../../static/Runman/img/player/new/2.png";
+    img24 = new Image();
+    img24.src = "../../static/Runman/img/player/new/3.png";
+    img25 = new Image();
+    img25.src = "../../static/Runman/img/player/new/4.png";
+    img26 = new Image();
+    img26.src = "../../static/Runman/img/player/new/5.png";
+    img27 = new Image();
+    img27.src = "../../static/Runman/img/player/new/6.png";
+    img28 = new Image();
+    img28.src = "../../static/Runman/img/player/new/7.png";
+    img29 = new Image();
+    img29.src = "../../static/Runman/img/player/new/8.png";
+    img30 = new Image();
+    img30.src = "../../static/Runman/img/player/new/d.png";
+    img31 = new Image();
+    img31.src = "../../static/Runman/img/player/new/j3.png";
+}
+
 function sound(src) {
     this.sound = document.createElement("audio");
     this.sound.src = src;
