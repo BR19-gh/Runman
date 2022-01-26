@@ -910,7 +910,7 @@ function countHighestScore() {
     if (nameStat == 'unknown name') {
         return
     } else {
-        fetch(`http://www.br19.me/runman/user/${localStorage.nickname}`, {
+        fetch(`/runman/user/${localStorage.nickname}`, {
                 headers: {
                     'Method': 'GET',
                     'Content-Type': 'application/json',
@@ -945,7 +945,7 @@ function hasWhiteSpace(s) {
 document.getElementById('DoneName').addEventListener('click', () => {
     playOrStop(menuS, VoiceOn);
     inputValue = document.getElementById('enterNNPopupInput').value; {
-        fetch(`http://www.br19.me/runman/user/${inputValue}`, {
+        fetch(`/runman/user/${inputValue}`, {
                 headers: {
                     'Method': 'GET',
                     'Content-Type': 'application/json',
@@ -998,7 +998,7 @@ document.getElementById('DoneName').addEventListener('click', () => {
 
 function addUser(name, hcoins, htime) {
 
-    fetch('http://www.br19.me/runman/user', {
+    fetch('/runman/user', {
             headers: {
 
                 'Method': 'POST',
@@ -1022,7 +1022,7 @@ function addUser(name, hcoins, htime) {
 
 function updateUserRecords(name, hcoins, htime) {
 
-    fetch('http://www.br19.me/runman/user', {
+    fetch('/runman/user', {
             headers: {
 
                 'Method': 'PUT',
@@ -1047,7 +1047,7 @@ function updateUserRecords(name, hcoins, htime) {
 
 function displayRecordsForRanking() {
 
-    fetch(`http://www.br19.me/runman/users/10/${order}`, {
+    fetch(`/runman/users/10/${order}`, {
             headers: {
                 'Method': 'GET',
                 'Content-Type': 'application/json',
