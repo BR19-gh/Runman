@@ -34,6 +34,10 @@ document.getElementById("dawrati-card").addEventListener("click", function() {
     window.location.assign("/dawrati")
 });
 
+document.getElementById("onlinestore-card").addEventListener("click", function() {
+    window.location.assign(`${'onlinestore.'+(window.location.href).split('//')[1].split('www.')[1].split('/')[0]}`)
+});
+
 document.getElementById("1nbt3-card").addEventListener("click", function() {
     window.location.assign("/onethree")
 });
