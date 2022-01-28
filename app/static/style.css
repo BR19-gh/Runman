@@ -272,3 +272,11 @@ p.carHoversP {
 h5.carHoversH5 {
     font-size: 18px;
 }
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+h5.carHoversH5 {
+    margin-bottom: 0px;
+}
