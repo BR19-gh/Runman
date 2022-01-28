@@ -266,5 +266,9 @@ h5 {
 }
 
 p.carHoversP {
-    font-size: 11px;
+    font-size: 9px;
+}
+
+h5.carHoversH5 {
+    font-size: 18px;
 }
