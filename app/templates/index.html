@@ -207,6 +207,70 @@
     </innerBody>
 
 </body>
+
+<!-- for dark mode -->
+<style>
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-image: url("../static/img/backgroundDark.jpg");
+        }
+        #circle {
+            background-color: #164a8d;
+        }
+        .titles2:hover {
+            color: #164a8d;
+        }
+        .titles2:nth-last-child(n+2) {
+            border-right: 1px #164a8d solid;
+        }
+        .sectionContainers:nth-child(2):hover {
+            background-color: #000000a0;
+        }
+        .circles {
+            border: #164a8d 1px solid;
+            color: black;
+        }
+        .circles:nth-last-child(n+1) {
+            background-color: #19539e;
+            animation: loadingCircles 700ms ease-in-out;
+        }
+        .circles:nth-last-child(n+2) {
+            background-color: #164a8d;
+            animation: loadingCircles 800ms ease-in-out;
+        }
+        .circles:nth-last-child(n+3) {
+            background-color: #123c74;
+            animation: loadingCircles 900ms ease-in-out;
+        }
+        .circles:hover {
+            font-size: 20px;
+            color: #164a8d;
+            background-color: black;
+        }
+        p.card-text {
+            color: black;
+            text-align: center;
+        }
+        .carousel-caption {
+            color: #00000015;
+        }
+        .carousel-caption:hover {
+            color: black;
+            background-color: #ffffff55;
+        }
+        .btn-outline-info {
+            color: #ffffff;
+            background-color: #0b2547;
+            border: 1px solid #164a8d;
+        }
+        .btn-outline-info:hover {
+            color: #ffffff;
+            border-color: #0b2547;
+            background-color: #164a8d;
+        }
+    }
+</style>
+
 <style>
     innerBody {
         display: none;
@@ -224,7 +288,7 @@
 <script>
     function startSpinner() {
         document.getElementsByTagName("b")[0].style.display = "none";
-        var myVar = setTimeout(showPage, 1000);
+        var myVar = setTimeout(showPage, 700);
     }
 
     function showPage() {
@@ -489,7 +553,6 @@
     
     .circles {
         transition: 100ms ease-in-out;
-        background-color: blue;
         width: 145px;
         height: 145px;
         font-size: 25px;
