@@ -207,6 +207,27 @@
     </innerBody>
 
 </body>
+<style>
+    .spinner-border {
+        width: 6rem;
+        height: 6rem;
+        border: 1em solid currentColor;
+        border-right-color: transparent;
+        margin-top: 350px;
+        z-index: 100;
+    }
+</style>
+<script>
+    function startSpinner() {
+        document.getElementsByTagName("b")[0].style.display = "none";
+        var myVar = setTimeout(showPage, 1000);
+    }
+
+    function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementsByTagName("innerBody")[0].style.display = "block";
+    }
+</script>
 
 <!-- for all -->
 <style>
@@ -235,28 +256,6 @@
         }
     }
 </style>
-
-<style>
-    .spinner-border {
-        width: 6rem;
-        height: 6rem;
-        border: 1em solid currentColor;
-        border-right-color: transparent;
-        margin-top: 350px;
-        z-index: 100;
-    }
-</style>
-<script>
-    function startSpinner() {
-        document.getElementsByTagName("body")[0].style.display = "none";
-        var myVar = setTimeout(showPage, 1000);
-    }
-
-    function showPage() {
-        document.getElementById("loader").style.display = "none";
-        document.getElementsByTagName("body")[0].style.display = "block";
-    }
-</script>
 
 <!-- for header -->
 <style>
