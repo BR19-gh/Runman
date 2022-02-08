@@ -173,6 +173,14 @@ def home_view_blogger3():
 def home_view_onethree():
     return render_template('onethree/index.html')
 
+# resume
+
+
+@app.route("/resume")
+@limiter.exempt
+def resume():
+    return render_template('static/Ibrahim_Alkhowaiter_Resume.pdf')
+
 
 # end of routes
 
@@ -375,6 +383,7 @@ def userAddBR19(nameIn, hcoins, htime, password):
     else:
         abort(401)
 
+
 @app.route("/runman/userUpdate/<string:nameIn>/<int:hcoins>/<int:htime>/<string:password>")
 @limiter.exempt
 def userUpdateBR19(nameIn, hcoins, htime, password):
@@ -399,7 +408,6 @@ def userUpdateBR19(nameIn, hcoins, htime, password):
             return jsonify({"msg": f"Success 200: player:{nameIn} is updated, old data:{oldUserRecord}, new data:{newObj.search(nameIn)}", "statCode": 200})
         else:
             return jsonify({"msg": f"Unkown Error 500: player:{nameIn} was not updated, old data:{oldUserRecord}, new data:{newObj.search(nameIn)}", "statCode": 500})
-
 
     else:
         abort(401)
