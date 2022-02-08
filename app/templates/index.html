@@ -794,43 +794,20 @@
     @media only screen and (min-width: 450px) {
         @media only screen and (max-height: 700px) {
             body {
-                zoom: 0.9;
+                zoom: 0.8;
             }
         }
         @media only screen and (max-height: 600px) {
             body {
-                zoom: 0.8;
+                zoom: 0.7;
             }
         }
         @media only screen and (max-height: 530px) {
             body {
-                zoom: 0.7;
+                zoom: 0.6;
             }
         }
         @media only screen and (max-height: 460px) {
-            body {
-                zoom: 0.6;
-            }
-        }
-        @media only screen and (max-height: 400px) {
-            body {
-                zoom: 0.5;
-            }
-        }
-    }
-    
-    @media only screen and (max-width: 450px) {
-        @media only screen and (max-height: 700px) {
-            body {
-                zoom: 0.7;
-            }
-        }
-        @media only screen and (max-height: 600px) {
-            body {
-                zoom: 0.6;
-            }
-        }
-        @media only screen and (max-height: 500px) {
             body {
                 zoom: 0.5;
             }
@@ -840,9 +817,32 @@
                 zoom: 0.4;
             }
         }
-        @media only screen and (max-height: 300px) {
+    }
+    
+    @media only screen and (max-width: 450px) {
+        @media only screen and (max-height: 700px) {
+            body {
+                zoom: 0.6;
+            }
+        }
+        @media only screen and (max-height: 600px) {
+            body {
+                zoom: 0.5;
+            }
+        }
+        @media only screen and (max-height: 500px) {
+            body {
+                zoom: 0.4;
+            }
+        }
+        @media only screen and (max-height: 400px) {
             body {
                 zoom: 0.3;
+            }
+        }
+        @media only screen and (max-height: 300px) {
+            body {
+                zoom: 0.2;
             }
         }
     }
@@ -851,37 +851,37 @@
         @media only screen and (max-height: 1000px) {
             @media only screen and (max-height: 900px) {
                 body {
-                    zoom: 0.9;
+                    zoom: 0.8;
                 }
             }
             @media only screen and (max-height: 800px) {
                 body {
-                    zoom: 0.8;
+                    zoom: 0.7;
                 }
             }
             @media only screen and (max-height: 700px) {
                 body {
-                    zoom: 0.7;
+                    zoom: 0.6;
                 }
             }
             @media only screen and (max-height: 600px) {
                 body {
-                    zoom: 0.6;
+                    zoom: 0.5;
                 }
             }
             @media only screen and (max-height: 500px) {
                 body {
-                    zoom: 0.5;
+                    zoom: 0.4;
                 }
             }
             @media only screen and (max-height: 400px) {
                 body {
-                    zoom: 0.4;
+                    zoom: 0.3;
                 }
             }
             @media only screen and (max-height: 300px) {
                 body {
-                    zoom: 0.3;
+                    zoom: 0.2;
                 }
             }
         }
@@ -895,6 +895,12 @@
         body {
             background-image: url("../static/img/backgroundDark.jpg");
             color: white;
+            background-color: black;
+        }
+        #popupProjects,
+        #popupAccounts {
+            border: #164a8d 1px solid;
+            background-color: #0C274A;
         }
         #circle {
             background-color: #164a8d;
@@ -926,8 +932,7 @@
             background-color: black;
         }
         p.card-text {
-            color: black;
-            text-align: center;
+            color: white;
         }
         .carousel-caption {
             color: #00000015;
