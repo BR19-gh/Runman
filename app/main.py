@@ -179,7 +179,7 @@ def home_view_onethree():
 @app.route("/resume")
 @limiter.exempt
 def resume():
-    return render_template('static/Ibrahim_Alkhowaiter_Resume.pdf')
+    return render_template('../static/Ibrahim_Alkhowaiter_Resume.pdf')
 
 
 # end of routes
