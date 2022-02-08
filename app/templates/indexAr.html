@@ -249,13 +249,13 @@
 </style>
 <script>
     function startSpinner() {
-        document.getElementsByTagName("innerBody")[0].style.display = "none";
+        document.getElementsByTagName("body")[0].style.display = "none";
         var myVar = setTimeout(showPage, 1000);
     }
 
     function showPage() {
         document.getElementById("loader").style.display = "none";
-        document.getElementsByTagName("innerBody")[0].style.display = "block";
+        document.getElementsByTagName("body")[0].style.display = "block";
     }
 </script>
 
