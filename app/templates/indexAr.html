@@ -43,6 +43,170 @@
     <title>Portfolio</title>
 </head>
 
+<body onload="startSpinner()">
+
+    <div class="d-flex justify-content-center">
+        <div id="loader" class="spinner-border" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+
+    <innerBody>
+
+        <header>
+            <div class="headerContainers">
+                <div id="circleContainer" class="titles1">
+                    <div id="circle"></div>
+                </div>
+                <div class="titles1" id="name">إبراهيم الخويطر</div>
+                <div class="titles1" id="jobTitle">مطور برمجيات</div>
+            </div>
+            <div class="headerContainers">
+                <div onclick='window.location.assign("/resume")' class="titles2" id="resume">السيرة الذاتية</div>
+                <div onclick="document.getElementById('popupProjects').style.display='block'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupProjects').style.opacity='1';}, 200);" class="titles2" id="projects">المشاريع</div>
+                <div onclick="document.getElementById('popupAccounts').style.display='block'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupAccounts').style.opacity='1';}, 200);" class="titles2" id="accounts">حسابات التواصل</div>
+                <div onclick='window.location.assign("/en")' class="titles2" id="accounts">اللغة: عربي</div>
+            </div>
+        </header>
+        <section>
+            <div class="sectionContainers">
+                <img src="../static/img/person.png" alt="">
+            </div>
+            <div class="sectionContainers">
+                <div id="textContaoners">
+                    <h1>أهلا، بالعالم!</h1>
+                    <h2>من أنا؟</h2>
+                    <p>
+                        مطور برمجيات متخصص في علوم الحاسب، مع عدة شهادات ودورات في البرمجة وتطوير الويب المتكامل وإدارة المشاريع الرقمية.
+                    </p>
+                </div>
+                <div id="circlesContainer">
+                    <div onclick='window.location.assign("../static/Ibrahim_Alkhowaiter_Resume.pdf")' class="circles">السيرة</div>
+                    <div onclick="document.getElementById('popupProjects').style.display='block'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupProjects').style.opacity='1';}, 200);" class="circles">المشاريع</div>
+                    <div onclick="document.getElementById('popupAccounts').style.display='block'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupAccounts').style.opacity='1';}, 200);" class="circles">الحسابات</div>
+                </div>
+            </div>
+        </section>
+        <div id="popupProjects" class="card card-img-top">
+            <button onclick="document.getElementById('popupProjects').style.opacity='0'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupProjects').style.display='none';}, 200);" type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-interval="false" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../static/img/onlinestore.png" class="d-block w-100" alt="onlinestore.png">
+                        <div class="carousel-caption d-md-block">
+                            <h5>متجر إلكتروني ونظام فوترة متكامل</h5>
+                            <p class="pInPupupProjects">نموذج متجر إلكتروني متكامل يعطي القدرة للمالك بأن يضيف منتج مع سعره, والقدرة على إضافة أكواد ترويجية والتي يمكن استخدامها من قبل زبنائهم، والقدرة للزبون بأن يرسل فاتورته الى واتساب المالك, للمزيد من التفاصيل في GitHub. يستخدم
+                                المتجر Flask كلغة خلفية (سيرفر) وPostgreSQL كقاعدة بيانات و CSS,HTML,JS كلغات واجهة.</p>
+                            <div onclick="location.assign('http://onlinestore.br19.me/');" class="card-body">
+                                <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../static/img/Runman.png" class="d-block w-100" alt="Runman.png">
+                        <div class="carousel-caption  d-md-block">
+                            <h5>لعبة منصات متكاملة</h5>
+                            <p class="pInPupupProjects">لعبة بكسل متكاملة ذات تمرير جانبي، حيث يتعين على اللاعب جعل الشخصية تقفز العقبات وتقتل الوحوش. تستخدم اللعبة Flask كلغة خلفية (سيرفر) وPostgreSQL كقاعدة بيانات و CSS,HTML,JS كلغات واجهة.</p>
+                            <div onclick="location.assign('/runman/ar');" class="card-body">
+                                <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../static/img/Blogger.png" class="d-block w-100" alt="Blogger.png">
+                        <div class="carousel-caption  d-md-block">
+                            <h5>موقع مدونات</h5>
+                            <p class="pInPupupProjects">واجهة موقع مدونات يمكن المستخدم من رفع مدونات مع عناوين بعد تسجيل الدخول باسم "admin".</p>
+                            <div onclick="location.assign('/blogger');" class="card-body">
+                                <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../static/img/DemonsKiller.png" class="d-block w-100" alt="DemonsKiller.png">
+                        <div class="carousel-caption  d-md-block">
+                            <h5>لعبة مصغرة</h5>
+                            <p class="pInPupupProjects">هدف اللعبة هو قتل اكبر عدد ممكن من العفاريت (بالضغط عليهم) من غير قتل أي من البشر.</p>
+                            <div class="card-body">
+                                <p onclick="location.assign('/demonskiller/ar');" class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../static/img/Dagshtik.png" class="d-block w-100" alt="Dagshtik.png">
+                        <div class="carousel-caption  d-md-block">
+                            <h5>حاسبة لعبة</h5>
+                            <p class="pInPupupProjects">حاسبة للعبة الورق السعودية الشهيرة <b>مداقش</b> (شبيهة بالبوكر) تقوم الحاسبة بجميع العمليات الحسابية باللعبة للاعبين.</p>
+                            <div onclick="location.assign('/dagshtick');" class="card-body">
+                                <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../static/img/dawrati.png" class="d-block w-100" alt="dawrati.png">
+                        <div class="carousel-caption  d-md-block">
+                            <h5>موقع للدورات</h5>
+                            <p class="pInPupupProjects">نموذج واجهة لموقع للمنظمات والشركات اللتي تتيح دورات تعليمية أو تطوير للذات.</p>
+                            <div onclick="location.assign('/dawrati');" class="card-body">
+                                <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../static/img/1-nbt-3t.png" class="d-block w-100" alt="1-nbt-3t.png">
+                        <div class="carousel-caption  d-md-block">
+                            <h5>تطبيق ألغاز</h5>
+                            <p class="pInPupupProjects">تطبيق الغاز يمكن أن يحتوي على عدة أسئلة وخيارات متعددة لكل سؤال.</p>
+                            <div onclick="location.assign('/onethree');" class="card-body">
+                                <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </div>
+
+        <div id="popupAccounts" class="card card-img-top">
+            <button onclick="document.getElementById('popupAccounts').style.opacity='0'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupAccounts').style.display='none';}, 200);" type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+            <div id="info-card-body" class="card-body">
+                <div class="wrapping">
+                    <button type="button" title="حساب LinkedIn" onclick='window.location.assign("https://www.linkedin.com/in/ibrahim-alkhowaiter-430b24203/")' id="linkedinAccount" class="btn btn-outline-info"><i class="fab fa-linkedin"></i></button>
+                    <button type="button" title="حساب GitHub" onclick='window.location.assign("https://github.com/BR19-gh")' id="githubAccount" class="btn btn-outline-info"><i class="fab fa-github-square"></i></button>
+                </div>
+                <div class="wrapping">
+                    <button type="button" title="البريد الإلكتروني" href="mailto: ibrahim-abdalaziz@hotmail.com" id="emailAddress" class="btn btn-outline-info"><i class="fas fa-envelope"></i></button>
+                    <button type="button" onclick='window.location.assign("https://wa.me/966500885115")' title="حساب WhatsApp" id="WhatsAppAccount" class="btn btn-outline-info"><i
+                            class="fab fa-whatsapp-square"></i></button>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text">حسابات التواصل
+            </div>
+        </div>
+
+
+    </innerBody>
+
+</body>
 
 <!-- for all -->
 <style>
@@ -721,170 +885,5 @@
         }
     }
 </style>
-
-<body onload="startSpinner()">
-
-    <div class="d-flex justify-content-center">
-        <div id="loader" class="spinner-border" role="status">
-            <span class="sr-only"></span>
-        </div>
-    </div>
-
-    <innerBody>
-
-        <header>
-            <div class="headerContainers">
-                <div id="circleContainer" class="titles1">
-                    <div id="circle"></div>
-                </div>
-                <div class="titles1" id="name">إبراهيم الخويطر</div>
-                <div class="titles1" id="jobTitle">مطور برمجيات</div>
-            </div>
-            <div class="headerContainers">
-                <div onclick='window.location.assign("/resume")' class="titles2" id="resume">السيرة الذاتية</div>
-                <div onclick="document.getElementById('popupProjects').style.display='block'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupProjects').style.opacity='1';}, 200);" class="titles2" id="projects">المشاريع</div>
-                <div onclick="document.getElementById('popupAccounts').style.display='block'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupAccounts').style.opacity='1';}, 200);" class="titles2" id="accounts">حسابات التواصل</div>
-                <div onclick='window.location.assign("/en")' class="titles2" id="accounts">اللغة: عربي</div>
-            </div>
-        </header>
-        <section>
-            <div class="sectionContainers">
-                <img src="../static/img/person.png" alt="">
-            </div>
-            <div class="sectionContainers">
-                <div id="textContaoners">
-                    <h1>أهلا، بالعالم!</h1>
-                    <h2>من أنا؟</h2>
-                    <p>
-                        مطور برمجيات متخصص في علوم الحاسب، مع عدة شهادات ودورات في البرمجة وتطوير الويب المتكامل وإدارة المشاريع الرقمية.
-                    </p>
-                </div>
-                <div id="circlesContainer">
-                    <div onclick='window.location.assign("../static/Ibrahim_Alkhowaiter_Resume.pdf")' class="circles">السيرة</div>
-                    <div onclick="document.getElementById('popupProjects').style.display='block'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupProjects').style.opacity='1';}, 200);" class="circles">المشاريع</div>
-                    <div onclick="document.getElementById('popupAccounts').style.display='block'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupAccounts').style.opacity='1';}, 200);" class="circles">الحسابات</div>
-                </div>
-            </div>
-        </section>
-        <div id="popupProjects" class="card card-img-top">
-            <button onclick="document.getElementById('popupProjects').style.opacity='0'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupProjects').style.display='none';}, 200);" type="button" class="btn-close btn-close-white" aria-label="Close"></button>
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-interval="false" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../static/img/onlinestore.png" class="d-block w-100" alt="onlinestore.png">
-                        <div class="carousel-caption d-md-block">
-                            <h5>متجر إلكتروني ونظام فوترة متكامل</h5>
-                            <p class="pInPupupProjects">نموذج متجر إلكتروني متكامل يعطي القدرة للمالك بأن يضيف منتج مع سعره, والقدرة على إضافة أكواد ترويجية والتي يمكن استخدامها من قبل زبنائهم، والقدرة للزبون بأن يرسل فاتورته الى واتساب المالك, للمزيد من التفاصيل في GitHub. يستخدم
-                                المتجر Flask كلغة خلفية (سيرفر) وPostgreSQL كقاعدة بيانات و CSS,HTML,JS كلغات واجهة.</p>
-                            <div onclick="location.assign('http://onlinestore.br19.me/');" class="card-body">
-                                <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../static/img/Runman.png" class="d-block w-100" alt="Runman.png">
-                        <div class="carousel-caption  d-md-block">
-                            <h5>لعبة منصات متكاملة</h5>
-                            <p class="pInPupupProjects">لعبة بكسل متكاملة ذات تمرير جانبي، حيث يتعين على اللاعب جعل الشخصية تقفز العقبات وتقتل الوحوش. تستخدم اللعبة Flask كلغة خلفية (سيرفر) وPostgreSQL كقاعدة بيانات و CSS,HTML,JS كلغات واجهة.</p>
-                            <div onclick="location.assign('/runman/ar');" class="card-body">
-                                <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../static/img/Blogger.png" class="d-block w-100" alt="Blogger.png">
-                        <div class="carousel-caption  d-md-block">
-                            <h5>موقع مدونات</h5>
-                            <p class="pInPupupProjects">واجهة موقع مدونات يمكن المستخدم من رفع مدونات مع عناوين بعد تسجيل الدخول باسم "admin".</p>
-                            <div onclick="location.assign('/blogger');" class="card-body">
-                                <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../static/img/DemonsKiller.png" class="d-block w-100" alt="DemonsKiller.png">
-                        <div class="carousel-caption  d-md-block">
-                            <h5>لعبة مصغرة</h5>
-                            <p class="pInPupupProjects">هدف اللعبة هو قتل اكبر عدد ممكن من العفاريت (بالضغط عليهم) من غير قتل أي من البشر.</p>
-                            <div class="card-body">
-                                <p onclick="location.assign('/demonskiller/ar');" class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../static/img/Dagshtik.png" class="d-block w-100" alt="Dagshtik.png">
-                        <div class="carousel-caption  d-md-block">
-                            <h5>حاسبة لعبة</h5>
-                            <p class="pInPupupProjects">حاسبة للعبة الورق السعودية الشهيرة <b>مداقش</b> (شبيهة بالبوكر) تقوم الحاسبة بجميع العمليات الحسابية باللعبة للاعبين.</p>
-                            <div onclick="location.assign('/dagshtick');" class="card-body">
-                                <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../static/img/dawrati.png" class="d-block w-100" alt="dawrati.png">
-                        <div class="carousel-caption  d-md-block">
-                            <h5>موقع للدورات</h5>
-                            <p class="pInPupupProjects">نموذج واجهة لموقع للمنظمات والشركات اللتي تتيح دورات تعليمية أو تطوير للذات.</p>
-                            <div onclick="location.assign('/dawrati');" class="card-body">
-                                <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../static/img/1-nbt-3t.png" class="d-block w-100" alt="1-nbt-3t.png">
-                        <div class="carousel-caption  d-md-block">
-                            <h5>تطبيق ألغاز</h5>
-                            <p class="pInPupupProjects">تطبيق الغاز يمكن أن يحتوي على عدة أسئلة وخيارات متعددة لكل سؤال.</p>
-                            <div onclick="location.assign('/onethree');" class="card-body">
-                                <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-
-        </div>
-
-        <div id="popupAccounts" class="card card-img-top">
-            <button onclick="document.getElementById('popupAccounts').style.opacity='0'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupAccounts').style.display='none';}, 200);" type="button" class="btn-close btn-close-white" aria-label="Close"></button>
-            <div id="info-card-body" class="card-body">
-                <div class="wrapping">
-                    <button type="button" title="حساب LinkedIn" onclick='window.location.assign("https://www.linkedin.com/in/ibrahim-alkhowaiter-430b24203/")' id="linkedinAccount" class="btn btn-outline-info"><i class="fab fa-linkedin"></i></button>
-                    <button type="button" title="حساب GitHub" onclick='window.location.assign("https://github.com/BR19-gh")' id="githubAccount" class="btn btn-outline-info"><i class="fab fa-github-square"></i></button>
-                </div>
-                <div class="wrapping">
-                    <button type="button" title="البريد الإلكتروني" href="mailto: ibrahim-abdalaziz@hotmail.com" id="emailAddress" class="btn btn-outline-info"><i class="fas fa-envelope"></i></button>
-                    <button type="button" onclick='window.location.assign("https://wa.me/966500885115")' title="حساب WhatsApp" id="WhatsAppAccount" class="btn btn-outline-info"><i
-                            class="fab fa-whatsapp-square"></i></button>
-                </div>
-            </div>
-            <div class="card-body">
-                <p class="card-text">حسابات التواصل
-            </div>
-        </div>
-
-
-    </innerBody>
-
-</body>
 
 </html>
