@@ -622,6 +622,9 @@
         .circles:hover {
             font-size: 8px;
         }
+        .circles:active {
+            font-size: 9px;
+        }
     }
 </style>
 
@@ -955,6 +958,11 @@
             color: #061425;
             background-color: #0c2c55;
             border: #0c2c55;
+        }
+        @media only screen and (max-width: 1000px) {
+            .circles:active {
+                font-size: 9px;
+            }
         }
         p.card-text {
             color: white;
