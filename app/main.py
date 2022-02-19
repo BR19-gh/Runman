@@ -432,24 +432,24 @@ def ratelimit_handler(e):
     print(msg)
     return render_template('errPages/500err.html', msg=msg)
 
+
 @app.errorhandler(503)
 def ratelimit_handler(e):
     msg = '{"msg": f"Error 500: something in our side went wrong, surly we are working to fix it soon, please try again later", "statCode": 500}'
     print(msg)
     return render_template('errPages/500err.html', msg=msg)
 
+
 @app.errorhandler(405)
 def ratelimit_handler(e):
     return jsonify({"msg": f"Error 405: the method used is not allowed, please try again with correct method", "statCode": 405})
 
 
-
 @app.errorhandler(404)
 def ratelimit_handler(e):
-    print(msg)
     msg = '{"msg": f"Error 404: the requested URL was not found on the server. If you entered the URL manually please check your spelling and try again", "statCode": 404}'
+    print(msg)
     return render_template('errPages/404err.html', msg=msg)
-
 
 
 # other
