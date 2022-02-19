@@ -13,11 +13,11 @@ body {
     font-family: 'ArabicPixel2', cursive;
     background-color: rgb(0, 0, 0);
     justify-content: center;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 * {
-    user-select: none;
-    -webkit-user-select: none;
 }
 
 @supports (-webkit-touch-callout: none) {
