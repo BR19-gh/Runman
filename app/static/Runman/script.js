@@ -1163,7 +1163,7 @@ document.getElementById("orderBtn").addEventListener("click", () => {
         if (currentPage == 'ar') {
             document.getElementById('orderBtn').innerHTML = '<div style="direction: rtl;">الوقت (ثوان)</div>'
         } else {
-            document.getElementById('orderBtn').innerText = 'time (sec)'
+            document.getElementById('orderBtn').innerText = 'Time (s)'
         }
         order = 2;
     }
