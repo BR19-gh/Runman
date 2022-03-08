@@ -8,6 +8,18 @@
     src: url("ArabicPixel2.ttf");
 }
 
+:root {
+    touch-action: pan-x pan-y;
+    height: 100%
+}
+
+body {
+    overflow-y: hidden;
+    /* Hide vertical scrollbar */
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+}
+
 body {
     display: flex;
     font-family: 'ArabicPixel2', cursive;
