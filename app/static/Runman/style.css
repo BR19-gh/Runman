@@ -29,8 +29,6 @@ body {
     user-select: none;
 }
 
-* {}
-
 @supports (-webkit-touch-callout: none) {
     body {
         zoom: .85;
