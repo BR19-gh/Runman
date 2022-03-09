@@ -7,7 +7,6 @@ let sun = document.getElementById("sun");
 let moon = document.getElementById("moon");
 let sky = document.getElementById("above");
 let sky2 = document.getElementById("innerBody");
-let cloud = document.getElementById("cloud");
 let kill = 0;
 let numberOfObstaclesIncluded = 3;
 var chooseObstacleInterval;
@@ -522,10 +521,7 @@ obstacle2.style.display = "none";
 coins.style.display = "none";
 var timer;
 
-cloudChangerVal = setInterval(() => {
-    let cloudChooserVal = Math.floor(Math.random() * 3) + 1;
-    if (cloudChooserVal == 1) { cloud.style.backgroundImage = 'url("../../static/Runman/img/cloud/1.png")'; } else if (cloudChooserVal == 2) { cloud.style.backgroundImage = 'url("../../static/Runman/img/cloud/2.png")'; } else { cloud.style.backgroundImage = 'url("../../static/Runman/img/cloud/3.png")'; }
-}, 20000);
+
 
 
 //start
