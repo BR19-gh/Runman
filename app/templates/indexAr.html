@@ -43,6 +43,31 @@
     <title>الصفحة الشخصية</title>
 </head>
 
+<script>
+    function openPopup(popup) {
+        document.getElementById('cover').style.display = 'block';
+        let timeoutToDisplayNone = setTimeout(() => {
+            document.getElementById('cover').style.opacity = '1';
+        }, 200);
+
+        document.getElementById(`${popup}`).style.display = 'block';
+        let timeoutTODisplayNone2 = setTimeout(() => {
+            document.getElementById(`${popup}`).style.opacity = '1';
+        }, 200);
+    }
+
+    function closePopup(popup) {
+        document.getElementById('cover').style.opacity = '0';
+        let timeoutToDisplayNone = setTimeout(() => {
+            document.getElementById('cover').style.display = 'none';
+        }, 200);
+        document.getElementById(`${popup}`).style.opacity = '0';
+        let timeoutToDisplayNone2 = setTimeout(() => {
+            document.getElementById(`${popup}`).style.display = 'none';
+        }, 200);
+    }
+</script>
+
 <body onload="startSpinner()">
 
     <div class="d-flex justify-content-center">
@@ -52,7 +77,7 @@
     </div>
 
     <innerBody>
-
+        <div onclick="closePopup('popupProjects'); closePopup('popupAccounts');" id="cover"></div>
         <header>
             <div class="headerContainers">
                 <div id="circleContainer" class="titles1">
@@ -63,8 +88,8 @@
             </div>
             <div class="headerContainers">
                 <div onclick='window.location.assign("../static/Ibrahim_Alkhowaiter_Resume.pdf")' class="titles2" id="resume">السيرة الذاتية</div>
-                <div onclick="document.getElementById('popupProjects').style.display='block'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupProjects').style.opacity='1';}, 200);" class="titles2" id="projects">المشاريع</div>
-                <div onclick="document.getElementById('popupAccounts').style.display='block'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupAccounts').style.opacity='1';}, 200);" class="titles2" id="accounts">التواصل</div>
+                <div onclick="openPopup('popupProjects')" class="titles2" id="projects">المشاريع</div>
+                <div onclick="openPopup('popupAccounts')" class="titles2" id="accounts">التواصل</div>
                 <div onclick='window.location.assign("/en")' class="titles2" id="accounts">اللغة: عربي</div>
             </div>
         </header>
@@ -82,13 +107,13 @@
                 </div>
                 <div id="circlesContainer">
                     <div onclick='window.location.assign("../static/Ibrahim_Alkhowaiter_Resume.pdf")' class="circles">السيرة</div>
-                    <div onclick="document.getElementById('popupProjects').style.display='block'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupProjects').style.opacity='1';}, 200);" class="circles">المشاريع</div>
-                    <div onclick="document.getElementById('popupAccounts').style.display='block'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupAccounts').style.opacity='1';}, 200);" class="circles">التواصل</div>
+                    <div onclick="openPopup('popupProjects')" class="circles">المشاريع</div>
+                    <div onclick="openPopup('popupAccounts')" class="circles">التواصل</div>
                 </div>
             </div>
         </section>
         <div id="popupProjects" class="card card-img-top">
-            <button onclick="document.getElementById('popupProjects').style.opacity='0'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupProjects').style.display='none';}, 200);" type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+            <button onclick="closePopup('popupProjects')" type="button" class="btn-close btn-close-white" aria-label="Close"></button>
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-interval="false" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -104,8 +129,8 @@
                         <img src="../static/img/onlinestore.png" class="d-block w-100" alt="onlinestore.png">
                         <div class="carousel-caption d-md-block">
                             <h5>متجر إلكتروني ونظام فوترة متكامل</h5>
-                            <p class="pInPupupProjects">نموذج متجر إلكتروني متكامل يعطي القدرة لمالك المتجر على إضافة منتج مع سعره, وإضافة أكواد ترويجية (والتي يمكن لزبائن المتجر استخدامها)، والقدرة للزبون على إرسال فاتورة الشراء إلى حساب واتساب الخاص بالمالك, للمزيد من التفاصيل في موقع GitHub. يستخدم
-                                المتجر Flask كلغة خلفية (سيرفر) وPostgreSQL كقاعدة بيانات و CSS/Bootstrap,HTML,JS كلغات واجهة.</p>
+                            <p class="pInPupupProjects">نموذج متجر إلكتروني متكامل يعطي القدرة لمالك المتجر على إضافة منتج مع سعره, وإضافة أكواد ترويجية (والتي يمكن لزبائن المتجر استخدامها)، والقدرة للزبون على إرسال فاتورة الشراء إلى حساب واتساب الخاص بالمالك, للمزيد من التفاصيل
+                                في موقع GitHub. يستخدم المتجر Flask كلغة خلفية (سيرفر) وPostgreSQL كقاعدة بيانات و CSS/Bootstrap,HTML,JS كلغات واجهة.</p>
                             <div onclick="location.assign('http://onlinestore.br19.me/');" class="card-body">
                                 <p class="card-text">إضغط هـــــنـــــا للذهاب الى المشروع.</p>
                             </div>
@@ -186,7 +211,7 @@
         </div>
 
         <div id="popupAccounts" class="card card-img-top">
-            <button onclick="document.getElementById('popupAccounts').style.opacity='0'; let timeoutToDisplayNone = setTimeout(()=>{document.getElementById('popupAccounts').style.display='none';}, 200);" type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+            <button onclick="closePopup('popupAccounts')" type="button" class="btn-close btn-close-white" aria-label="Close"></button>
             <div id="info-card-body" class="card-body">
                 <div class="wrapping">
                     <button type="button" title="حساب LinkedIn" onclick='window.location.assign("https://www.linkedin.com/in/ibrahim-alkhowaiter-430b24203/")' id="linkedinAccount" class="btn btn-outline-info"><i class="fab fa-linkedin"></i></button>
@@ -199,7 +224,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <p class="card-text">التواصل
+                <p class="card-text">حسابات التواصل
             </div>
         </div>
 
@@ -630,6 +655,17 @@
 
 <!-- for projects popup -->
 <style>
+    #cover {
+        opacity: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: #00000050;
+        position: absolute;
+        display: none;
+        transition: 200ms ease-in-out;
+    }
+    
     #popupProjects,
     #popupAccounts {
         opacity: 0;
@@ -644,6 +680,7 @@
         left: 50%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+        z-index: 2;
     }
     
     p.card-text {
@@ -918,6 +955,9 @@
             background-image: url("../static/img/backgroundDark.jpg");
             color: white;
             background-color: black;
+        }
+        #cover {
+            background-color: #ffffff10;
         }
         #popupProjects,
         #popupAccounts {
