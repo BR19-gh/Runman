@@ -36,7 +36,7 @@ addBlogBtn.addEventListener('click', () => {
 });
 
 signInBtn.addEventListener('click', () => {
-    window.location.assign('/blogger');
+    window.location.assign('/blogger/login');
 });
 
 
