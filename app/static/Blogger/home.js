@@ -31,7 +31,7 @@ if (localStorage.getItem('isUserAdmin') == 1) {
 
 addBlogBtn.addEventListener('click', () => {
     if (localStorage.getItem('isUserAdmin') == 1) {
-        window.location.assign('blogger//addBlog');
+        window.location.assign('/blogger/addBlog');
     }
 });
 

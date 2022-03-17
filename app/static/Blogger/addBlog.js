@@ -19,4 +19,4 @@ function submit() {
 
 
 document.getElementById('submitBtn').addEventListener('click', submit);
-document.getElementById('x').addEventListener('click', () => { window.location.assign('/blogger'); });
+document.getElementById('x').addEventListener('click', () => { window.location.assign('/blogger/home'); });
