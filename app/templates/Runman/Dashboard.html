@@ -131,7 +131,7 @@
 </style>
 <script>
     let order = 2;
-    fetch('http://www.br19.me/runman/users', {
+    fetch('/runman/users', {
             headers: {
 
                 'Content-Type': 'application/json',
@@ -193,7 +193,7 @@
 
     function deleteRecord(name) {
         if (document.getElementById('name').value == '') return;
-        fetch(`http://www.br19.me/runman/userDelete/${name}/HelloWorld1432`, {
+        fetch(`/runman/userDelete/${name}/HelloWorld1432`, {
                 headers: {
 
                     'Content-Type': 'application/json',
@@ -233,7 +233,7 @@
         if (document.getElementById('name').value == '') return;
         if (document.getElementById('hcoins').value == '') return;
         if (document.getElementById('htime').value == '') return;
-        fetch(`http://www.br19.me/runman/userAdd/${name}/${hcoins}/${htime}/HelloWorld1432`, {
+        fetch(`/runman/userAdd/${name}/${hcoins}/${htime}/HelloWorld1432`, {
                 headers: {
 
                     'Content-Type': 'application/json',
@@ -278,7 +278,7 @@
         if (document.getElementById('name').value == '') return;
         if (document.getElementById('hcoins').value == '') return;
         if (document.getElementById('htime').value == '') return;
-        fetch(`http://www.br19.me/runman/userUpdate/${name}/${hcoins}/${htime}/HelloWorld1432`, {
+        fetch(`/runman/userUpdate/${name}/${hcoins}/${htime}/HelloWorld1432`, {
                 headers: {
 
                     'Content-Type': 'application/json',

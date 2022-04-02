@@ -1192,7 +1192,7 @@ document.getElementById("Linkedin").addEventListener("click", function() {
 });
 document.getElementById("Website").addEventListener("click", function() {
     playOrStop(menuS, VoiceOn);
-    window.location.assign("http://www.br19.me");
+    window.location.assign("/");
 });
 document.getElementById("Email").addEventListener("click", function() {
     playOrStop(menuS, VoiceOn);
