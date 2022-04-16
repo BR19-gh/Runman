@@ -74,6 +74,7 @@
     function loadProjects(listOfProjects) {
 
         for (let project in listOfProjects) {
+            console.log(listOfProjects[project]["img"])
             document.getElementById("projectsContainer").innerHTML +=
                 `<div class="carousel-item"> 
                 <img src="${listOfProjects[project]["img"]}" class="d-block w-100" alt="${listOfProjects[project]["img"]}"> 
