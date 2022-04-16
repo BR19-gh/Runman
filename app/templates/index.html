@@ -66,6 +66,13 @@
             document.getElementById(`${popup}`).style.display = 'none';
         }, 200);
     }
+
+    function loadProjects(listOfProject){
+
+        for (let Project in listOfProject) {
+                        document.getElementById("projectsContainer").innerHTML += `<div class="carousel-item"> <img src="${Project["img"]}" class="d-block w-100" alt="img"> <div class="carousel-caption  d-md-block"> <h5>${Project["title"]}</h5> <p class="pInPupupProjects">${Project["description"]}</p> <div onclick="location.assign('${Project["link"]}');" class="card-body"> <p class="card-text">Press HERE to Go to the Project.</p> </div> </div> </div> `;
+                    }
+    }
 </script>
 
 <body onload="startSpinner()">
@@ -164,9 +171,7 @@
                         "description": "Quiz app that can include as many questions as wanted with multiple answers provided.",
                     }, ];
 
-                    for (let Project in listOfProject) {
-                        document.getElementById("projectsContainer").innerHTML += `<div class="carousel-item"> <img src="${Project["img"]}" class="d-block w-100" alt="img"> <div class="carousel-caption  d-md-block"> <h5>${Project["title"]}</h5> <p class="pInPupupProjects">${Project["description"]}</p> <div onclick="location.assign('${Project["link"]}');" class="card-body"> <p class="card-text">Press HERE to Go to the Project.</p> </div> </div> </div> `;
-                    }
+                   loadProjects(listOfProject);
                 </script>
                 <!-- <div class="carousel-inner">
                     <div class="carousel-item active">
