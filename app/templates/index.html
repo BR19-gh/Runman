@@ -71,20 +71,7 @@
         }, 200);
     }
 
-    function loadProjects(listOfProjects) {
 
-        for (let project in listOfProjects) {
-            console.log(listOfProjects[project]["img"])
-            document.getElementById("projectsContainer").innerHTML +=
-                `<div class="carousel-item"> 
-                <img src="${listOfProjects[project]["img"]}" class="d-block w-100" alt="${listOfProjects[project]["img"]}"> 
-                <div class="carousel-caption  d-md-block"> <h5>${listOfProjects[project]["title"]}</h5> 
-                    <p class="pInPupupProjects">${listOfProjects[project]["description"]}</p> 
-                    <div onclick="location.assign('${listOfProjects[project]["link"]}');" class="card-body"> 
-                        <p class="card-text">Press HERE to Go to the Project.</p> 
-                        </div> </div> </div> `;
-        }
-    }
 </script>
 
 <body onload="startSpinner()">
@@ -185,8 +172,18 @@
                         "img": "../static/img/dawrati.png", "title": "Courses Website", "link": "/dawrati",
                         "description": "Sample frontend website for organizations that offer courses and self-improvement sessions.",
                     }, { "img": "../static/img/onethree.png", "title": "Quiz App", "link": "/onethree", "description": "Quiz app that can include as many questions as wanted with multiple answers provided.", },];
-                    
-                    loadProjects(listOfProjects);
+
+                    for (let project in listOfProjects) {
+                        console.log(listOfProjects[project]["img"])
+                        document.getElementById("projectsContainer").innerHTML +=
+                            `<div class="carousel-item"> 
+                <img src="${listOfProjects[project]["img"]}" class="d-block w-100" alt="${listOfProjects[project]["img"]}"> 
+                <div class="carousel-caption  d-md-block"> <h5>${listOfProjects[project]["title"]}</h5> 
+                    <p class="pInPupupProjects">${listOfProjects[project]["description"]}</p> 
+                    <div onclick="location.assign('${listOfProjects[project]["link"]}');" class="card-body"> 
+                        <p class="card-text">Press HERE to Go to the Project.</p> 
+                        </div> </div> </div> `;
+                    }
                 </script>
 
 
