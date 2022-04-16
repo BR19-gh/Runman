@@ -70,7 +70,7 @@
     function loadProjects(listOfProject) {
 
         for (let Project in listOfProject) {
-            console.log(Project);
+            console.log(Project["title"]);
             document.getElementById("projectsContainer").innerHTML += `<div class="carousel-item"> <img src="${Project["img"]}" class="d-block w-100" alt="img"> <div class="carousel-caption  d-md-block"> <h5>${Project["title"]}</h5> <p class="pInPupupProjects">${Project["description"]}</p> <div onclick="location.assign('${Project["link"]}');" class="card-body"> <p class="card-text">Press HERE to Go to the Project.</p> </div> </div> </div> `;
         }
     }
