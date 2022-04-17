@@ -233,20 +233,32 @@
 
 </body>
 
+<style>
+    /*typewriter*/
+    
+    .typeText::after {
+        content: "|";
+        /* animation: blink 1s step-end infinite; */
+        animation: none;
+    }
+    
+    .showAnim.typeText::after {
+        animation: blink 1s step-end infinite;
+    }
+    
+    @keyframes blink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+    /*typewriter*/
+</style>
 <script>
-    //animations
-
-
-    setTimeout(() => {
-        document.getElementsByTagName('h1')[0].style.fontFamily = "Courier";
-    }, 2300);
-
-    setTimeout(() => {
-        document.getElementsByTagName('h1')[0].style.fontFamily = "Tajawal";
-    }, 3500);
-
-
-    //typewriter//
+    //typewriter
     var typeText = document.querySelector(".typeText")
     var textToBeTyped = "مطور برمجيات"
     var textToBeTypedArr = ["مطور برمجيات", "مطور ويب متكامل", "مطور خلفية", "مطور واجهات"]
@@ -295,31 +307,6 @@
         playAnim()
     }, 900)
 </script>
-
-<style>
-    /*typewriter*/
-    
-    .typeText::after {
-        content: "|";
-        /* animation: blink 1s step-end infinite; */
-        animation: none;
-    }
-    
-    .showAnim.typeText::after {
-        animation: blink 1s step-end infinite;
-    }
-    
-    @keyframes blink {
-        0%,
-        100% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0;
-        }
-    }
-    /*typewriter*/
-</style>
 
 <style>
     innerBody {
@@ -555,30 +542,39 @@
         }
         50% {
             opacity: 0;
+            font-family: 'Work Sans', 'Tajawal';
         }
         55% {
             opacity: 1;
+            font-family: 'Courier New', Courier, monospace;
         }
         60% {
             opacity: 1;
+            font-family: 'Courier New', Courier, monospace;
         }
         65% {
             opacity: 1;
+            font-family: 'Courier New', Courier, monospace;
         }
         70% {
             opacity: 1;
+            font-family: 'Courier New', Courier, monospace;
         }
         75% {
             opacity: 1;
+            font-family: 'Courier New', Courier, monospace;
         }
         80% {
             opacity: 1;
+            font-family: 'Courier New', Courier, monospace;
         }
         85% {
             opacity: 1;
+            font-family: 'Courier New', Courier, monospace;
         }
         90% {
             opacity: 0;
+            font-family: 'Work Sans', 'Tajawal';
         }
         95% {
             opacity: 1;

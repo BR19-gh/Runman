@@ -273,23 +273,35 @@
 
 </body>
 
+<style>
+    /*typewriter*/
+    
+    .typeText::after {
+        content: "|";
+        /* animation: blink 1s step-end infinite; */
+        animation: none;
+    }
+    
+    .showAnim.typeText::after {
+        animation: blink 1s step-end infinite;
+    }
+    
+    @keyframes blink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+    /*typewriter*/
+</style>
 <script>
-    //animations
-
-
-    setTimeout(() => {
-        document.getElementsByTagName('h1')[0].style.fontFamily = "Cascadia Code";
-    }, 2300);
-
-    setTimeout(() => {
-        document.getElementsByTagName('h1')[0].style.fontFamily = "Tajawal";
-    }, 3500);
-
-
-    //typewriter//
+    //typewriter
     var typeText = document.querySelector(".typeText")
     var textToBeTyped = "Software Developer"
-    var textToBeTypedArr = ["Software Developer", "Fullstack Developer", "Backend Developer", "Frontend Developer"]
+    var textToBeTypedArr = ["Software Developer", "Web Developer", "Backend Developer", "Frontend Developer"]
     var index = 0,
         isAdding = true,
         textToBeTypedIndex = 0
@@ -335,31 +347,6 @@
         playAnim()
     }, 900)
 </script>
-
-<style>
-    /*typewriter*/
-    
-    .typeText::after {
-        content: "|";
-        /* animation: blink 1s step-end infinite; */
-        animation: none;
-    }
-    
-    .showAnim.typeText::after {
-        animation: blink 1s step-end infinite;
-    }
-    
-    @keyframes blink {
-        0%,
-        100% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0;
-        }
-    }
-    /*typewriter*/
-</style>
 
 <style>
     innerBody {
@@ -589,30 +576,39 @@
         }
         50% {
             opacity: 0;
+            font-family: 'Work Sans', 'Tajawal';
         }
         55% {
             opacity: 1;
+            font-family: 'Courier Prime', monospace;
         }
         60% {
             opacity: 1;
+            font-family: 'Courier Prime', monospace;
         }
         65% {
             opacity: 1;
+            font-family: 'Courier Prime', monospace;
         }
         70% {
             opacity: 1;
+            font-family: 'Courier Prime', monospace;
         }
         75% {
             opacity: 1;
+            font-family: 'Courier Prime', monospace;
         }
         80% {
             opacity: 1;
+            font-family: 'Courier Prime', monospace;
         }
         85% {
             opacity: 1;
+            font-family: 'Courier Prime', monospace;
         }
         90% {
             opacity: 0;
+            font-family: 'Work Sans', 'Tajawal';
         }
         95% {
             opacity: 1;
