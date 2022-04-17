@@ -84,7 +84,7 @@
                     <div id="circle"></div>
                 </div>
                 <div class="titles1" id="name">Ibrahim Alkhowaiter</div>
-                <div class="titles1" id="jobTitle">Software Developer</div>
+                <div class="titles1 typeText" id="jobTitle"></div>
             </div>
             <div class="headerContainers">
                 <div onclick='window.location.assign("../static/Ibrahim_Alkhowaiter_Resume.pdf")' class="titles2" id="resume">Resume</div>
@@ -272,6 +272,94 @@
     </innerBody>
 
 </body>
+
+<script>
+    //animations
+
+
+    setTimeout(() => {
+        document.getElementsByTagName('h1')[0].style.fontFamily = "Cascadia Code";
+    }, 2300);
+
+    setTimeout(() => {
+        document.getElementsByTagName('h1')[0].style.fontFamily = "Tajawal";
+    }, 3500);
+
+
+    //typewriter//
+    var typeText = document.querySelector(".typeText")
+    var textToBeTyped = "Software Developer"
+    var textToBeTypedArr = ["Software Developer", "Fullstack Developer", "Backend Developer", "Frontend Developer"]
+    var index = 0,
+        isAdding = true,
+        textToBeTypedIndex = 0
+
+    function playAnim() {
+        setTimeout(function() {
+            // set the text of typeText to a substring of the text to be typed using index.
+            typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index)
+            if (isAdding) {
+                // adding text
+                if (index > textToBeTypedArr[textToBeTypedIndex].length) {
+                    // no more text to add
+                    isAdding = false
+                    typeText.classList.add("showAnim")
+                        //break: wait 2s before playing again
+                    setTimeout(function() {
+                        typeText.classList.remove("showAnim")
+                        playAnim()
+                    }, 2000)
+                    return
+                } else {
+                    // increment index by 1
+                    index++
+                }
+            } else {
+                // removing text
+                if (index === 0) {
+                    // no more text to remove
+                    isAdding = true
+                        //switch to next text in text array
+                    textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length
+                } else {
+                    // decrement index by 1
+                    index--
+                }
+            }
+            // call itself
+            playAnim()
+        }, isAdding ? 120 : 60)
+    }
+    // start animation
+    setTimeout(function() {
+        playAnim()
+    }, 900)
+</script>
+
+<style>
+    /*typewriter*/
+    
+    .typeText::after {
+        content: "|";
+        /* animation: blink 1s step-end infinite; */
+        animation: none;
+    }
+    
+    .showAnim.typeText::after {
+        animation: blink 1s step-end infinite;
+    }
+    
+    @keyframes blink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+    /*typewriter*/
+</style>
 
 <style>
     innerBody {
@@ -501,39 +589,30 @@
         }
         50% {
             opacity: 0;
-            font-family: 'Work Sans', 'Tajawal';
         }
         55% {
             opacity: 1;
-            font-family: 'Courier Prime', monospace;
         }
         60% {
             opacity: 1;
-            font-family: 'Courier Prime', monospace;
         }
         65% {
             opacity: 1;
-            font-family: 'Courier Prime', monospace;
         }
         70% {
             opacity: 1;
-            font-family: 'Courier Prime', monospace;
         }
         75% {
             opacity: 1;
-            font-family: 'Courier Prime', monospace;
         }
         80% {
             opacity: 1;
-            font-family: 'Courier Prime', monospace;
         }
         85% {
             opacity: 1;
-            font-family: 'Courier Prime', monospace;
         }
         90% {
             opacity: 0;
-            font-family: 'Work Sans', 'Tajawal';
         }
         95% {
             opacity: 1;
