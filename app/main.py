@@ -26,8 +26,15 @@ class RecordsTable:
     def __init__(self):
         self.conn = psycopg2.connect(DATABASE_URL, sslmode='require')
         self.cur = self.conn.cursor(cursor_factory=ext.DictCursor)
-        self.cur.execute(
-            "CREATE TABLE IF NOT EXISTS records (name TEXT NOT NULL,hcoins INTEGER NOT NULL,htime INTEGER NOT NULL)")
+        self.cur.execute("""
+
+            CREATE TABLE IF NOT EXISTS records
+                (
+                    name   TEXT NOT NULL,
+                    hcoins INTEGER NOT NULL,
+                    htime  INTEGER NOT NULL
+                ) 
+                        """)
 
     def display(self):
         self.cur.execute("SELECT * FROM records")
@@ -152,6 +159,7 @@ def home_view_dawrati():
 @limiter.exempt
 def home_view_blogger0():
     return render_template('Blogger/home.html')
+
 
 @app.route("/blogger/login")
 @limiter.exempt
