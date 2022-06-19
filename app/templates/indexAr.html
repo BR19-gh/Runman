@@ -98,7 +98,7 @@
             </div>
             <div class="sectionContainers">
                 <div id="textContaoners">
-                    <h1>أهلا، بالعالم!</h1>
+                    <h1 dir="ltr" style="font-size:xxx-large;">!أهلا، بالعالم</h1>
                     <h2>من أنا؟</h2>
                     <p>
                         مطور برمجيات متخصص في علوم الحاسب، مع عدة شهادات ودورات وخبرات في البرمجة وتطوير الويب المتكامل وإدارة المشاريع الرقمية.
@@ -232,6 +232,15 @@
     </innerBody>
 
 </body>
+
+<script>
+    setTimeout(function() {
+        document.querySelectorAll('h1')[0].innerText = "<h1>!أهلا، بالعالم</h1>"
+    }, 2300);
+    setTimeout(function() {
+        document.querySelectorAll('h1')[0].innerHTML = "أهلا، بالعالم!"
+    }, 3500);
+</script>
 
 <style>
     /*typewriter*/
@@ -546,31 +555,31 @@
         }
         55% {
             opacity: 1;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Consolas', Courier, monospace;
         }
         60% {
             opacity: 1;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Consolas', Courier, monospace;
         }
         65% {
             opacity: 1;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Consolas', Courier, monospace;
         }
         70% {
             opacity: 1;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Consolas', Courier, monospace;
         }
         75% {
             opacity: 1;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Consolas', Courier, monospace;
         }
         80% {
             opacity: 1;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Consolas', Courier, monospace;
         }
         85% {
             opacity: 1;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Consolas', Courier, monospace;
         }
         90% {
             opacity: 0;
