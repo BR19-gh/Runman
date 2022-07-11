@@ -4,11 +4,10 @@ A side-scrolling fullstack pixel game where player has to make the character avo
 ## What the Repository contains
 The repository contains the following files and folders:
 ### Backend
-- `backend`: backend files, and the most important ones are:
-   - `app/main.py`: where all the routes, models, imports and database configurations are in.
-   - `wsgi.py`: what the deployment host look for to run the backend.
-   - `requirements.txt`: all the dependencies to run the api mentioned here.
-   - `runtime.txt`: the version of Python to use as runtime mentioned here.
+ - `app/main.py`: where all the routes, models, imports and database configurations are in.
+ - `wsgi.py`: what the deployment host look for to run the backend.
+ - `requirements.txt`: all the dependencies to run the api mentioned here.
+ - `runtime.txt`: the version of Python to use as runtime mentioned here.
 ### Frontend
 - `index.html`: the main `Html` file for the game.
 - `indexAr.html`: the Arabic version of `index.html`.
