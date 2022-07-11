@@ -71,131 +71,28 @@ class RecordsTable:
 
 # routes
 
-# main
-
 @app.route("/")
-@limiter.exempt
-def home_view():
-    return render_template('index.html')
-
-
-@app.route("/en")
-@limiter.exempt
-def home_view_en():
-    return render_template('index.html')
-
-
-@app.route("/ar")
-@limiter.exempt
-def home_view_ar():
-    return render_template('indexAr.html')
-
-# Runman
-
-
-@app.route("/runman")
 @limiter.exempt
 def home_view_runman():
     return render_template('Runman/index.html')
 
 
-@app.route("/runman/en")
+@app.route("/en")
 @limiter.exempt
 def home_view_runman_en():
     return render_template('Runman/index.html')
 
 
-@app.route("/runman/ar")
+@app.route("/ar")
 @limiter.exempt
 def home_view_runman_ar():
     return render_template('Runman/indexAr.html')
 
 
-@app.route("/runman/db")
+@app.route("/db")
 @limiter.exempt
 def home_view_runman_db():
     return render_template('Runman/Dashboard.html')
-
-# DemonsKiller
-
-
-@app.route("/demonskiller")
-@limiter.exempt
-def home_view_demonskiller():
-    return render_template('DemonsKiller/index.html')
-
-
-@app.route("/demonskiller/en")
-@limiter.exempt
-def home_view_demonskiller_en():
-    return render_template('DemonsKiller/index.html')
-
-
-@app.route("/demonskiller/ar")
-@limiter.exempt
-def home_view_demonskiller_ar():
-    return render_template('DemonsKiller/indexAr.html')
-
-# Dagshtick
-
-
-@app.route("/dagshtick")
-@limiter.exempt
-def home_view_dagshtick():
-    return render_template('Dagshtick/index.html')
-
-# dawrati
-
-
-@app.route("/dawrati")
-@limiter.exempt
-def home_view_dawrati():
-    return render_template('dawrati/main.html')
-
-# Blogger
-
-
-@app.route("/blogger")
-@limiter.exempt
-def home_view_blogger0():
-    return render_template('Blogger/home.html')
-
-
-@app.route("/blogger/login")
-@limiter.exempt
-def home_view_blogger1():
-    return render_template('Blogger/login.html')
-
-
-@app.route("/blogger/home")
-@limiter.exempt
-def home_view_blogger2():
-    return render_template('Blogger/home.html')
-
-
-@app.route("/blogger/addBlog")
-@limiter.exempt
-def home_view_blogger3():
-    return render_template('Blogger/addBlog.html')
-
-# onethree
-
-
-@app.route("/onethree")
-@limiter.exempt
-def home_view_onethree():
-    return render_template('onethree/index.html')
-
-# resume
-
-
-@app.route("/resume")
-@limiter.exempt
-def resume():
-    return render_template('/static/Ibrahim_Alkhowaiter_Resume.pdf')
-
-
-# end of routes
 
 
 # Runman Backend

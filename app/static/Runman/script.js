@@ -778,13 +778,13 @@ document.getElementById("Voice").addEventListener("click", () => {
 document.getElementById("English").addEventListener("click", () => {
     playOrStop(menuS, VoiceOn);
     playOrStop(menuS, VoiceOn);
-    window.location.assign("/runman/en");
+    window.location.assign("/en");
 });
 
 document.getElementById("Arabic").addEventListener("click", () => {
     playOrStop(menuS, VoiceOn);
     playOrStop(menuS, VoiceOn);
-    window.location.assign("/runman/ar");
+    window.location.assign("/ar");
 });
 
 
@@ -1192,7 +1192,7 @@ document.getElementById("Linkedin").addEventListener("click", function() {
 });
 document.getElementById("Website").addEventListener("click", function() {
     playOrStop(menuS, VoiceOn);
-    window.location.assign("/");
+    window.location.assign("https://br19.herokuapp.com/");
 });
 document.getElementById("Email").addEventListener("click", function() {
     playOrStop(menuS, VoiceOn);
