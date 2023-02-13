@@ -18,4 +18,4 @@ The repository contains the following files and folders:
 - `ArabicPixel1.ttf` and `ArabicPixel2.ttf`: the fonts used in the game.
 - `Runman.zip`: the game in .zip file to download via the `download` button inside `Settings`.
 
-You can play the game online via [br19.herokuapp.com/runman](https://br19.herokuapp.com/runman) 
+You can play the game online via [this link](https://br19-runman.herokuapp.com).
