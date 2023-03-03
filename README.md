@@ -6,7 +6,7 @@ The repository contains the following files and folders:
 ### Backend
  - `app/main.py`: where all the routes, models, imports and database configurations are in.
  - `wsgi.py`: what the deployment host look for to run the backend.
- - `requirements.txt`: all the dependencies to run the api mentioned here.
+ - `requirements.txt`: all the dependencies to run the APIs mentioned here.
  - `runtime.txt`: the version of Python to use as runtime mentioned here.
 ### Frontend
 - `index.html`: the main `Html` file for the game.
